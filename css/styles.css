@@ -1,0 +1,1927 @@
+/* ================================================
+   FATIH EREN ÇETIN - PERSONAL PORTFOLIO
+   Design System & Styles
+   ================================================ */
+
+/* ------------------------------------------------
+   CSS VARIABLES - DESIGN TOKENS
+   ------------------------------------------------ */
+:root {
+    /* Colors - Blue Gradient Theme */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-tertiary: #1a1a25;
+
+    --accent-primary: #3b82f6;
+    --accent-secondary: #1e40af;
+    --accent-light: #60a5fa;
+    --accent-glow: rgba(59, 130, 246, 0.3);
+    --accent-glow-strong: rgba(59, 130, 246, 0.5);
+
+    --spotify-green: #1DB954;
+    --spotify-glow: rgba(29, 185, 84, 0.3);
+
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(255, 255, 255, 0.2);
+
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3.5rem;
+    --font-size-6xl: 4.5rem;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 30px var(--accent-glow);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Z-Index Scale */
+    --z-background: -1;
+    --z-base: 1;
+    --z-cards: 10;
+    --z-navbar: 100;
+    --z-modal: 1000;
+}
+
+/* ------------------------------------------------
+   RESET & BASE STYLES
+   ------------------------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ------------------------------------------------
+   3D BACKGROUND CANVAS
+   ------------------------------------------------ */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+/* ------------------------------------------------
+   NAVBAR
+   ------------------------------------------------ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-navbar);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: var(--transition-base);
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(30px);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.nav-link {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+    transition: var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+}
+
+.nav-toggle {
+    display: none;
+    color: var(--text-primary);
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-sm);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        gap: var(--spacing-md);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-base);
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* ------------------------------------------------
+   HERO SECTION
+   ------------------------------------------------ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: var(--z-base);
+}
+
+.hero-title {
+    font-size: clamp(var(--font-size-4xl), 8vw, var(--font-size-6xl));
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-light) 50%, var(--accent-primary) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+}
+
+.hero-subtitle {
+    font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-2xl));
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ------------------------------------------------
+   BENTO GRID SECTION
+   ------------------------------------------------ */
+.bento-section {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: var(--spacing-lg);
+}
+
+/* ------------------------------------------------
+   BENTO CARDS - BASE STYLES
+   ------------------------------------------------ */
+.bento-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, var(--accent-glow), transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-primary);
+}
+
+.card-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-preview {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Card Scrollable Content */
+.card-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-secondary) transparent;
+}
+
+.card-scrollable::-webkit-scrollbar {
+    width: 4px;
+}
+
+.card-scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-scrollable::-webkit-scrollbar-thumb {
+    background: var(--accent-secondary);
+    border-radius: 2px;
+}
+
+/* ------------------------------------------------
+   CARD SIZE VARIATIONS
+   ------------------------------------------------ */
+/* Large 2x2 - About Me */
+.card-about {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Medium 2x1 - AI/ML Projects & Skills */
+.card-ai,
+.card-skills {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Medium 1x2 - Data Science & Blog */
+.card-data,
+.card-blog {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Small 1x1 - DIY, GitHub, Spotify, Social, Contact */
+.card-diy,
+.card-github,
+.card-spotify,
+.card-social,
+.card-contact {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* ------------------------------------------------
+   SPOTIFY CARD - GREEN THEME
+   ------------------------------------------------ */
+.card-spotify {
+    --accent-primary: var(--spotify-green);
+    --accent-glow: var(--spotify-glow);
+}
+
+.card-spotify .card-icon {
+    color: var(--spotify-green);
+}
+
+.card-spotify:hover {
+    box-shadow: var(--shadow-lg), 0 0 30px var(--spotify-glow);
+}
+
+.card-spotify::before {
+    background: radial-gradient(circle at 50% 0%, var(--spotify-glow), transparent 70%);
+}
+
+/* ------------------------------------------------
+   CONTACT CARD - NO EXPAND
+   ------------------------------------------------ */
+.card-contact {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------
+   FOOTER
+   ------------------------------------------------ */
+.footer {
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    min-height: 40px;
+}
+
+/* ------------------------------------------------
+   MODAL - EXPANDED CARDS
+   ------------------------------------------------ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    width: 100%;
+    max-width: 800px;
+    max-height: 85vh;
+    position: relative;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity var(--transition-base);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.modal-close.scroll-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-body {
+    padding: var(--spacing-2xl);
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-secondary) transparent;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--accent-secondary);
+    border-radius: 3px;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.modal-header .card-icon {
+    font-size: var(--font-size-3xl);
+}
+
+.modal-header h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+}
+
+/* ------------------------------------------------
+   EXPANDED CARD CONTENT STYLES
+   ------------------------------------------------ */
+
+/* Section Titles */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--accent-light);
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.section-title:first-of-type {
+    margin-top: 0;
+}
+
+.section-title i {
+    font-size: var(--font-size-base);
+}
+
+/* Bio Text */
+.bio-text {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Item Lists */
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.item-list li::before {
+    content: '•';
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+/* Project Cards (Inside Modal) */
+.project-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+.project-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-card-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.project-card-title i {
+    color: var(--accent-primary);
+}
+
+.project-card-arrow {
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.project-card:hover .project-card-arrow {
+    color: var(--accent-primary);
+    transform: translateX(4px);
+}
+
+.project-card-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Skill Cards */
+.skill-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-fast);
+}
+
+.skill-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-card-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.skill-card-title i {
+    color: var(--accent-primary);
+}
+
+.skill-card-link {
+    color: var(--accent-primary);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: var(--transition-fast);
+}
+
+.skill-card-link:hover {
+    color: var(--accent-light);
+}
+
+.skill-card-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Blog Items */
+.blog-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.blog-item:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+}
+
+.blog-item-title {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.blog-item-arrow {
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.blog-item:hover .blog-item-arrow {
+    color: var(--accent-primary);
+    transform: translateX(4px);
+}
+
+/* Social Grid */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.social-item:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.social-item i {
+    font-size: var(--font-size-2xl);
+    color: var(--accent-primary);
+}
+
+.social-item span {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* GitHub Stats */
+.github-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.github-stats img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* Spotify Playlist Cards - Green Theme */
+.spotify-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.spotify-content .project-card {
+    border-color: var(--spotify-green);
+}
+
+.spotify-content .project-card:hover {
+    border-color: var(--spotify-green);
+    box-shadow: 0 4px 16px var(--spotify-glow);
+}
+
+.spotify-content .project-card-title i {
+    color: var(--spotify-green);
+}
+
+.spotify-content .project-card-arrow {
+    color: var(--spotify-green);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-content .project-card:hover .project-card-arrow {
+    color: var(--spotify-green) !important;
+    filter: drop-shadow(0 0 4px var(--spotify-green)) drop-shadow(0 0 8px var(--spotify-glow));
+    transform: translateX(3px);
+}
+
+/* Spotify Modal - Green branding */
+.modal-body:has(.spotify-content) .modal-header .card-icon i {
+    color: var(--spotify-green) !important;
+}
+
+.modal-content:has(.spotify-content) {
+    border: 2px solid var(--spotify-green);
+    box-shadow: 0 8px 32px var(--spotify-glow);
+}
+
+/* ------------------------------------------------
+   GITHUB MODAL - STATS DISPLAY
+   ------------------------------------------------ */
+.github-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.github-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.github-stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.github-stat-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+}
+
+.github-stat-card i {
+    font-size: var(--font-size-2xl);
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.github-stat-card .stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.github-stat-card .stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.github-languages {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.github-section-title {
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.github-section-title i {
+    color: var(--accent-primary);
+    margin-right: var(--spacing-sm);
+}
+
+.language-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.language-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.lang-name {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.lang-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lang-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+.lang-percent {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    text-align: right;
+}
+
+.github-profile-link {
+    margin-top: var(--spacing-md);
+}
+
+.loading-text {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .github-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ------------------------------------------------
+   SCROLL REVEAL ANIMATION
+   ------------------------------------------------ */
+.bento-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bento-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------------------------------------
+   RESPONSIVE DESIGN
+   ------------------------------------------------ */
+@media (max-width: 1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-about {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-about,
+    .card-ai,
+    .card-skills {
+        grid-column: span 2;
+    }
+
+    .card-data,
+    .card-diy {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .bento-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        border-radius: var(--radius-xl);
+    }
+
+    .modal-body {
+        padding: var(--spacing-lg);
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------------------------------------
+   UTILITY CLASSES
+   ------------------------------------------------ */
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ------------------------------------------------
+   ICON HOVER GLOW EFFECTS (Reduced)
+   ------------------------------------------------ */
+/* Individual icon hover - subtle white glow */
+.bento-card .card-icon i {
+    transition: filter var(--transition-base), transform var(--transition-base);
+}
+
+.bento-card:hover .card-icon i {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+/* Spotify icon - lighter green glow on hover (reduced) */
+.card-spotify:hover .card-icon i {
+    filter: drop-shadow(0 0 6px rgba(30, 215, 96, 0.5)) drop-shadow(0 0 12px rgba(30, 215, 96, 0.3));
+}
+
+/* ------------------------------------------------
+   CARD HEADER ROW - INLINE LAYOUT
+   ------------------------------------------------ */
+.card-header-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-header-row .card-icon {
+    margin-bottom: 0;
+    font-size: var(--font-size-2xl);
+}
+
+.card-header-row .card-title {
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------
+   INLINE LISTS AND ICONS
+   ------------------------------------------------ */
+.inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.inline-list li {
+    padding: 0;
+}
+
+.inline-icons {
+    margin-top: 0;
+}
+
+.inline-graph {
+    margin-top: 0;
+}
+
+.inline-preview {
+    margin-top: 0;
+}
+
+/* ------------------------------------------------
+   CLICKABLE ELEMENTS
+   ------------------------------------------------ */
+/* Project links in AI/ML card */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.project-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    color: var(--accent-primary);
+    font-size: 10px;
+}
+
+/* Clickable Kaggle Badge */
+.kaggle-badge.clickable {
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.kaggle-badge.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 190, 255, 0.4);
+}
+
+/* Clickable DIY/Skills Icons - Individual hover */
+.clickable-icon {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.clickable-icon:hover {
+    border-color: var(--accent-primary);
+    background: var(--glass-bg-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.clickable-icon:hover i,
+.clickable-icon:hover svg {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+/* Contact icon - subtle glow like other icons */
+.contact-icon {
+    transition: var(--transition-fast);
+}
+
+.card-contact:hover .contact-icon i {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+/* Blog latest link */
+.blog-latest-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.blog-latest-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.blog-latest-link i {
+    color: var(--accent-primary);
+}
+
+/* Social icon links - Individual hover */
+.social-icons-row {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.card-social {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.card-social .social-icons-row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--accent-primary);
+    font-size: var(--font-size-2xl);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.social-icon-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.social-icon-link:hover i {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+/* ------------------------------------------------
+   ABOUT ME CARD - COLLAPSED CONTENT
+   ------------------------------------------------ */
+.card-about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.about-top-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.about-top-row .card-title {
+    font-size: var(--font-size-2xl);
+    margin: 0;
+}
+
+.about-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-primary);
+    flex-shrink: 0;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-about-content .card-preview {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.card-expand-hint {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.card-about:hover .card-expand-hint {
+    opacity: 1;
+}
+
+/* ------------------------------------------------
+   AI/ML CARD - PROJECT LIST
+   ------------------------------------------------ */
+.card-project-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.card-project-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) 0;
+}
+
+.card-project-list li i {
+    color: var(--accent-primary);
+    font-size: var(--font-size-xs);
+    width: 16px;
+}
+
+/* ------------------------------------------------
+   DATA SCIENCE CARD - KAGGLE & STATS
+   ------------------------------------------------ */
+.kaggle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, #20beff, #1e88e5);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.kaggle-badge i {
+    font-size: var(--font-size-sm);
+}
+
+.data-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--accent-light);
+}
+
+.stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.mini-chart {
+    margin-top: auto;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 40px;
+    color: var(--accent-primary);
+}
+
+/* ------------------------------------------------
+   DIY CARD - GALLERY
+   ------------------------------------------------ */
+.diy-gallery {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+/* DIY Modal - Icon Grid Layout */
+.diy-modal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    padding: var(--spacing-md) 0;
+}
+
+.diy-modal-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    width: 140px;
+}
+
+.diy-modal-icon:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+}
+
+.diy-modal-icon i {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.diy-modal-label {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.diy-modal-desc {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.diy-thumb {
+    width: 60px;
+    height: 75px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: var(--font-size-xl);
+    color: var(--accent-primary);
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.diy-thumb .icon-label {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Individual hover handled by .clickable-icon class */
+
+/* ------------------------------------------------
+   SKILLS CARD - TECH ICONS
+   ------------------------------------------------ */
+.tech-icons {
+    display: flex;
+    gap: 8px;
+    margin-top: var(--spacing-sm);
+}
+
+.tech-icon {
+    width: 55px;
+    height: 70px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: var(--font-size-xl);
+    color: var(--accent-primary);
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.tech-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tech-icon .icon-label {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Individual hover handled by .clickable-icon class */
+
+/* ------------------------------------------------
+   BLOG CARD - VERTICAL SCROLL
+   ------------------------------------------------ */
+.blog-scroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: var(--spacing-xs);
+}
+
+.blog-scroll-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.blog-scroll-container::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+    border-radius: 2px;
+}
+
+.blog-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+/* Data Science card - full height scroll for 1x2 cards */
+.data-scroll-full {
+    flex: 1;
+    max-height: none;
+}
+
+.blog-latest {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.blog-latest i {
+    color: var(--accent-primary);
+}
+
+/* ------------------------------------------------
+   GITHUB CARD - LATEST PROJECT
+   ------------------------------------------------ */
+.github-latest-project {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+    margin-top: var(--spacing-sm);
+}
+
+.github-latest-project:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.github-latest-project i {
+    font-size: var(--font-size-lg);
+    color: var(--accent-primary);
+}
+
+.github-latest-project .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.github-latest-project .project-name {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.github-latest-project .project-desc {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+/* ------------------------------------------------
+   SPOTIFY CARD - PREVIEW
+   ------------------------------------------------ */
+.spotify-preview {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.spotify-preview:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.playlist-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+}
+
+.playlist-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.playlist-name {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Spotify Card - Green branding */
+.card-spotify .card-icon i {
+    color: #1DB954;
+}
+
+.card-spotify:hover {
+    border-color: #1DB954;
+}
+
+.card-spotify:hover::before {
+    background: radial-gradient(circle at top, rgba(29, 185, 84, 0.15), transparent 70%);
+}
+
+/* Spotify, GitHub, DIY cards - center content */
+.card-spotify,
+.card-github {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-spotify .spotify-preview,
+.card-github .github-latest-project {
+    margin: auto;
+}
+
+.card-diy {
+    display: flex;
+    flex-direction: column;
+}
+
+.diy-icons-row {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.diy-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--accent-primary);
+    font-size: var(--font-size-2xl);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.diy-icon-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* ------------------------------------------------
+   SOCIAL CARD - ICONS (Deprecated grid style)
+   ------------------------------------------------ */
+/* Kept for backwards compatibility but social-icons-row is preferred */
+.social-icons-grid {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.social-icons-grid i {
+    font-size: var(--font-size-xl);
+    color: var(--accent-primary);
+    transition: var(--transition-fast);
+}
+
+/* ------------------------------------------------
+   CONTACT CARD - CENTERED ICON
+   ------------------------------------------------ */
+.card-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon {
+    font-size: var(--font-size-4xl);
+    margin: 0;
+}
+
+.contact-icon i {
+    transition: var(--transition-base);
+}
+
+.card-contact:hover .contact-icon i {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------------
+   RESPONSIVE ADJUSTMENTS FOR NEW CONTENT
+   ------------------------------------------------ */
+@media (max-width: 900px) {
+    .card-about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tech-icons {
+        justify-content: flex-start;
+    }
+
+    .diy-gallery {
+        justify-content: flex-start;
+    }
+
+    .data-stats {
+        justify-content: center;
+    }
+}
+
+/* ------------------------------------------------
+   HORIZONTAL SCROLL CONTAINER
+   ------------------------------------------------ */
+.scroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    position: relative;
+    width: 100%;
+}
+
+.scroll-content {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-xs);
+}
+
+.scroll-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.scroll-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    z-index: 5;
+}
+
+.scroll-btn:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.scroll-btn:active {
+    transform: scale(0.95);
+}
+
+/* DIY Gallery - exactly 2 icons, centered, no cut-off */
+.card-diy .scroll-container {
+    justify-content: space-between;
+}
+
+.diy-gallery.scroll-content {
+    margin: var(--spacing-md) 0;
+    gap: 16px;
+    justify-content: flex-start;
+    width: 136px;
+    min-width: 136px;
+    max-width: 136px;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    flex: 0 0 136px;
+}
+
+.diy-gallery .diy-thumb {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* Tech Icons - centered with scroll, buttons at edges */
+.card-skills .scroll-container {
+    justify-content: space-between;
+}
+
+.tech-icons.scroll-content {
+    margin-top: var(--spacing-sm);
+    gap: 12px;
+    justify-content: center;
+}
