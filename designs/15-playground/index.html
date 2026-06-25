@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+    <meta
+      name="description"
+      content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Train a tiny neural net live in your browser, then explore the real work."
+    />
+    <meta name="color-scheme" content="dark" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <header class="site-header">
+      <a class="brand" href="#main">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Fatih Eren Çetin
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#playground">Playground</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ===================== HERO + PLAYGROUND ===================== -->
+      <section class="hero" aria-labelledby="hero-name">
+        <div class="hero-grid">
+          <!-- Identity is instant, never gated behind the demo. -->
+          <div class="hero-identity">
+            <p class="eyebrow">AI Engineer · LLM &amp; Agentic AI</p>
+            <h1 id="hero-name">Fatih Eren Çetin</h1>
+            <p class="hero-location">Ankara, Türkiye</p>
+            <p class="hero-oneliner">
+              AI Engineer building production-grade LLM, RAG, and multi-agent
+              systems — most recently a
+              <strong>9-agent Claude pipeline</strong> that lifted top-1
+              retrieval from <strong>43% to 86%</strong> with
+              <strong>0% citation hallucination</strong>.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#playground">Try the live demo</a>
+              <a class="btn btn-ghost" href="#work">See the real work</a>
+            </div>
+
+            <ul class="stat-strip" aria-label="Signature stats">
+              <li><span class="stat-v">9-agent</span><span class="stat-l">Claude pipeline</span></li>
+              <li><span class="stat-v">43%→86%</span><span class="stat-l">top-1 retrieval</span></li>
+              <li><span class="stat-v">0%</span><span class="stat-l">citation hallucination</span></li>
+              <li><span class="stat-v">700+</span><span class="stat-l">automated tests</span></li>
+              <li><span class="stat-v">ISO 42001/27001</span><span class="stat-l">Lead Auditor</span></li>
+            </ul>
+          </div>
+
+          <!-- The interactive artifact: a real in-browser MLP. -->
+          <div class="hero-demo" id="playground">
+            <div class="demo-frame" data-reveal>
+              <div class="demo-head">
+                <h2 class="demo-title">Live ML Playground</h2>
+                <p class="demo-frame-note">
+                  Train a tiny neural net in your browser — a 30-second demo of
+                  the fundamentals behind the production systems I build.
+                  <strong>This is a teaching toy, not my production model.</strong>
+                </p>
+              </div>
+
+              <div class="demo-body">
+                <div class="canvas-wrap">
+                  <canvas
+                    id="pg-canvas"
+                    width="420"
+                    height="420"
+                    role="img"
+                    aria-label="Decision boundary of a small neural network learning to separate two classes of 2D points. Navy region is class 0, amber region is class 1."
+                  ></canvas>
+                  <div class="canvas-legend" aria-hidden="true">
+                    <span><i class="dot dot-0"></i> class 0</span>
+                    <span><i class="dot dot-1"></i> class 1</span>
+                  </div>
+                  <!-- No-JS / pre-train fallback figure -->
+                  <noscript>
+                    <p class="noscript-note">
+                      JavaScript is off, so the live trainer is disabled. The
+                      playground trains a small multilayer perceptron (2 inputs
+                      → two hidden layers → 1 sigmoid output) with real
+                      forward-pass and back-propagation on a toy 2D dataset, and
+                      renders its decision boundary as a navy/amber color field
+                      that sharpens as the loss drops. Everything below — the
+                      projects, experience, skills and contact — is fully
+                      readable without JavaScript.
+                    </p>
+                  </noscript>
+                </div>
+
+                <form class="demo-controls" aria-label="Playground controls" onsubmit="return false;">
+                  <p id="pg-status" class="pg-status" role="status" aria-live="polite">
+                    Press Play to train (no JavaScript? see the description below the canvas).
+                  </p>
+
+                  <div class="readout" aria-live="polite">
+                    <span>epoch <b id="pg-epoch">0</b></span>
+                    <span>loss <b id="pg-loss">—</b></span>
+                    <span>acc <b id="pg-acc">—</b></span>
+                  </div>
+
+                  <div class="btn-row">
+                    <button type="button" id="pg-play" class="btn btn-primary btn-sm" aria-pressed="false">▶ Play</button>
+                    <button type="button" id="pg-step" class="btn btn-ghost btn-sm">Step</button>
+                    <button type="button" id="pg-reset" class="btn btn-ghost btn-sm">Reset</button>
+                  </div>
+
+                  <div class="control">
+                    <label for="pg-dataset">Dataset</label>
+                    <select id="pg-dataset">
+                      <option value="circles">Concentric circles</option>
+                      <option value="spirals">Two spirals</option>
+                      <option value="xor">XOR blobs</option>
+                    </select>
+                  </div>
+
+                  <div class="control">
+                    <label for="pg-activation">Activation</label>
+                    <select id="pg-activation">
+                      <option value="tanh">Tanh</option>
+                      <option value="relu">ReLU</option>
+                      <option value="sigmoid">Sigmoid</option>
+                    </select>
+                  </div>
+
+                  <div class="control">
+                    <label for="pg-lr">Learning rate <output id="pg-lr-out">0.300</output></label>
+                    <input type="range" id="pg-lr" min="0.01" max="1.5" step="0.01" value="0.3" />
+                  </div>
+
+                  <div class="control">
+                    <label for="pg-hidden">Hidden neurons / layer <output id="pg-hidden-out">6</output></label>
+                    <input type="range" id="pg-hidden" min="2" max="8" step="1" value="6" />
+                  </div>
+
+                  <div class="control">
+                    <label for="pg-noise">Noise <output id="pg-noise-out">0.10</output></label>
+                    <input type="range" id="pg-noise" min="0" max="0.4" step="0.01" value="0.1" />
+                  </div>
+
+                  <p class="control-hint">
+                    Architecture: 2 inputs (x, y) → two hidden layers → 1
+                    sigmoid output. Full-batch gradient descent, binary
+                    cross-entropy loss. All runs locally — no model download, no
+                    network calls.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section class="band" id="about" aria-labelledby="about-h" data-reveal>
+        <div class="container narrow">
+          <h2 id="about-h" class="section-title">About</h2>
+          <p class="lede">
+            Mathematics BSc (full scholarship, Bilkent University) turned AI
+            Engineer. I build production-grade LLM, RAG and multi-agent systems
+            that act over tools, APIs and data — paired with ISO/IEC 42001 (AI
+            Management) &amp; 27001 Lead Auditor governance and reliability
+            rigor. Foundations from instructing 100+ students in Python.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== SELECTED WORK ===================== -->
+      <section class="band" id="work" aria-labelledby="work-h">
+        <div class="container">
+          <h2 id="work-h" class="section-title" data-reveal>Selected work</h2>
+          <p class="section-sub" data-reveal>
+            Five real projects — with the decisions and tradeoffs behind them,
+            not just the wins. Only the public one links out; private and team
+            projects are labeled honestly.
+          </p>
+
+          <div
+            id="work-filters"
+            class="filters"
+            role="group"
+            aria-label="Filter projects by tag"
+            hidden
+          ></div>
+          <p id="work-filter-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+          <div class="work-grid">
+            <!-- 1 — Flagship -->
+            <article class="card" data-project data-tags="Multi-Agent|Dense RAG|FastAPI|Provenance" data-reveal>
+              <div class="card-top">
+                <span class="badge badge-flag">Flagship</span>
+                <span class="badge badge-private">Private repo — no public link</span>
+              </div>
+              <h3 class="card-title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+              <p class="card-summary">
+                9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a
+                deterministic Python orchestrator that drafts regulatory
+                documents with enforced, verifiable citations.
+              </p>
+              <p class="card-rationale">
+                <b>Why this way:</b> chose a deterministic orchestrator over an
+                autonomous agent loop so every step is auditable and
+                reproducible — predictability beat cleverness for a compliance
+                workload. Used dense RAG with article-aware chunking because
+                legislation is structured; provenance is enforced at generation
+                time, not patched afterward.
+              </p>
+              <ul class="card-metrics">
+                <li>Top-1 retrieval <b>43% → 86%</b> on a 7-query legislation ground-truth set</li>
+                <li><b>0%</b> citation hallucination across 5 end-to-end scenarios</li>
+                <li><b>700+</b> tests (Python + Playwright); per-step token / cost / latency auditing</li>
+              </ul>
+              <ul class="tag-list" aria-label="Stack">
+                <li>Claude Sonnet 4.6 + Haiku 4.5</li><li>Qdrant</li><li>Voyage-3-Large + rerank-2</li><li>FastAPI</li><li>Arq / Redis</li><li>PostgreSQL</li>
+              </ul>
+            </article>
+
+            <!-- 2 — RAG System (public) -->
+            <article class="card" data-project data-tags="RAG|Citations|Hexagonal" data-reveal>
+              <div class="card-top">
+                <span class="badge badge-public">Public</span>
+              </div>
+              <h3 class="card-title">RAG Systems — Chat With Your Documents</h3>
+              <p class="card-summary">
+                FastAPI + Streamlit + Google Gemini + ChromaDB document-QA with
+                per-chunk source citations and cross-lingual TR/EN retrieval.
+              </p>
+              <p class="card-rationale">
+                <b>Why this way:</b> built on a hexagonal (ports &amp; adapters)
+                architecture so the LLM and the vector store are swappable
+                behind interfaces — the retrieval layer is not welded to one
+                vendor. Every answer carries per-chunk citations so a reader can
+                verify the source.
+              </p>
+              <ul class="card-metrics">
+                <li>Hexagonal architecture — swappable LLM / vector-store adapters</li>
+                <li>Per-chunk source citations; cross-lingual TR/EN</li>
+                <li><b>64</b>-test suite</li>
+              </ul>
+              <ul class="tag-list" aria-label="Stack">
+                <li>FastAPI</li><li>Streamlit</li><li>Google Gemini</li><li>ChromaDB</li>
+              </ul>
+              <p class="card-link">
+                <a href="https://github.com/FatihErenCetin/RAG-System" rel="noopener noreferrer">
+                  View on GitHub →
+                </a>
+              </p>
+            </article>
+
+            <!-- 3 — SME Assistant -->
+            <article class="card" data-project data-tags="Multi-Agent|Function Calling|Reliability" data-reveal>
+              <div class="card-top">
+                <span class="badge badge-flag">Team — core dev / lead</span>
+                <span class="badge badge-private">No public link</span>
+              </div>
+              <h3 class="card-title">Multi-Agent SME Operations Assistant</h3>
+              <p class="card-summary">
+                Gemini function-calling assistant for SME operations across
+                Telegram and Web, with per-agent permission scoping and graceful
+                degradation.
+              </p>
+              <p class="card-rationale">
+                <b>Why this way:</b> scoped permissions per agent so a tool
+                failure or a compromised step cannot exceed its authority.
+                Designed API-key rotation with deterministic fallbacks, so the
+                system degrades into a predictable mode instead of failing
+                outright.
+              </p>
+              <ul class="card-metrics">
+                <li>Per-agent permission scoping</li>
+                <li>API-key rotation + deterministic fallbacks (graceful degradation)</li>
+                <li>Telegram + Web surfaces</li>
+              </ul>
+              <ul class="tag-list" aria-label="Stack">
+                <li>Google Gemini</li><li>Function calling</li><li>Telegram Bot</li><li>Web</li>
+              </ul>
+            </article>
+
+            <!-- 4 — Investment -->
+            <article class="card" data-project data-tags="Forecasting|Data Engineering|Backtest" data-reveal>
+              <div class="card-top">
+                <span class="badge badge-flag">Data + Forecasting</span>
+                <span class="badge badge-private">No public link</span>
+              </div>
+              <h3 class="card-title">Investment-Incentive Analytics &amp; Forecasting Platform</h3>
+              <p class="card-summary">
+                Reconciled 132 official sources (55 Excel + 77 Word) into a
+                77K-record dataset, then backtested forecasting models
+                out-of-sample.
+              </p>
+              <p class="card-rationale">
+                <b>Why this way:</b> ran a 5-model out-of-sample backtest instead
+                of trusting in-sample fit — the honest comparison was against a
+                seasonal-naive baseline. SARIMA earned its place by beating that
+                baseline by a wide margin, not by being the fanciest option.
+              </p>
+              <ul class="card-metrics">
+                <li>132 sources (55 Excel + 77 Word) → 77K-record dataset (Parquet + SQLite)</li>
+                <li>5-model out-of-sample backtest</li>
+                <li>SARIMA <b>24% MAPE</b> vs 93% seasonal-naive baseline</li>
+              </ul>
+              <ul class="tag-list" aria-label="Stack">
+                <li>Python</li><li>SARIMA</li><li>Polars</li><li>Streamlit / Plotly</li>
+              </ul>
+            </article>
+
+            <!-- 5 — Financial TS -->
+            <article class="card" data-project data-tags="Time-Series|LightGBM|Feature Engineering" data-reveal>
+              <div class="card-top">
+                <span class="badge badge-flag">Time-Series</span>
+                <span class="badge badge-private">No public link</span>
+              </div>
+              <h3 class="card-title">Financial Time-Series Forecasting</h3>
+              <p class="card-summary">
+                Forecasting over Borsa İstanbul equities using 30+ technical
+                indicators and a gradient-boosting + classical-stats ensemble.
+              </p>
+              <p class="card-rationale">
+                <b>Why this way:</b> paired LightGBM with SARIMA/SARIMAX rather
+                than reaching for a deep net — on this data volume the
+                gradient-boosted + classical approach was the better-calibrated,
+                more interpretable bet.
+              </p>
+              <ul class="card-metrics">
+                <li>30+ technical indicators (RSI, MACD, Bollinger, …)</li>
+                <li>LightGBM + SARIMA / SARIMAX</li>
+                <li>Borsa İstanbul equities</li>
+              </ul>
+              <ul class="tag-list" aria-label="Stack">
+                <li>LightGBM</li><li>SARIMA / SARIMAX</li><li>scikit-learn</li><li>Python</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section class="band" id="experience" aria-labelledby="exp-h">
+        <div class="container">
+          <h2 id="exp-h" class="section-title" data-reveal>Experience</h2>
+          <ol class="timeline">
+            <li class="tl-item" data-reveal>
+              <div class="tl-head">
+                <h3>AI Engineer</h3>
+                <span class="tl-dates">09/2024 – Present</span>
+              </div>
+              <p class="tl-org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</p>
+              <ul class="tl-bullets">
+                <li>Built an agentic ISO/IEC 17020 conformity-audit assistant: Claude Agent SDK + 2 MCP servers + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF), on-device and KVKK / EU-AI-Act compliant.</li>
+                <li>Built a full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph).</li>
+                <li>Designed and delivered an internal AI training curriculum (LLM, prompt engineering, RAG, agents).</li>
+              </ul>
+            </li>
+            <li class="tl-item" data-reveal>
+              <div class="tl-head">
+                <h3>AI Fellow</h3>
+                <span class="tl-dates">12/2025 – Present</span>
+              </div>
+              <p class="tl-org">Yapay Zeka ve Teknoloji Akademisi · Remote</p>
+              <ul class="tl-bullets">
+                <li>Selected in the top 4.7% of 31,700 applicants; one of 5 fellows building community tooling.</li>
+                <li>Lead developer of a 4-person team building a Slack microservice platform: Slack Bolt, async SQLAlchemy / PostgreSQL, Groq Llama 3.3 summarization, sentence-transformers + UMAP/HDBSCAN clustering.</li>
+              </ul>
+            </li>
+            <li class="tl-item" data-reveal>
+              <div class="tl-head">
+                <h3>AI Engineering Intern</h3>
+                <span class="tl-dates">2024</span>
+              </div>
+              <p class="tl-org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</p>
+              <ul class="tl-bullets">
+                <li>Internship preceding the full-time AI Engineer role — early LLM and RAG prototyping.</li>
+              </ul>
+            </li>
+            <li class="tl-item" data-reveal>
+              <div class="tl-head">
+                <h3>Lab Assistant</h3>
+                <span class="tl-dates">2022 – 2024</span>
+              </div>
+              <p class="tl-org">Bilkent University · Ankara</p>
+              <ul class="tl-bullets">
+                <li>Instructed 100+ students in Python across lab sessions.</li>
+              </ul>
+            </li>
+            <li class="tl-item" data-reveal>
+              <div class="tl-head">
+                <h3>Innovation Intern</h3>
+                <span class="tl-dates">2022</span>
+              </div>
+              <p class="tl-org">SA</p>
+              <ul class="tl-bullets">
+                <li>Early-career innovation internship.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="education" data-reveal>
+            <h3 class="sub-h">Education</h3>
+            <p class="edu-line">
+              <b>BSc Mathematics (Full Scholarship)</b> — Bilkent University,
+              2024. <span class="muted">English-medium.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section class="band" id="skills" aria-labelledby="skills-h">
+        <div class="container">
+          <h2 id="skills-h" class="section-title" data-reveal>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group" data-reveal>
+              <h3>LLM &amp; Agentic</h3>
+              <ul class="tag-list">
+                <li>Anthropic Claude API</li><li>Google Gemini</li><li>OpenAI API</li><li>MCP</li><li>LangGraph</li><li>LangChain</li><li>Multi-agent systems</li><li>Function calling</li><li>Structured outputs</li><li>Prompt engineering</li>
+              </ul>
+            </div>
+            <div class="skill-group" data-reveal>
+              <h3>RAG &amp; Retrieval</h3>
+              <ul class="tag-list">
+                <li>Qdrant</li><li>ChromaDB</li><li>pgvector</li><li>sqlite-vec</li><li>Voyage embeddings</li><li>Hybrid BM25 + dense + RRF</li><li>Reranking</li>
+              </ul>
+            </div>
+            <div class="skill-group" data-reveal>
+              <h3>Backend &amp; Data</h3>
+              <ul class="tag-list">
+                <li>Python</li><li>FastAPI</li><li>async Python</li><li>SQLAlchemy + Alembic</li><li>PostgreSQL</li><li>Redis</li><li>Pydantic</li><li>Polars</li><li>scikit-learn</li><li>LightGBM</li>
+              </ul>
+            </div>
+            <div class="skill-group" data-reveal>
+              <h3>MLOps &amp; Governance</h3>
+              <ul class="tag-list">
+                <li>Docker &amp; docker-compose</li><li>CI/CD (GitHub Actions)</li><li>pytest (TDD)</li><li>Ruff / mypy</li><li>ISO/IEC 42001</li><li>ISO/IEC 27001</li><li>KVKK / GDPR / EU-AI-Act-aware</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CERTIFICATIONS ===================== -->
+      <section class="band" id="certs" aria-labelledby="certs-h">
+        <div class="container narrow">
+          <h2 id="certs-h" class="section-title" data-reveal>Certifications</h2>
+          <ul class="cert-list" data-reveal>
+            <li><span class="star" aria-hidden="true">★</span> <b>ISO/IEC 42001 Lead Auditor</b> — AI Management System</li>
+            <li><span class="star" aria-hidden="true">★</span> <b>ISO/IEC 27001:2022 Lead Auditor</b> — Information Security</li>
+            <li><b>Miuul</b> — Data Scientist Bootcamp · Generative AI &amp; Prompt Engineering · Deep Learning · Time Series · Recommendation Systems · ML Summer Camp</li>
+            <li><b>Yapay Zeka ve Teknoloji Akademisi</b> — Deep Learning · Web App Development</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section class="band band-contact" id="contact" aria-labelledby="contact-h">
+        <div class="container narrow" data-reveal>
+          <h2 id="contact-h" class="section-title">Contact</h2>
+          <p class="lede">
+            Open to AI Engineering roles in LLM, RAG and agentic systems.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:fatih.e.cetin@gmail.com">fatih.e.cetin@gmail.com</a>
+          </div>
+          <ul class="contact-links">
+            <li><a href="https://linkedin.com/in/fatih-eren-cetin" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/FatihErenCetin" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://kaggle.com/fatiherencetin" rel="noopener noreferrer">Kaggle</a></li>
+            <li><a href="https://hackerrank.com/fecetinn" rel="noopener noreferrer">HackerRank</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="year">2026</span> Fatih Eren Çetin · Ankara, Türkiye ·
+        Built as a self-contained static page — the neural net trains live in
+        your browser, no frameworks, no model download.
+      </p>
+    </footer>
+
+    <!-- Scripts: data first, then engine, then UI controllers. Deferred so
+         the static content paints immediately. -->
+    <script defer src="js/data.js"></script>
+    <script defer src="js/nn.js"></script>
+    <script defer src="js/playground.js"></script>
+    <script defer src="js/app.js"></script>
+  </body>
+</html>

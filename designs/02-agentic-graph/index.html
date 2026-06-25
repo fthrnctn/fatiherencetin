@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+<meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Most recently a 9-agent Claude pipeline that lifted top-1 retrieval from 43% to 86% with 0% citation hallucination." />
+<meta name="color-scheme" content="dark" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI" />
+<meta property="og:description" content="Production-grade LLM, RAG and multi-agent systems. A 9-agent Claude pipeline: 43% → 86% top-1 retrieval, 0% citation hallucination." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ======================= HEADER / NAV ======================= -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Fatih Eren Çetin — home">
+      <span class="brand-mark" aria-hidden="true">FEÇ</span>
+      <span class="brand-meta">
+        <span class="brand-name">Fatih&nbsp;Eren&nbsp;Çetin</span>
+        <span class="brand-role">// ai_engineer · llm &amp; agentic</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#contact" class="nav-cta">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Ankara, Türkiye · open to agentic-AI roles</p>
+        <h1 id="hero-title">
+          <span class="h1-line">Fatih Eren</span>
+          <span class="h1-line">Çetin</span>
+        </h1>
+        <p class="hero-role">AI Engineer <span class="sep" aria-hidden="true">/</span> LLM &amp; Agentic AI</p>
+        <p class="hero-lede">
+          I build production-grade <strong>LLM</strong>, <strong>RAG</strong> and
+          <strong>multi-agent</strong> systems — most recently a
+          <strong>9-agent Claude pipeline</strong> that lifted top-1 retrieval from
+          <span class="num">43%</span> to <span class="num">86%</span> with
+          <span class="num num--amber">0%</span> citation hallucination.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#work">View the work</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+          <a class="icon-link" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+        <ul class="hero-tags" aria-label="Core focus areas">
+          <li>Claude Agent SDK</li>
+          <li>Dense &amp; Hybrid RAG</li>
+          <li>LangGraph</li>
+          <li>FastAPI</li>
+          <li>ISO/IEC 42001 LA</li>
+        </ul>
+      </div>
+
+      <!-- ===== SIGNATURE: live agent-pipeline graph ===== -->
+      <figure class="graph-card" aria-labelledby="graph-cap">
+        <div class="graph-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="graph-file">agent-pipeline.svc</span>
+          <span class="graph-status"><span class="led" aria-hidden="true"></span>running</span>
+        </div>
+
+        <svg id="pipeline" class="pipeline" viewBox="0 0 900 560"
+             role="img" aria-labelledby="pipeline-title pipeline-desc"
+             preserveAspectRatio="xMidYMid meet">
+          <title id="pipeline-title">Multi-agent LLM pipeline architecture</title>
+          <desc id="pipeline-desc">A query enters a deterministic orchestrator, which fans out to a pool of nine Claude agents (Sonnet 4.6 and Haiku 4.5). The agents query a dense-RAG retriever built on Qdrant with Voyage embeddings; results pass through human-in-the-loop review and are emitted as citation-backed output with zero citation hallucination.</desc>
+
+          <defs>
+            <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#6E8BFF" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#5EE6C5" stop-opacity="0.55"/>
+            </linearGradient>
+            <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="2.6" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- agent pool backdrop -->
+          <g class="cluster" aria-hidden="true">
+            <rect x="392" y="66" width="152" height="452" rx="16"/>
+            <text class="cluster-tag" x="468" y="56">agent_pool · ×9</text>
+          </g>
+
+          <!-- edges (drawn behind nodes) -->
+          <g class="edges" fill="none" aria-hidden="true">
+            <path id="e0"  class="edge" data-flow="blue"  d="M80 290 C164 290 164 290 248 290"/>
+            <path id="e1"  class="edge" data-flow="teal"  d="M248 290 C358 290 358 95 468 95"/>
+            <path id="e2"  class="edge" data-flow="teal"  d="M248 290 C358 290 358 193 468 193"/>
+            <path id="e3"  class="edge" data-flow="teal"  d="M248 290 C358 290 358 290 468 290"/>
+            <path id="e4"  class="edge" data-flow="teal"  d="M248 290 C358 290 358 387 468 387"/>
+            <path id="e5"  class="edge" data-flow="teal"  d="M248 290 C358 290 358 485 468 485"/>
+            <path id="e6"  class="edge" data-flow="blue"  d="M468 95 C564 95 564 290 660 290"/>
+            <path id="e7"  class="edge" data-flow="blue"  d="M468 193 C564 193 564 290 660 290"/>
+            <path id="e8"  class="edge" data-flow="blue"  d="M468 290 C564 290 564 290 660 290"/>
+            <path id="e9"  class="edge" data-flow="blue"  d="M468 387 C564 387 564 290 660 290"/>
+            <path id="e10" class="edge" data-flow="blue"  d="M468 485 C564 485 564 290 660 290"/>
+            <path id="e11" class="edge" data-flow="teal"  d="M660 290 C660 387 660 387 660 485"/>
+            <path id="e12" class="edge" data-flow="amber" d="M660 485 C734 485 734 290 808 290"/>
+          </g>
+
+          <!-- pulses injected by JS -->
+          <g id="pulses" filter="url(#glow)" aria-hidden="true"></g>
+
+          <!-- nodes -->
+          <g class="nodes">
+            <g class="node node--io" data-edges="e0">
+              <rect class="node-box" x="26" y="268" width="108" height="44" rx="11"/>
+              <circle class="node-led" cx="39" cy="280" r="3"/>
+              <text class="node-label" x="80" y="294">query</text>
+            </g>
+
+            <g class="node node--orch" data-edges="e0,e1,e2,e3,e4,e5">
+              <rect class="node-box" x="173" y="266" width="150" height="48" rx="11"/>
+              <circle class="node-led" cx="186" cy="278" r="3"/>
+              <text class="node-label" x="248" y="287">orchestrator</text>
+              <text class="node-sub" x="248" y="301">deterministic</text>
+            </g>
+
+            <g class="node node--agent" data-edges="e1,e6">
+              <rect class="node-box" x="404" y="74" width="128" height="42" rx="10"/>
+              <circle class="node-led" cx="417" cy="86" r="2.6"/>
+              <text class="node-label sm" x="468" y="99">agent_01</text>
+            </g>
+            <g class="node node--agent" data-edges="e2,e7">
+              <rect class="node-box" x="404" y="172" width="128" height="42" rx="10"/>
+              <circle class="node-led" cx="417" cy="184" r="2.6"/>
+              <text class="node-label sm" x="468" y="197">agent_02</text>
+            </g>
+            <g class="node node--agent" data-edges="e3,e8">
+              <rect class="node-box" x="404" y="269" width="128" height="42" rx="10"/>
+              <circle class="node-led" cx="417" cy="281" r="2.6"/>
+              <text class="node-label sm" x="468" y="294">agent_03</text>
+            </g>
+            <g class="node node--agent" data-edges="e4,e9">
+              <rect class="node-box" x="404" y="366" width="128" height="42" rx="10"/>
+              <circle class="node-led" cx="417" cy="378" r="2.6"/>
+              <text class="node-label sm" x="468" y="391">agent_04</text>
+            </g>
+            <g class="node node--agent" data-edges="e5,e10">
+              <rect class="node-box" x="404" y="464" width="128" height="42" rx="10"/>
+              <circle class="node-led" cx="417" cy="476" r="2.6"/>
+              <text class="node-label sm" x="468" y="489">agent_05</text>
+            </g>
+
+            <g class="node node--rag" data-edges="e6,e7,e8,e9,e10,e11">
+              <rect class="node-box" x="585" y="266" width="150" height="48" rx="11"/>
+              <circle class="node-led" cx="598" cy="278" r="3"/>
+              <text class="node-label" x="660" y="287">dense_rag</text>
+              <text class="node-sub" x="660" y="301">Qdrant · Voyage</text>
+            </g>
+
+            <g class="node node--gate" data-edges="e11,e12">
+              <rect class="node-box" x="581" y="464" width="158" height="42" rx="10"/>
+              <circle class="node-led" cx="594" cy="476" r="2.6"/>
+              <text class="node-label sm" x="660" y="489">human_review</text>
+            </g>
+
+            <g class="node node--sink" data-edges="e12">
+              <rect class="node-box" x="748" y="266" width="120" height="48" rx="11"/>
+              <circle class="node-led" cx="761" cy="278" r="3"/>
+              <text class="node-label" x="808" y="287">citations</text>
+              <text class="node-sub amber" x="808" y="301">0% halluc.</text>
+            </g>
+          </g>
+        </svg>
+
+        <figcaption class="graph-legend" id="graph-cap">
+          <span class="lg lg--orch">orchestrator</span>
+          <span class="lg lg--agent">agent ·9</span>
+          <span class="lg lg--rag">dense RAG</span>
+          <span class="lg lg--sink">citations</span>
+          <span class="lg-note">Sonnet&nbsp;4.6 · Haiku&nbsp;4.5</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ======================= TELEMETRY / STATS ======================= -->
+  <section class="stats" aria-label="Key metrics">
+    <div class="wrap stats-grid">
+      <div class="stat">
+        <span class="stat-val">43<span class="arrow" aria-hidden="true">→</span>86<small>%</small></span>
+        <span class="stat-key">top-1 retrieval</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val stat-val--amber">0<small>%</small></span>
+        <span class="stat-key">citation hallucination</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">9</span>
+        <span class="stat-key">Claude agents</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">700<small>+</small></span>
+        <span class="stat-key">automated tests</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">4.7<small>%</small></span>
+        <span class="stat-key">top of 31,700 applicants</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">ISO</span>
+        <span class="stat-key">42001 &amp; 27001 Lead Auditor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ABOUT ======================= -->
+  <section class="section reveal" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="sec-eyebrow">// about</span>
+        <h2 id="about-h" class="sec-title">Math foundations, shipped as systems.</h2>
+      </header>
+
+      <div class="panel about-panel">
+        <div class="about-photo">
+          <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+               alt="Portrait of Fatih Eren Çetin" width="320" height="380" loading="lazy" />
+          <span class="photo-tag">// Ankara, TR</span>
+        </div>
+        <div class="about-body">
+          <p>
+            <strong>Mathematics BSc</strong> (full scholarship, Bilkent University) turned
+            AI Engineer. I build production-grade LLM, RAG and multi-agent systems that act
+            over tools, APIs and data — and I care as much about the parts you don't see:
+            evaluation, determinism, and the human-in-the-loop gate.
+          </p>
+          <p>
+            That engineering is paired with governance rigor — <strong>ISO/IEC 42001</strong>
+            (AI Management) and <strong>ISO/IEC 27001 Lead Auditor</strong> — so systems ship
+            KVKK / GDPR / EU-AI-Act-aware, not just demo-ready. Foundations come from teaching
+            <strong>100+ students</strong> Python.
+          </p>
+          <ul class="about-facts">
+            <li><span class="fk">role</span><span class="fv">AI Engineer · LLM &amp; Agentic AI</span></li>
+            <li><span class="fk">base</span><span class="fv">Ankara, Türkiye</span></li>
+            <li><span class="fk">edu</span><span class="fv">BSc Mathematics — Bilkent (full scholarship)</span></li>
+            <li><span class="fk">langs</span><span class="fv">Turkish (native) · English (professional)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= EXPERIENCE ======================= -->
+  <section class="section reveal" id="experience" aria-labelledby="exp-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="sec-eyebrow">// experience.log</span>
+        <h2 id="exp-h" class="sec-title">A typed timeline.</h2>
+      </header>
+
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-date">2024 — now</div>
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="panel tl-body">
+            <div class="tl-top">
+              <h3 class="tl-role">AI Engineer</h3>
+              <span class="tl-loc">Ankara · on-site</span>
+            </div>
+            <p class="tl-org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık</p>
+            <ul class="tl-points">
+              <li>Built an agentic ISO/IEC 17020 conformity-audit assistant — <strong>Claude Agent SDK</strong> + <strong>2 MCP servers</strong> + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF); on-device, KVKK / EU-AI-Act compliant.</li>
+              <li>Shipped a full-stack multi-agent RAG import-compliance assistant on <strong>FastAPI + LangGraph</strong>.</li>
+              <li>Designed &amp; delivered an internal AI training curriculum — LLMs, prompt engineering, RAG and agents.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-date">2025 — now</div>
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="panel tl-body">
+            <div class="tl-top">
+              <h3 class="tl-role">AI Fellow</h3>
+              <span class="tl-loc">Remote</span>
+            </div>
+            <p class="tl-org">Yapay Zeka ve Teknoloji Akademisi</p>
+            <ul class="tl-points">
+              <li>Selected in the <strong>top 4.7% of 31,700</strong> applicants; one of 5 fellows building community tooling.</li>
+              <li><strong>Lead developer of a 4-person team</strong> building a Slack microservice platform — Slack Bolt, async SQLAlchemy / PostgreSQL.</li>
+              <li>Groq <strong>Llama 3.3</strong> summarization + <strong>sentence-transformers</strong> embeddings with UMAP / HDBSCAN clustering.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-date">2022 — 2024</div>
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="panel tl-body tl-body--compact">
+            <div class="tl-top">
+              <h3 class="tl-role">Earlier</h3>
+              <span class="tl-loc">Ankara</span>
+            </div>
+            <ul class="tl-points">
+              <li><strong>MCV Intern</strong> (2024) — first AI-assistant prototypes.</li>
+              <li><strong>Lab Assistant, Bilkent University</strong> (2022–2024) — taught 100+ students Python.</li>
+              <li><strong>SA Innovation Intern</strong> (2022).</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-date">2024</div>
+          <div class="tl-node tl-node--edu" aria-hidden="true"></div>
+          <div class="panel tl-body tl-body--compact">
+            <div class="tl-top">
+              <h3 class="tl-role">BSc Mathematics <span class="badge badge--soft">full scholarship</span></h3>
+              <span class="tl-loc">English-medium</span>
+            </div>
+            <p class="tl-org">Bilkent University</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= WORK / PROJECTS ======================= -->
+  <section class="section reveal" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="sec-eyebrow">// projects/</span>
+        <h2 id="work-h" class="sec-title">Pipelines I&apos;ve shipped.</h2>
+      </header>
+
+      <!-- Flagship -->
+      <article class="panel project project--flag">
+        <div class="proj-head">
+          <div>
+            <span class="proj-kicker">flagship</span>
+            <h3 class="proj-title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+          </div>
+          <span class="lock" title="Private repository"><i class="fa-solid fa-lock" aria-hidden="true"></i> private</span>
+        </div>
+        <p class="proj-desc">
+          Nine specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python
+          orchestrator, grounded by dense RAG (Qdrant + Voyage-3-Large + rerank-2). Async
+          FastAPI + Arq / Redis + PostgreSQL, with human-in-the-loop review before any citation
+          is emitted.
+        </p>
+        <div class="proj-metrics">
+          <span class="pm"><b>43→86%</b> top-1</span>
+          <span class="pm"><b class="amber">0%</b> halluc.</span>
+          <span class="pm"><b>700+</b> tests</span>
+          <span class="pm"><b>9</b> agents</span>
+        </div>
+        <ul class="chips" aria-label="Stack">
+          <li>Claude</li><li>Multi-Agent</li><li>Dense RAG</li><li>Qdrant</li><li>Voyage</li><li>FastAPI</li><li>Arq / Redis</li><li>PostgreSQL</li>
+        </ul>
+        <div class="proj-foot">
+          <a class="proj-link" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener">
+            GitHub profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          <span class="proj-note">code private — capability-level overview</span>
+        </div>
+      </article>
+
+      <!-- Grid of the rest -->
+      <div class="proj-grid">
+
+        <article class="panel project">
+          <div class="proj-head">
+            <h3 class="proj-title">RAG Systems — Chat With Your Documents</h3>
+            <span class="tag-open"><i class="fa-brands fa-github" aria-hidden="true"></i> public</span>
+          </div>
+          <p class="proj-desc">
+            FastAPI + Streamlit + Google Gemini + ChromaDB. Hexagonal (Ports &amp; Adapters)
+            architecture, per-chunk source citations, TR / EN cross-lingual retrieval.
+          </p>
+          <div class="proj-metrics"><span class="pm"><b>64</b> tests</span><span class="pm"><b>TR / EN</b> cross-lingual</span></div>
+          <ul class="chips" aria-label="Stack"><li>FastAPI</li><li>Streamlit</li><li>Gemini</li><li>ChromaDB</li><li>Hexagonal</li></ul>
+          <div class="proj-foot">
+            <a class="proj-link" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener">
+              View repo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel project">
+          <div class="proj-head">
+            <h3 class="proj-title">Multi-Agent SME Operations Assistant</h3>
+            <span class="badge">team · core dev</span>
+          </div>
+          <p class="proj-desc">
+            Gemini function-calling agents with per-agent permission scoping and graceful
+            degradation (API-key rotation + deterministic fallbacks). Telegram + Web surfaces.
+          </p>
+          <ul class="chips" aria-label="Stack"><li>Gemini</li><li>Function calling</li><li>Permission scoping</li><li>Telegram</li><li>Web</li></ul>
+          <div class="proj-foot"><span class="proj-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> no public link</span></div>
+        </article>
+
+        <article class="panel project">
+          <div class="proj-head">
+            <h3 class="proj-title">Investment-Incentive Analytics &amp; Forecasting</h3>
+          </div>
+          <p class="proj-desc">
+            132 official sources (55 Excel + 77 Word) reconciled into a 77K-record dataset;
+            a 5-model out-of-sample backtest — SARIMA <b>24% MAPE</b> vs 93% seasonal-naive.
+          </p>
+          <div class="proj-metrics"><span class="pm"><b>77K</b> records</span><span class="pm"><b>132</b> sources</span></div>
+          <ul class="chips" aria-label="Stack"><li>SARIMA</li><li>Polars</li><li>Parquet</li><li>SQLite</li><li>Streamlit / Plotly</li></ul>
+          <div class="proj-foot"><span class="proj-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> no public link</span></div>
+        </article>
+
+        <article class="panel project">
+          <div class="proj-head">
+            <h3 class="proj-title">Financial Time-Series Forecasting</h3>
+          </div>
+          <p class="proj-desc">
+            30+ technical indicators (RSI, MACD, Bollinger…) feeding LightGBM + SARIMA / SARIMAX
+            models on Borsa İstanbul series.
+          </p>
+          <ul class="chips" aria-label="Stack"><li>LightGBM</li><li>SARIMA / SARIMAX</li><li>scikit-learn</li><li>Borsa İstanbul</li></ul>
+          <div class="proj-foot"><span class="proj-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> no public link</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SKILLS MATRIX ======================= -->
+  <section class="section reveal" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="sec-eyebrow">// capability_matrix</span>
+        <h2 id="skills-h" class="sec-title">The real stack.</h2>
+      </header>
+
+      <div class="matrix">
+        <div class="panel cap">
+          <h3 class="cap-title"><span class="cap-idx">01</span> LLM &amp; Agentic</h3>
+          <ul class="chips chips--block" aria-label="LLM and agentic">
+            <li>Claude API</li><li>Gemini</li><li>OpenAI API</li><li>MCP</li><li>LangGraph</li><li>LangChain</li><li>Multi-agent</li><li>Function calling</li><li>Structured outputs</li><li>Prompt eng.</li>
+          </ul>
+        </div>
+        <div class="panel cap">
+          <h3 class="cap-title"><span class="cap-idx">02</span> RAG &amp; Retrieval</h3>
+          <ul class="chips chips--block" aria-label="RAG and retrieval">
+            <li>Qdrant</li><li>ChromaDB</li><li>pgvector</li><li>sqlite-vec</li><li>Voyage embeddings</li><li>BM25 + dense</li><li>RRF</li><li>Reranking</li>
+          </ul>
+        </div>
+        <div class="panel cap">
+          <h3 class="cap-title"><span class="cap-idx">03</span> Backend &amp; Data</h3>
+          <ul class="chips chips--block" aria-label="Backend and data">
+            <li>Python</li><li>FastAPI</li><li>async Python</li><li>SQLAlchemy + Alembic</li><li>PostgreSQL</li><li>Redis</li><li>Pydantic</li><li>Polars</li><li>scikit-learn</li><li>LightGBM</li>
+          </ul>
+        </div>
+        <div class="panel cap">
+          <h3 class="cap-title"><span class="cap-idx">04</span> MLOps &amp; Governance</h3>
+          <ul class="chips chips--block" aria-label="MLOps and governance">
+            <li>Docker / compose</li><li>CI/CD (GH Actions)</li><li>pytest (TDD)</li><li>Ruff / mypy</li><li>ISO/IEC 42001</li><li>ISO/IEC 27001</li><li>KVKK / GDPR</li><li>EU-AI-Act-aware</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="panel certs">
+        <h3 class="cap-title"><span class="cap-idx">★</span> Certifications</h3>
+        <ul class="cert-list">
+          <li><i class="fa-solid fa-star star" aria-hidden="true"></i> <strong>ISO/IEC 42001 Lead Auditor</strong> — AI Management System</li>
+          <li><i class="fa-solid fa-star star" aria-hidden="true"></i> <strong>ISO/IEC 27001:2022 Lead Auditor</strong> — Information Security</li>
+          <li><span class="dot" aria-hidden="true">·</span> Miuul — Data Scientist Bootcamp, GenAI &amp; Prompt Engineering, Deep Learning, Time Series, Recommendation Systems</li>
+          <li><span class="dot" aria-hidden="true">·</span> Yapay Zeka ve Teknoloji Akademisi — Deep Learning, Web App Development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT / FOOTER ======================= -->
+  <section class="section section--contact reveal" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <span class="sec-eyebrow">// contact</span>
+        <h2 id="contact-h" class="sec-title">Let&apos;s build something that holds up in production.</h2>
+      </header>
+
+      <div class="contact-grid">
+        <a class="panel link-card" href="mailto:fatih.e.cetin@gmail.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span class="lc-key">email</span>
+          <span class="lc-val">fatih.e.cetin@gmail.com</span>
+        </a>
+        <a class="panel link-card" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <span class="lc-key">linkedin</span>
+          <span class="lc-val">in/fatih-eren-cetin</span>
+        </a>
+        <a class="panel link-card" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span class="lc-key">github</span>
+          <span class="lc-val">FatihErenCetin</span>
+        </a>
+        <a class="panel link-card" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener">
+          <i class="fa-brands fa-kaggle" aria-hidden="true"></i>
+          <span class="lc-key">kaggle</span>
+          <span class="lc-val">fatiherencetin</span>
+        </a>
+        <a class="panel link-card" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener">
+          <i class="fa-brands fa-hackerrank" aria-hidden="true"></i>
+          <span class="lc-key">hackerrank</span>
+          <span class="lc-val">fecetinn</span>
+        </a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span class="foot-brand">Fatih Eren Çetin</span>
+        <span class="foot-meta">// AI Engineer · LLM &amp; Agentic AI · Ankara, Türkiye</span>
+        <span class="foot-sig">built as an agent graph — <span class="amber">0%</span> hallucinated</span>
+      </div>
+    </footer>
+  </section>
+
+</main>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

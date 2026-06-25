@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG & multi-agent systems.">
+    <meta name="keywords"
+        content="AI Engineer, LLM, RAG, multi-agent, agentic AI, LangGraph, prompt engineering, Python, FastAPI">
+    <meta name="author" content="Fatih Eren Çetin">
+
+    <title>Fatih Eren Çetin | AI Engineer · LLM & Agentic AI</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">FEC</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Fatih Eren Çetin</h1>
+            <p class="hero-subtitle">AI Engineer · LLM &amp; Agentic AI</p>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section" id="projects">
+        <div class="bento-grid">
+
+            <!-- About Me Card - Large 2x2 -->
+            <div class="bento-card card-about" data-card="about" data-expandable="true">
+                <div class="card-about-content">
+                    <div class="about-top-row">
+                        <div class="about-photo">
+                            <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg" alt="Fatih Eren Çetin">
+                        </div>
+                        <h3 class="card-title">Hi, I'm Fatih! 👋</h3>
+                    </div>
+                    <p class="card-preview">AI Engineer building production-grade LLM, RAG &amp; multi-agent systems.
+                        Mathematics BSc (full scholarship); ISO/IEC 42001 &amp; 27001 Lead Auditor.</p>
+                </div>
+                <div class="card-expand-hint">
+                    <i class="fas fa-expand-alt"></i>
+                </div>
+            </div>
+
+            <!-- AI / LLM Projects Card - Medium 2x1 -->
+            <div class="bento-card card-ai" data-card="ai" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="card-title">LLM &amp; Agentic Projects</h3>
+                </div>
+                <ul class="card-project-list inline-list">
+                    <li><a href="https://github.com/FatihErenCetin" target="_blank" class="project-link"><i
+                                class="fas fa-diagram-project"></i> Multi-Agent LLM System</a></li>
+                    <li><a href="https://github.com/FatihErenCetin/RAG-System" target="_blank" class="project-link"><i
+                                class="fas fa-comments"></i> RAG — Chat With Your Docs</a></li>
+                    <li><a href="https://github.com/FatihErenCetin" target="_blank" class="project-link"><i
+                                class="fas fa-network-wired"></i> Multi-Agent SME Assistant</a></li>
+                </ul>
+            </div>
+
+            <!-- Data Science Card - Medium 1x2 -->
+            <div class="bento-card card-data" data-card="data" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="card-title">Data Science</h3>
+                </div>
+                <div class="blog-scroll-container data-scroll-full">
+                    <a href="https://github.com/fecetinn/RFM-CLTV-Analysis-Online-Retail" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-users"></i>
+                        <span>RFM-CLTV Analysis</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Product-Rating-Review-Sorting-Analysis" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-star"></i>
+                        <span>Rating &amp; Review Sorting</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/A-B-Testing-Bidding-Strategies-Analysis" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-flask"></i>
+                        <span>A/B Testing Analysis</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/CLTV-Prediction-with-BN-BGD-and-Gamma-Gamma" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>CLTV Prediction</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Customer_Segmentation_with_RFM" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Customer Segmentation</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Telcom_Customer_Churn" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-user-slash"></i>
+                        <span>Telco Customer Churn</span>
+                    </a>
+                    <a href="https://www.kaggle.com/code/fatiherencetin/telco-customer-churn" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fab fa-kaggle"></i>
+                        <span>Kaggle: Churn Analysis</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Certifications Card - Medium 1x2 (reuses blog card styling) -->
+            <div class="bento-card card-blog" data-card="certs" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 class="card-title">Certifications</h3>
+                </div>
+                <div class="blog-scroll-container data-scroll-full">
+                    <a href="https://www.iso.org/standard/81230.html" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>ISO/IEC 42001 Lead Auditor</span>
+                    </a>
+                    <a href="https://www.iso.org/standard/27001" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-lock"></i>
+                        <span>ISO/IEC 27001 Lead Auditor</span>
+                    </a>
+                    <a href="https://www.miuul.com/" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <span>GenAI &amp; Prompt Engineering</span>
+                    </a>
+                    <a href="https://www.miuul.com/" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-database"></i>
+                        <span>Data Scientist Bootcamp</span>
+                    </a>
+                    <a href="https://www.miuul.com/" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-brain"></i>
+                        <span>Deep Learning</span>
+                    </a>
+                    <a href="https://www.miuul.com/" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-chart-area"></i>
+                        <span>Time Series</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills Card - Medium 2x1 -->
+            <div class="bento-card card-skills" data-card="skills" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="card-title">Skills</h3>
+                </div>
+                <div class="scroll-container" data-scroll="skills">
+                    <button class="scroll-btn scroll-left" data-target="skills"><i
+                            class="fas fa-chevron-left"></i></button>
+                    <div class="tech-icons scroll-content" id="skills-scroll">
+                        <a href="https://docs.python.org/" target="_blank" class="tech-icon clickable-icon"
+                            title="Python">
+                            <i class="fab fa-python"></i>
+                            <span class="icon-label">Python</span>
+                        </a>
+                        <a href="https://docs.anthropic.com/" target="_blank" class="tech-icon clickable-icon"
+                            title="Anthropic Claude API">
+                            <i class="fas fa-robot"></i>
+                            <span class="icon-label">Claude API</span>
+                        </a>
+                        <a href="https://langchain-ai.github.io/langgraph/" target="_blank"
+                            class="tech-icon clickable-icon" title="LangGraph">
+                            <i class="fas fa-diagram-project"></i>
+                            <span class="icon-label">LangGraph</span>
+                        </a>
+                        <a href="https://fastapi.tiangolo.com/" target="_blank" class="tech-icon clickable-icon"
+                            title="FastAPI">
+                            <i class="fas fa-bolt"></i>
+                            <span class="icon-label">FastAPI</span>
+                        </a>
+                        <a href="https://qdrant.tech/documentation/" target="_blank" class="tech-icon clickable-icon"
+                            title="Qdrant (vector DB)">
+                            <i class="fas fa-magnifying-glass"></i>
+                            <span class="icon-label">Qdrant</span>
+                        </a>
+                        <a href="https://www.postgresql.org/docs/" target="_blank" class="tech-icon clickable-icon"
+                            title="PostgreSQL">
+                            <i class="fas fa-database"></i>
+                            <span class="icon-label">PostgreSQL</span>
+                        </a>
+                        <a href="https://modelcontextprotocol.io/" target="_blank" class="tech-icon clickable-icon"
+                            title="Model Context Protocol">
+                            <i class="fas fa-plug"></i>
+                            <span class="icon-label">MCP</span>
+                        </a>
+                        <a href="https://docs.docker.com/" target="_blank" class="tech-icon clickable-icon"
+                            title="Docker">
+                            <i class="fab fa-docker"></i>
+                            <span class="icon-label">Docker</span>
+                        </a>
+                        <a href="https://git-scm.com/doc" target="_blank" class="tech-icon clickable-icon" title="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span class="icon-label">Git</span>
+                        </a>
+                        <a href="https://scikit-learn.org/" target="_blank" class="tech-icon clickable-icon"
+                            title="scikit-learn">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="icon-label">scikit-learn</span>
+                        </a>
+                    </div>
+                    <button class="scroll-btn scroll-right" data-target="skills"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Kaggle Card - Small 1x1 (reuses DIY card styling) -->
+            <div class="bento-card card-diy" data-card="kaggle" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fab fa-kaggle"></i></div>
+                    <h3 class="card-title">Kaggle</h3>
+                </div>
+                <div class="diy-icons-row">
+                    <a href="https://www.kaggle.com/fatiherencetin" target="_blank" class="diy-icon-link"
+                        title="Kaggle profile"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://www.kaggle.com/code/fatiherencetin/telco-customer-churn" target="_blank"
+                        class="diy-icon-link" title="Churn notebook"><i class="fas fa-book"></i></a>
+                    <a href="https://www.hackerrank.com/profile/fecetinn" target="_blank" class="diy-icon-link"
+                        title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                </div>
+            </div>
+
+            <!-- GitHub Card - Small 1x1 -->
+            <div class="bento-card card-github" data-card="github" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fab fa-github"></i></div>
+                    <h3 class="card-title">GitHub</h3>
+                </div>
+                <a href="https://github.com/FatihErenCetin/RAG-System" target="_blank"
+                    class="github-latest-project">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="project-info">
+                        <span class="project-name">RAG-System</span>
+                        <span class="project-desc">Chat With Your Documents</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Spotify Card - Small 1x1 -->
+            <div class="bento-card card-spotify" data-card="spotify" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fab fa-spotify"></i></div>
+                    <h3 class="card-title">Spotify</h3>
+                </div>
+                <a href="https://open.spotify.com/playlist/37i9dQZF1DWYoYGBbGKurt" target="_blank"
+                    class="spotify-preview inline-preview clickable-icon">
+                    <div class="playlist-cover">
+                        <i class="fas fa-headphones" style="font-size: 24px; color: var(--accent-primary);"></i>
+                    </div>
+                    <span class="playlist-name">Code &amp; lo-fi 🎧</span>
+                </a>
+            </div>
+
+            <!-- Social Links Card - Small 1x1 -->
+            <div class="bento-card card-social" data-card="social" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3 class="card-title">Social</h3>
+                </div>
+                <div class="social-icons-row">
+                    <a href="https://www.linkedin.com/in/fatih-eren-cetin" target="_blank" class="social-icon-link"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/FatihErenCetin" target="_blank" class="social-icon-link"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/fatiherencetin" target="_blank" class="social-icon-link"><i
+                            class="fab fa-kaggle"></i></a>
+                    <a href="https://www.hackerrank.com/profile/fecetinn" target="_blank" class="social-icon-link"><i
+                            class="fab fa-hackerrank"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Card - Small 1x1 (No Expand) -->
+            <a href="mailto:fatih.e.cetin@gmail.com" class="bento-card card-contact" data-expandable="false">
+                <div class="card-icon contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="card-title">Contact</h3>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <!-- Empty for now -->
+        </div>
+    </footer>
+
+    <!-- Modal Overlay for Expanded Cards -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+<meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. A 9-agent Claude pipeline that lifted top-1 retrieval 43% → 86% with 0% citation hallucination.">
+<meta name="color-scheme" content="dark">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI">
+<meta property="og:description" content="Production-grade LLM, RAG &amp; multi-agent systems. 9-agent Claude pipeline · 43→86% top-1 · 0% hallucination · 700+ tests.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Caveat:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0712'/%3E%3Ctext x='50' y='72' font-size='66' font-family='Anton,sans-serif' fill='%23FF2E88' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+<script>
+  /* Mark JS available early, but DO NOT hide anything yet.
+     The reveal-hiding class (.anim) is added by main.js only when
+     IntersectionObserver works AND motion is allowed — so no-JS,
+     failed-JS and reduced-motion all keep every section fully visible. */
+  document.documentElement.classList.add('has-js');
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Decorative custom cursor (aria-hidden, JS-gated, fine-pointer only) -->
+<div class="cursor" aria-hidden="true">
+  <span class="cursor__dot"></span>
+  <span class="cursor__ring"></span>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" data-cursor="link">
+    <span class="nav__brand-mark">FEÇ</span>
+    <span class="nav__brand-sub">AI ENGINEER</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#about" data-cursor="link">About</a>
+    <a href="#work" data-cursor="link">Work</a>
+    <a href="#projects" data-cursor="link">Projects</a>
+    <a href="#skills" data-cursor="link">Stack</a>
+    <a href="#contact" class="nav__cta" data-cursor="link">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO / SIGNATURE COLLAGE ============ -->
+<section class="hero" id="home" aria-label="Introduction">
+  <!-- background ornament layers (decorative) -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="blob blob--magenta" data-depth="0.04"></div>
+    <div class="blob blob--cyan" data-depth="0.07"></div>
+    <div class="blob blob--lime" data-depth="0.05"></div>
+    <div class="ghost ghost--1" data-depth="0.02">AGENTIC</div>
+    <div class="ghost ghost--2" data-depth="0.03">RAG · LLM · EVAL</div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="hero__wrap">
+
+    <!-- Huge layered name -->
+    <div class="hero__title" data-depth="0.015">
+      <p class="hero__eyebrow"><span>Ankara, Türkiye</span> <span aria-hidden="true">◆</span> <span>LLM &amp; Agentic AI</span></p>
+      <h1 class="hero__name">
+        <span class="hero__name-line hero__name-line--1">FATİH</span>
+        <span class="hero__name-line hero__name-line--2">EREN</span>
+        <span class="hero__name-line hero__name-line--3">ÇETİN</span>
+      </h1>
+      <p class="hero__role">AI&nbsp;ENGINEER<span class="hero__role-x">×</span>BUILDER&nbsp;OF&nbsp;SYSTEMS&nbsp;THAT&nbsp;ACT</p>
+    </div>
+
+    <!-- One-liner panel (solid, AA-legible) -->
+    <div class="hero__lead panel" data-depth="0.03">
+      <p>I build production-grade <strong>LLM</strong>, <strong>RAG</strong> and
+      <strong>multi-agent</strong> systems that act over tools, APIs and data —
+      most recently a <strong>9-agent Claude pipeline</strong> that lifted top-1
+      retrieval from <strong>43% to 86%</strong> with <strong>0% citation
+      hallucination</strong>.</p>
+      <div class="hero__lead-cta">
+        <a class="btn btn--lime" href="#projects" data-cursor="link">See the work <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i></a>
+        <a class="btn btn--ghost" href="#contact" data-cursor="link">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- Photo panel -->
+    <figure class="hero__photo" data-depth="0.06">
+      <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+           alt="Portrait of Fatih Eren Çetin" width="420" height="520" loading="eager">
+      <figcaption class="hero__photo-tag">VERIFIED&nbsp;HUMAN</figcaption>
+    </figure>
+
+    <!-- Toolchain collage board -->
+    <div class="toolboard" data-depth="0.02" aria-label="AI toolchain">
+      <span class="tool tool--claude">CLAUDE<small>Sonnet 4.6 · Haiku 4.5</small></span>
+      <span class="tool tool--gemini">GEMINI<small>function calling</small></span>
+      <span class="tool tool--gpt">OPENAI<small>GPT API</small></span>
+      <span class="tool tool--qdrant">QDRANT<small>dense vectors</small></span>
+      <span class="tool tool--chroma">CHROMADB<small>per-chunk cite</small></span>
+      <span class="tool tool--voyage">VOYAGE-3<small>embed + rerank-2</small></span>
+      <span class="tool tool--lang">LANGGRAPH<small>agent graphs</small></span>
+      <span class="tool tool--mcp">MCP<small>2 servers</small></span>
+      <span class="tool tool--fast">FASTAPI<small>async · Arq · Redis</small></span>
+      <span class="tool tool--cluster">UMAP·HDBSCAN<small>clustering</small></span>
+      <span class="tool tool--lgbm">LIGHTGBM<small>+ SARIMA</small></span>
+      <span class="tool tool--pg">PGVECTOR<small>sqlite-vec · RRF</small></span>
+    </div>
+
+    <!-- Rotated stat stickers (decorative placement, real numbers) -->
+    <div class="stickers">
+      <div class="sticker sticker--retrieval" data-depth="0.10">
+        <span class="sticker__big">43<i>→</i>86<small>%</small></span>
+        <span class="sticker__lbl">top-1 retrieval</span>
+        <svg class="sticker__chart" viewBox="0 0 90 40" role="img" aria-label="Bar chart: top-1 retrieval improved from 43 percent to 86 percent">
+          <rect x="10" y="22" width="22" height="16" rx="2" fill="#1A1226"></rect>
+          <rect x="44" y="6"  width="22" height="32" rx="2" fill="#C6FF00"></rect>
+          <text x="21" y="19" class="sticker__chart-t">43</text>
+          <text x="55" y="3"  class="sticker__chart-t">86</text>
+        </svg>
+      </div>
+      <div class="sticker sticker--hall" data-depth="0.08">
+        <span class="sticker__big">0<small>%</small></span>
+        <span class="sticker__lbl">citation hallucination<br>· 5 scenarios ·</span>
+      </div>
+      <div class="sticker sticker--tests" data-depth="0.12">
+        <span class="sticker__big">700<i>+</i></span>
+        <span class="sticker__lbl">automated tests</span>
+      </div>
+      <div class="sticker sticker--scrib" data-depth="0.07" aria-hidden="true">9&nbsp;agents</div>
+    </div>
+
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label="Scroll to about">
+    <span>SCROLL</span><i class="fa-solid fa-angles-down" aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>CLAUDE AGENT SDK</span><b>✺</b><span>QDRANT</span><b>✺</b><span>LANGGRAPH</span><b>✺</b><span>VOYAGE-3-LARGE</span><b>✺</b><span>HYBRID BM25 + DENSE</span><b>✺</b><span>FASTAPI</span><b>✺</b><span>RERANK-2</span><b>✺</b><span>HUMAN-IN-THE-LOOP</span><b>✺</b><span>ISO 42001</span><b>✺</b><span>PYTEST · TDD</span><b>✺</b>
+    <span>CLAUDE AGENT SDK</span><b>✺</b><span>QDRANT</span><b>✺</b><span>LANGGRAPH</span><b>✺</b><span>VOYAGE-3-LARGE</span><b>✺</b><span>HYBRID BM25 + DENSE</span><b>✺</b><span>FASTAPI</span><b>✺</b><span>RERANK-2</span><b>✺</b><span>HUMAN-IN-THE-LOOP</span><b>✺</b><span>ISO 42001</span><b>✺</b><span>PYTEST · TDD</span><b>✺</b>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="section-tag section-tag--cyan">01 / WHO</div>
+  <div class="about__grid">
+    <div class="about__head">
+      <h2 id="about-h" class="display-h">MATH<br>MAJOR<br><em>→</em> AI<br>ENGINEER</h2>
+    </div>
+    <div class="about__body panel reveal">
+      <p>Mathematics BSc on a <strong>full scholarship</strong> at Bilkent University,
+      turned AI Engineer. I build production-grade <strong>LLM, RAG and multi-agent
+      systems</strong> that act over tools, APIs and data.</p>
+      <p>Engineering is paired with governance rigor: I'm an <strong>ISO/IEC 42001
+      (AI Management)</strong> and <strong>27001 Lead Auditor</strong>, so reliability,
+      provenance and compliance aren't afterthoughts. Foundations come from teaching
+      <strong>100+ students</strong> Python.</p>
+      <ul class="about__chips">
+        <li>Mathematics BSc · full scholarship</li>
+        <li>ISO/IEC 42001 &amp; 27001 Lead Auditor</li>
+        <li>AI fellow — top 4.7% of 31,700</li>
+        <li>Taught 100+ students Python</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="stats" aria-label="Signature numbers">
+  <div class="stats__inner">
+    <div class="statblock statblock--magenta reveal">
+      <span class="statblock__num"><span class="statblock__from">43</span>→86<small>%</small></span>
+      <span class="statblock__lbl">top-1 retrieval<br><i>7-query ground truth</i></span>
+    </div>
+    <div class="statblock statblock--lime reveal">
+      <span class="statblock__num">0<small>%</small></span>
+      <span class="statblock__lbl">citation hallucination<br><i>5 end-to-end scenarios</i></span>
+    </div>
+    <div class="statblock statblock--cyan reveal">
+      <span class="statblock__num">9</span>
+      <span class="statblock__lbl">specialized Claude agents<br><i>Sonnet 4.6 + Haiku 4.5</i></span>
+    </div>
+    <div class="statblock statblock--orange reveal">
+      <span class="statblock__num">700<small>+</small></span>
+      <span class="statblock__lbl">automated tests<br><i>Python + Playwright E2E</i></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="section-tag section-tag--magenta">02 / EXPERIENCE</div>
+  <h2 id="work-h" class="display-h work__h">WHERE I&nbsp;SHIP</h2>
+
+  <div class="work__list">
+
+    <article class="job panel job--a reveal">
+      <header class="job__head">
+        <h3 class="job__title">AI Engineer</h3>
+        <span class="job__when">09/2024 — Present</span>
+      </header>
+      <p class="job__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</p>
+      <ul class="job__points">
+        <li>Agentic <strong>ISO/IEC 17020</strong> conformity-audit assistant — Claude Agent SDK + <strong>2 MCP servers</strong> + local <strong>hybrid RAG</strong> (FTS5 BM25 + sqlite-vec + RRF); on-device, KVKK / EU-AI-Act compliant.</li>
+        <li>Full-stack <strong>multi-agent RAG</strong> import-compliance assistant (FastAPI + LangGraph).</li>
+        <li>Designed &amp; delivered an internal <strong>AI training curriculum</strong> — LLMs, prompt engineering, RAG, agents.</li>
+      </ul>
+      <div class="job__tags"><span>Claude Agent SDK</span><span>MCP</span><span>Hybrid RAG</span><span>LangGraph</span></div>
+    </article>
+
+    <article class="job panel job--b reveal">
+      <header class="job__head">
+        <h3 class="job__title">AI Fellow <span class="job__badge">TOP 4.7%</span></h3>
+        <span class="job__when">12/2025 — Present</span>
+      </header>
+      <p class="job__org">Yapay Zeka ve Teknoloji Akademisi · Remote</p>
+      <ul class="job__points">
+        <li>Selected from <strong>31,700 applicants</strong> (top 4.7%); one of 5 fellows building community tooling.</li>
+        <li><strong>Lead developer</strong> of a 4-person team — a Slack microservice platform: Slack Bolt, async SQLAlchemy / PostgreSQL.</li>
+        <li><strong>Groq Llama 3.3</strong> summarization + <strong>sentence-transformers</strong> with UMAP / HDBSCAN clustering.</li>
+      </ul>
+      <div class="job__tags"><span>Slack Bolt</span><span>async SQLAlchemy</span><span>Groq Llama 3.3</span><span>UMAP·HDBSCAN</span></div>
+    </article>
+
+    <article class="job panel job--c reveal">
+      <header class="job__head">
+        <h3 class="job__title">Earlier</h3>
+        <span class="job__when">2022 — 2024</span>
+      </header>
+      <p class="job__org">Foundations</p>
+      <ul class="job__points job__points--tight">
+        <li><strong>MCV Intern</strong> — 2024.</li>
+        <li><strong>Lab Assistant, Bilkent University</strong> — 2022–2024; taught <strong>100+ students</strong> Python.</li>
+        <li><strong>SA Innovation Intern</strong> — 2022.</li>
+      </ul>
+      <p class="job__edu"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <strong>BSc Mathematics (Full Scholarship)</strong> — Bilkent University, 2024 · English-medium.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects" aria-labelledby="proj-h">
+  <div class="section-tag section-tag--lime">03 / BUILT</div>
+  <h2 id="proj-h" class="display-h projects__h">A&nbsp;PORTFOLIO<br>OF&nbsp;EVERYTHING</h2>
+
+  <div class="projects__grid">
+
+    <!-- Flagship -->
+    <article class="proj proj--flag panel reveal">
+      <div class="proj__flagtag">FLAGSHIP</div>
+      <h3 class="proj__title">Multi-Agent LLM System<br><span>— Citation-Backed Regulatory Documents</span></h3>
+      <p class="proj__desc">9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python orchestrator. Dense RAG with Qdrant + Voyage-3-Large + rerank-2. Async FastAPI + Arq / Redis + PostgreSQL, human-in-the-loop review.</p>
+      <ul class="proj__metrics">
+        <li><b>43→86%</b> top-1</li>
+        <li><b>0%</b> hallucination</li>
+        <li><b>700+</b> tests</li>
+        <li><b>9</b> agents</li>
+      </ul>
+      <div class="proj__foot">
+        <div class="proj__tags"><span>Claude</span><span>Multi-Agent</span><span>Dense RAG</span><span>FastAPI</span></div>
+        <span class="proj__lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> Private repo</span>
+      </div>
+    </article>
+
+    <!-- RAG System (public) -->
+    <article class="proj proj--cyan panel reveal">
+      <h3 class="proj__title">RAG Systems<br><span>— Chat With Your Documents</span></h3>
+      <p class="proj__desc">FastAPI + Streamlit + Google Gemini + ChromaDB. Hexagonal (Ports &amp; Adapters) architecture, per-chunk source citations, TR / EN cross-lingual.</p>
+      <ul class="proj__metrics proj__metrics--sm">
+        <li><b>64</b> tests</li>
+        <li><b>TR/EN</b> bilingual</li>
+      </ul>
+      <div class="proj__foot">
+        <div class="proj__tags"><span>FastAPI</span><span>Gemini</span><span>ChromaDB</span><span>Hexagonal</span></div>
+        <a class="proj__link" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer" data-cursor="link"><i class="fa-brands fa-github" aria-hidden="true"></i> View source</a>
+      </div>
+    </article>
+
+    <!-- SME assistant -->
+    <article class="proj proj--orange panel reveal">
+      <h3 class="proj__title">Multi-Agent SME Operations Assistant<br><span>— Gemini · Telegram + Web</span></h3>
+      <p class="proj__desc">Google Gemini function calling with per-agent permission scoping and graceful degradation — API-key rotation plus deterministic fallbacks. Team build; core developer / lead.</p>
+      <div class="proj__foot">
+        <div class="proj__tags"><span>Gemini</span><span>Function Calling</span><span>Telegram</span><span>Permission Scoping</span></div>
+        <span class="proj__lock"><i class="fa-solid fa-users" aria-hidden="true"></i> Team · core dev</span>
+      </div>
+    </article>
+
+    <!-- Investment analytics -->
+    <article class="proj proj--violet panel reveal">
+      <h3 class="proj__title">Investment-Incentive Analytics<br><span>&amp; Forecasting Platform</span></h3>
+      <p class="proj__desc">132 official sources (55 Excel + 77 Word) reconciled into a 77K-record dataset (Parquet + SQLite). 5-model out-of-sample backtest — SARIMA 24% MAPE vs 93% seasonal-naive. Streamlit / Plotly.</p>
+      <ul class="proj__metrics proj__metrics--sm">
+        <li><b>77K</b> records</li>
+        <li><b>24%</b> MAPE</li>
+        <li><b>5</b> models</li>
+      </ul>
+      <div class="proj__foot">
+        <div class="proj__tags"><span>SARIMA</span><span>Polars</span><span>Streamlit</span><span>Plotly</span></div>
+        <span class="proj__lock"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Case study</span>
+      </div>
+    </article>
+
+    <!-- Financial TS -->
+    <article class="proj proj--magenta panel reveal">
+      <h3 class="proj__title">Financial Time-Series Forecasting</h3>
+      <p class="proj__desc">30+ technical indicators (RSI, MACD, Bollinger…) feeding LightGBM + SARIMA / SARIMAX on Borsa İstanbul data.</p>
+      <div class="proj__foot">
+        <div class="proj__tags"><span>LightGBM</span><span>SARIMAX</span><span>30+ indicators</span></div>
+        <span class="proj__lock"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Case study</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ SKILLS WALL ============ -->
+<section class="skills" id="skills" aria-labelledby="skills-h">
+  <div class="section-tag section-tag--cyan">04 / STACK</div>
+  <h2 id="skills-h" class="display-h skills__h">THE&nbsp;WHOLE<br><em>TOOLCHAIN</em></h2>
+
+  <div class="skills__grid">
+    <div class="skillcard panel reveal">
+      <h3 class="skillcard__h"><span class="dot dot--magenta"></span> LLM &amp; Agentic</h3>
+      <ul class="taglist">
+        <li>Anthropic Claude API</li><li>Google Gemini</li><li>OpenAI API</li>
+        <li>MCP</li><li>LangGraph</li><li>LangChain</li><li>Multi-agent systems</li>
+        <li>Function calling</li><li>Structured outputs</li><li>Prompt engineering</li>
+      </ul>
+    </div>
+    <div class="skillcard panel reveal">
+      <h3 class="skillcard__h"><span class="dot dot--cyan"></span> RAG &amp; Retrieval</h3>
+      <ul class="taglist">
+        <li>Qdrant</li><li>ChromaDB</li><li>pgvector</li><li>sqlite-vec</li>
+        <li>Voyage embeddings</li><li>Hybrid BM25 + dense</li><li>RRF</li><li>Reranking</li>
+      </ul>
+    </div>
+    <div class="skillcard panel reveal">
+      <h3 class="skillcard__h"><span class="dot dot--lime"></span> Backend &amp; Data</h3>
+      <ul class="taglist">
+        <li>Python</li><li>FastAPI</li><li>async Python</li><li>SQLAlchemy + Alembic</li>
+        <li>PostgreSQL</li><li>Redis</li><li>Pydantic</li><li>Polars</li>
+        <li>scikit-learn</li><li>LightGBM</li>
+      </ul>
+    </div>
+    <div class="skillcard panel reveal">
+      <h3 class="skillcard__h"><span class="dot dot--orange"></span> MLOps &amp; Governance</h3>
+      <ul class="taglist">
+        <li>Docker &amp; compose</li><li>CI/CD — GitHub Actions</li><li>pytest (TDD)</li>
+        <li>Ruff / mypy</li><li>ISO/IEC 42001</li><li>ISO/IEC 27001</li>
+        <li>KVKK / GDPR / EU-AI-Act</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Certifications strip -->
+  <div class="certs reveal" aria-label="Certifications">
+    <h3 class="certs__h">CERTS</h3>
+    <ul class="certs__list">
+      <li class="cert cert--star"><i class="fa-solid fa-star" aria-hidden="true"></i> ISO/IEC 42001 Lead Auditor <small>AI Management System</small></li>
+      <li class="cert cert--star"><i class="fa-solid fa-star" aria-hidden="true"></i> ISO/IEC 27001:2022 Lead Auditor <small>Information Security</small></li>
+      <li class="cert">Miuul <small>Data Scientist Bootcamp · GenAI &amp; Prompt Eng. · Deep Learning · Time Series · Recommenders</small></li>
+      <li class="cert">YZ &amp; Teknoloji Akademisi <small>Deep Learning · Web App Development</small></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="contact__inner">
+    <p class="contact__eyebrow">05 / SAY HELLO</p>
+    <h2 id="contact-h" class="contact__h">LET&apos;S&nbsp;BUILD<br>SOMETHING&nbsp;<span>LOUD.</span></h2>
+    <a class="contact__mail" href="mailto:fatih.e.cetin@gmail.com" data-cursor="link">fatih.e.cetin@gmail.com</a>
+    <ul class="contact__socials">
+      <li><a href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer" data-cursor="link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
+      <li><a href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer" data-cursor="link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      <li><a href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer" data-cursor="link"><i class="fa-brands fa-kaggle" aria-hidden="true"></i> Kaggle</a></li>
+      <li><a href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer" data-cursor="link"><i class="fa-brands fa-hackerrank" aria-hidden="true"></i> HackerRank</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__name">FATİH&nbsp;EREN&nbsp;ÇETİN</div>
+  <div class="footer__meta">
+    <span>AI Engineer · LLM &amp; Agentic AI</span>
+    <span>Ankara, Türkiye</span>
+    <span aria-hidden="true">Built loud, on purpose.</span>
+  </div>
+  <p class="footer__telemetry" aria-hidden="true">// decorative telemetry — 312 tok/s · ctx 12.8k · agent-loop OK · build #FE9A2C</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

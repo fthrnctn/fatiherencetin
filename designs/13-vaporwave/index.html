@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+  <meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. A 9-agent Claude pipeline that lifted top-1 retrieval from 43% to 86% with 0% citation hallucination." />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Social preview (self-referential, no external claims) -->
+  <meta property="og:title" content="Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI" />
+  <meta property="og:description" content="Production-grade LLM, RAG and multi-agent systems — rendered in 1984." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;600;700;800&family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top" aria-label="Fatih Eren Çetin — home">
+      <span class="nav__brand-mark" aria-hidden="true">FEÇ</span>
+      <span class="nav__brand-dot" aria-hidden="true"></span>
+      <span class="nav__brand-sub">AI&nbsp;ENGINEER</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="nav__status" aria-hidden="true"><span class="nav__status-led"></span>ONLINE</span>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-name">
+      <!-- Decorative outrun scene: sky + neon gridded sun + perspective grid floor -->
+      <div class="scene" aria-hidden="true">
+        <div class="scene__sky"></div>
+        <div class="scene__stars"></div>
+        <div class="scene__sun"></div>
+        <div class="scene__glow"></div>
+        <div class="scene__grid"><div class="scene__grid-plane"></div></div>
+        <div class="scene__vignette"></div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow"><span class="tick">//</span> AI&nbsp;ENGINEER &nbsp;·&nbsp; LLM&nbsp;&amp;&nbsp;AGENTIC&nbsp;AI &nbsp;·&nbsp; ANKARA, TÜRKİYE</p>
+
+        <h1 class="hero__name" id="hero-name">
+          <span class="chrome">Fatih&nbsp;Eren</span>
+          <span class="chrome">Çetin</span>
+        </h1>
+
+        <p class="hero__thesis">
+          I build <strong>production-grade LLM, RAG &amp; multi-agent systems</strong> —
+          most recently a <span class="hl-pink">9-agent Claude pipeline</span> that lifted
+          top-1 retrieval from <span class="hl-cyan">43% to 86%</span> with
+          <span class="hl-cyan">0% citation hallucination</span>.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projects">
+            <i class="fa-solid fa-play" aria-hidden="true"></i> View&nbsp;Projects
+          </a>
+          <a class="btn btn--ghost" href="mailto:fatih.e.cetin@gmail.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i> Email&nbsp;Me
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </div>
+
+        <!-- Decorative retro telemetry — stylistic flavor, not a real metric -->
+        <p class="hero__telemetry" aria-hidden="true">
+          <span>SYNTH.OS</span><span class="sep">▸</span>
+          <span>latent_space.exe</span><span class="sep">▸</span>
+          <span class="ok">ONLINE</span><span class="sep">▸</span>
+          <span>shader: outrun.v2</span><span class="sep">▸</span>
+          <span>render: 1984</span>
+        </p>
+      </div>
+
+      <a class="hero__scroll" href="#signal" aria-label="Scroll to readout">
+        <span aria-hidden="true">SCROLL</span>
+        <span class="hero__scroll-arrow" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============ SIGNAL / STAT READOUT ============ -->
+    <section class="section section--signal" id="signal" aria-labelledby="signal-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 00 — SIGNAL READOUT</p>
+          <h2 class="section__title" id="signal-title">The numbers, in neon</h2>
+        </div>
+
+        <ul class="readouts" role="list">
+          <li class="readout reveal">
+            <span class="readout__label">Top-1 retrieval</span>
+            <span class="readout__value">43<span class="arrow">→</span><span data-count-from="43" data-count-to="86">86</span>%</span>
+            <span class="readout__sub">7-query ground truth</span>
+          </li>
+          <li class="readout reveal">
+            <span class="readout__label">Citation hallucination</span>
+            <span class="readout__value">0%</span>
+            <span class="readout__sub">5 end-to-end scenarios</span>
+          </li>
+          <li class="readout reveal">
+            <span class="readout__label">Claude agents</span>
+            <span class="readout__value">9</span>
+            <span class="readout__sub">Sonnet&nbsp;4.6 + Haiku&nbsp;4.5</span>
+          </li>
+          <li class="readout reveal">
+            <span class="readout__label">Automated tests</span>
+            <span class="readout__value"><span data-count-from="0" data-count-to="700">700</span>+</span>
+            <span class="readout__sub">pytest + Playwright E2E</span>
+          </li>
+          <li class="readout reveal">
+            <span class="readout__label">AI fellow</span>
+            <span class="readout__value">4.7%</span>
+            <span class="readout__sub">top of 31,700 applicants</span>
+          </li>
+          <li class="readout reveal">
+            <span class="readout__label">Lead auditor</span>
+            <span class="readout__value readout__value--text">ISO 42001<span class="amp">·</span>27001</span>
+            <span class="readout__sub">AI mgmt + InfoSec</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 01 — ABOUT</p>
+          <h2 class="section__title" id="about-title">Mathematician turned AI Engineer</h2>
+        </div>
+
+        <div class="panel about reveal">
+          <div class="about__photo">
+            <figure class="frame">
+              <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+                   alt="Portrait of Fatih Eren Çetin" width="1915" height="2557" loading="lazy" />
+              <span class="frame__scan" aria-hidden="true"></span>
+              <span class="frame__corner frame__corner--tl" aria-hidden="true"></span>
+              <span class="frame__corner frame__corner--tr" aria-hidden="true"></span>
+              <span class="frame__corner frame__corner--bl" aria-hidden="true"></span>
+              <span class="frame__corner frame__corner--br" aria-hidden="true"></span>
+              <figcaption class="frame__cap"><span aria-hidden="true">▸</span> FATIH EREN ÇETİN · ANKARA</figcaption>
+            </figure>
+          </div>
+
+          <div class="about__body">
+            <p>
+              <strong>Mathematics BSc</strong> (full scholarship, Bilkent University) turned AI
+              Engineer. I build production-grade <strong>LLM, RAG and multi-agent systems</strong>
+              that act over tools, APIs and data — paired with
+              <strong>ISO/IEC&nbsp;42001 (AI Management)</strong> &amp;
+              <strong>27001 Lead Auditor</strong> governance and reliability rigor.
+            </p>
+            <p>
+              Foundations from instructing <strong>100+ students in Python</strong>. I care about
+              systems that are correct, cited, and accountable — the unglamorous parts that make
+              an AI product safe to ship.
+            </p>
+
+            <ul class="about__facts" role="list">
+              <li><span class="k">Role</span><span class="v">AI Engineer · LLM &amp; Agentic AI</span></li>
+              <li><span class="k">Based</span><span class="v">Ankara, Türkiye</span></li>
+              <li><span class="k">Education</span><span class="v">BSc Mathematics — Bilkent (Full Scholarship, 2024)</span></li>
+              <li><span class="k">Governance</span><span class="v">ISO/IEC 42001 &amp; 27001 Lead Auditor</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 02 — WORK TIMELINE</p>
+          <h2 class="section__title" id="work-title">Experience</h2>
+        </div>
+
+        <ol class="timeline" role="list">
+          <li class="tl reveal">
+            <div class="tl__rail" aria-hidden="true"><span class="tl__node"></span></div>
+            <article class="panel tl__card">
+              <header class="tl__head">
+                <h3 class="tl__role">AI Engineer</h3>
+                <span class="tag tag--now">PRESENT</span>
+              </header>
+              <p class="tl__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık</p>
+              <p class="tl__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ankara</span><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> 09/2024 — Present</span></p>
+              <ul class="tl__list" role="list">
+                <li>Agentic ISO/IEC 17020 conformity-audit assistant — Claude Agent SDK + 2 MCP servers + local <strong>hybrid RAG</strong> (FTS5 BM25 + sqlite-vec + RRF); on-device, KVKK / EU-AI-Act compliant.</li>
+                <li>Full-stack multi-agent RAG import-compliance assistant — <strong>FastAPI + LangGraph</strong>.</li>
+                <li>Designed &amp; delivered an internal AI training curriculum (LLM, prompt eng., RAG, agents).</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl reveal">
+            <div class="tl__rail" aria-hidden="true"><span class="tl__node"></span></div>
+            <article class="panel tl__card">
+              <header class="tl__head">
+                <h3 class="tl__role">AI Fellow</h3>
+                <span class="tag tag--now">PRESENT</span>
+              </header>
+              <p class="tl__org">Yapay Zeka ve Teknoloji Akademisi</p>
+              <p class="tl__meta"><span><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i> Remote</span><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> 12/2025 — Present</span></p>
+              <ul class="tl__list" role="list">
+                <li>Selected in the <strong>top 4.7% of 31,700</strong> applicants; one of 5 fellows building community tooling.</li>
+                <li><strong>Lead developer</strong> of a 4-person team — Slack microservice platform: Slack Bolt, async SQLAlchemy / PostgreSQL, Groq Llama&nbsp;3.3 summarization, sentence-transformers + UMAP / HDBSCAN clustering.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl reveal">
+            <div class="tl__rail" aria-hidden="true"><span class="tl__node"></span></div>
+            <article class="panel tl__card tl__card--compact">
+              <header class="tl__head">
+                <h3 class="tl__role">Earlier</h3>
+                <span class="tag">2022 — 2024</span>
+              </header>
+              <ul class="tl__list" role="list">
+                <li><strong>MCV Intern</strong> — 2024.</li>
+                <li><strong>Lab Assistant, Bilkent University</strong> — 2022–2024; instructed <strong>100+ students</strong> in Python.</li>
+                <li><strong>SA Innovation Intern</strong> — 2022.</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 03 — PROJECTS</p>
+          <h2 class="section__title" id="projects-title">Systems I&apos;ve shipped</h2>
+        </div>
+
+        <!-- FLAGSHIP -->
+        <article class="panel proj proj--flagship reveal">
+          <div class="proj__badge"><i class="fa-solid fa-star" aria-hidden="true"></i> FLAGSHIP</div>
+          <div class="proj__main">
+            <h3 class="proj__title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+            <p class="proj__desc">
+              <strong>9 specialized Claude agents</strong> (Sonnet&nbsp;4.6 + Haiku&nbsp;4.5) over a deterministic
+              Python orchestrator. Dense RAG with <strong>Qdrant + Voyage-3-Large + rerank-2</strong>;
+              <strong>43→86% top-1</strong>, <strong>0% hallucination</strong>, <strong>700+ tests</strong>.
+              Async FastAPI + Arq/Redis + PostgreSQL, with human-in-the-loop review.
+            </p>
+            <ul class="chips chips--sm" role="list">
+              <li>Claude</li><li>Multi-Agent</li><li>Dense RAG</li><li>Qdrant</li><li>FastAPI</li><li>Human-in-the-loop</li>
+            </ul>
+          </div>
+          <div class="proj__side">
+            <span class="proj__state proj__state--private"><i class="fa-solid fa-lock" aria-hidden="true"></i> Private repository</span>
+            <a class="proj__link" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">
+              GitHub profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <div class="proj-grid">
+          <!-- RAG (public) -->
+          <article class="panel proj reveal">
+            <h3 class="proj__title">RAG Systems — Chat With Your Documents</h3>
+            <p class="proj__desc">
+              FastAPI + Streamlit + Google Gemini + ChromaDB. Hexagonal (Ports &amp; Adapters)
+              architecture, per-chunk source citations, TR/EN cross-lingual, 64-test suite.
+            </p>
+            <ul class="chips chips--sm" role="list">
+              <li>FastAPI</li><li>Gemini</li><li>ChromaDB</li><li>Streamlit</li>
+            </ul>
+            <a class="proj__link" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> View source <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- SME (team) -->
+          <article class="panel proj reveal">
+            <h3 class="proj__title">Multi-Agent SME Operations Assistant</h3>
+            <p class="proj__desc">
+              Google Gemini function calling with per-agent permission scoping; graceful degradation
+              (API-key rotation + deterministic fallbacks). Telegram + Web. Team — core dev / lead.
+            </p>
+            <ul class="chips chips--sm" role="list">
+              <li>Gemini</li><li>Function calling</li><li>Telegram + Web</li>
+            </ul>
+            <span class="proj__state"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Team project · no public link</span>
+          </article>
+
+          <!-- Investment -->
+          <article class="panel proj reveal">
+            <h3 class="proj__title">Investment-Incentive Analytics &amp; Forecasting</h3>
+            <p class="proj__desc">
+              132 official sources (55 Excel + 77 Word) → 77K-record dataset (Parquet + SQLite).
+              5-model out-of-sample backtest — <strong>SARIMA 24% MAPE vs 93% seasonal-naive</strong>. Streamlit / Plotly.
+            </p>
+            <ul class="chips chips--sm" role="list">
+              <li>SARIMA</li><li>Polars</li><li>Backtesting</li><li>Plotly</li>
+            </ul>
+            <span class="proj__state"><i class="fa-solid fa-database" aria-hidden="true"></i> No public link</span>
+          </article>
+
+          <!-- Financial TS -->
+          <article class="panel proj reveal">
+            <h3 class="proj__title">Financial Time-Series Forecasting</h3>
+            <p class="proj__desc">
+              30+ technical indicators (RSI, MACD, Bollinger…) feeding <strong>LightGBM + SARIMA/SARIMAX</strong>
+              models over Borsa İstanbul data.
+            </p>
+            <ul class="chips chips--sm" role="list">
+              <li>LightGBM</li><li>SARIMAX</li><li>scikit-learn</li>
+            </ul>
+            <span class="proj__state"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> No public link</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 04 — STACK</p>
+          <h2 class="section__title" id="stack-title">Tools of the trade</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="panel stack reveal">
+            <h3 class="stack__title"><span aria-hidden="true">▸</span> LLM &amp; Agentic</h3>
+            <ul class="chips" role="list">
+              <li>Anthropic Claude API</li><li>Google Gemini</li><li>OpenAI API</li><li>MCP</li>
+              <li>LangGraph</li><li>LangChain</li><li>Multi-agent systems</li><li>Function calling</li>
+              <li>Structured outputs</li><li>Prompt engineering</li>
+            </ul>
+          </article>
+
+          <article class="panel stack reveal">
+            <h3 class="stack__title"><span aria-hidden="true">▸</span> RAG &amp; Retrieval</h3>
+            <ul class="chips" role="list">
+              <li>Qdrant</li><li>ChromaDB</li><li>pgvector</li><li>sqlite-vec</li>
+              <li>Voyage embeddings</li><li>Hybrid BM25 + dense</li><li>RRF</li><li>Reranking</li>
+            </ul>
+          </article>
+
+          <article class="panel stack reveal">
+            <h3 class="stack__title"><span aria-hidden="true">▸</span> Backend &amp; Data</h3>
+            <ul class="chips" role="list">
+              <li>Python</li><li>FastAPI</li><li>Async Python</li><li>SQLAlchemy + Alembic</li>
+              <li>PostgreSQL</li><li>Redis</li><li>Pydantic</li><li>Polars</li>
+              <li>scikit-learn</li><li>LightGBM</li>
+            </ul>
+          </article>
+
+          <article class="panel stack reveal">
+            <h3 class="stack__title"><span aria-hidden="true">▸</span> MLOps &amp; Governance</h3>
+            <ul class="chips" role="list">
+              <li>Docker &amp; compose</li><li>CI/CD (GitHub Actions)</li><li>pytest (TDD)</li>
+              <li>Ruff / mypy</li><li>ISO/IEC 42001</li><li>ISO/IEC 27001</li><li>KVKK / GDPR / EU&nbsp;AI&nbsp;Act</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="panel certs reveal">
+          <h3 class="certs__title"><span aria-hidden="true">★</span> Certifications</h3>
+          <ul class="certs__list" role="list">
+            <li class="cert cert--star"><span class="cert__name">ISO/IEC 42001 Lead Auditor</span><span class="cert__sub">AI Management System</span></li>
+            <li class="cert cert--star"><span class="cert__name">ISO/IEC 27001:2022 Lead Auditor</span><span class="cert__sub">Information Security</span></li>
+            <li class="cert"><span class="cert__name">Miuul</span><span class="cert__sub">Data Scientist Bootcamp · GenAI &amp; Prompt Eng. · Deep Learning · Time Series · Recsys</span></li>
+            <li class="cert"><span class="cert__name">Yapay Zeka ve Teknoloji Akademisi</span><span class="cert__sub">Deep Learning · Web App Development</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <!-- bookend horizon -->
+      <div class="contact__scene" aria-hidden="true"><div class="contact__grid"></div><div class="contact__sun"></div></div>
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 05 — CONTACT</p>
+          <h2 class="section__title section__title--big" id="contact-title">Let&apos;s build something</h2>
+          <p class="contact__lede reveal">Open to AI Engineering roles working on LLM, RAG and agentic systems. The fastest way to reach me is email.</p>
+        </div>
+
+        <div class="contact__links">
+          <a class="contact__card contact__card--primary reveal" href="mailto:fatih.e.cetin@gmail.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span class="contact__k">Email</span>
+            <span class="contact__v">fatih.e.cetin@gmail.com</span>
+          </a>
+          <a class="contact__card reveal" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <span class="contact__k">LinkedIn</span>
+            <span class="contact__v">/in/fatih-eren-cetin</span>
+          </a>
+          <a class="contact__card reveal" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span class="contact__k">GitHub</span>
+            <span class="contact__v">/FatihErenCetin</span>
+          </a>
+          <a class="contact__card reveal" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-kaggle" aria-hidden="true"></i>
+            <span class="contact__k">Kaggle</span>
+            <span class="contact__v">/fatiherencetin</span>
+          </a>
+          <a class="contact__card reveal" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-hackerrank" aria-hidden="true"></i>
+            <span class="contact__k">HackerRank</span>
+            <span class="contact__v">/fecetinn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__name chrome">Fatih Eren Çetin</span>
+      <span class="footer__meta">AI Engineer · LLM &amp; Agentic AI · Ankara, Türkiye</span>
+      <span class="footer__sig" aria-hidden="true">the future of AI, rendered in 1984 · <span id="year">2026</span></span>
+    </div>
+  </footer>
+
+  <!-- global overlays: scanlines + grain -->
+  <div class="fx-scanlines" aria-hidden="true"></div>
+  <div class="fx-grain" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
