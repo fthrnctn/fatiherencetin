@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatih Eren Çetin — AI Engineer · Chat with my CV</title>
+  <meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Ask my CV anything: a client-side retrieval-QA grounded in my real experience." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- flip no-js -> js as early as possible so enhancement styles apply without flash -->
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#main">
+        <span class="brand__dot" aria-hidden="true"></span>
+        FEÇ
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#chat">Ask</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO: identity is INSTANT, never gated ============ -->
+    <section class="hero wrap" aria-labelledby="hero-name">
+      <div class="hero__grid">
+        <div class="hero__intro">
+          <p class="hero__eyebrow">AI Engineer · LLM &amp; Agentic AI</p>
+          <h1 id="hero-name" class="hero__name">Fatih Eren Çetin</h1>
+          <p class="hero__oneliner">
+            AI Engineer building production-grade LLM, RAG, and multi-agent systems —
+            most recently a <strong>9-agent Claude pipeline</strong> that lifted top-1
+            retrieval from <strong>43% to 86%</strong> with <strong>0% citation hallucination</strong>.
+          </p>
+          <p class="hero__loc">📍 Ankara, Türkiye · <a href="mailto:fatih.e.cetin@gmail.com">fatih.e.cetin@gmail.com</a></p>
+          <ul class="hero__cred">
+            <li>ISO/IEC 42001 &amp; 27001 Lead Auditor</li>
+            <li>Mathematics BSc — full scholarship</li>
+            <li>AI fellow · top 4.7% of 31,700</li>
+          </ul>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#chat">Ask my CV ↓</a>
+            <a class="btn btn--ghost" href="#work">See selected work</a>
+          </div>
+        </div>
+        <figure class="hero__photo">
+          <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+               alt="Portrait of Fatih Eren Çetin" width="240" height="300" loading="eager" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= CHAT: the interactive hook ======================= -->
+    <section id="chat" class="chat-section wrap" aria-labelledby="chat-h">
+      <div class="chat-section__head">
+        <h2 id="chat-h">Ask my CV anything</h2>
+        <p class="chat-section__sub">
+          Answers are <strong>grounded in my real experience</strong>, retrieved client-side.
+          This widget is itself a tiny RAG system — TF-IDF + cosine over my CV, in your browser,
+          no server. If something isn't in my CV, it says so instead of guessing.
+        </p>
+      </div>
+
+      <div class="chat" role="group" aria-label="Chat with the CV assistant">
+        <div class="chat__bar">
+          <span class="chat__status" aria-hidden="true"><span class="chat__pulse"></span>retrieval-QA · client-side</span>
+          <div class="chat__llm">
+            <button id="llm-load-btn" class="llm-btn" type="button">🧠 load local LLM (WebGPU, ~1GB)</button>
+          </div>
+        </div>
+        <p id="llm-status" class="llm-status" role="status" aria-live="polite">
+          Optional &amp; additive. The default instant mode needs no download — this only re-phrases the same grounded answer with an in-browser model.
+        </p>
+
+        <div id="chat-log" class="chat__log" role="list" aria-label="Conversation"></div>
+
+        <div class="chat__chips-wrap">
+          <p class="chat__chips-label">Suggested questions</p>
+          <div id="chat-chips" class="chat__chips"></div>
+        </div>
+
+        <div class="chat__followups-wrap">
+          <div id="chat-followups" class="chat__chips chat__chips--small"></div>
+        </div>
+
+        <form id="chat-form" class="chat__form" autocomplete="off">
+          <label class="visually-hidden" for="chat-input">Ask a question about Fatih's CV</label>
+          <input id="chat-input" class="chat__input" type="text"
+                 placeholder="e.g. What's your flagship project?" />
+          <button class="chat__send" type="submit">Ask</button>
+        </form>
+        <p id="chat-live" class="visually-hidden" aria-live="polite"></p>
+      </div>
+
+      <!-- ===== NO-JS / fallback FAQ: identical Q&A as plain text ========= -->
+      <noscript>
+        <div class="nojs-note">
+          JavaScript is off, so the live chat is disabled — here are the same
+          answers as a static FAQ. Everything below is fully readable.
+        </div>
+      </noscript>
+      <details class="faq" id="static-faq" open>
+        <summary>Static FAQ — the same answers, no JavaScript required</summary>
+        <div class="faq__body">
+          <dl>
+            <dt>What's your flagship project?</dt>
+            <dd>The Multi-Agent LLM System for Citation-Backed Regulatory Documents (private repo):
+              9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python
+              orchestrator, dense RAG (Qdrant + Voyage-3-Large + rerank-2). It lifted top-1 retrieval
+              from 43% to 86% on a 7-query ground-truth set, with 0% citation hallucination across 5
+              scenarios. Async FastAPI + Arq/Redis + PostgreSQL, 700+ tests. <em>Private repository.</em></dd>
+
+            <dt>Do you have governance / ISO experience?</dt>
+            <dd>Yes — ISO/IEC 42001 Lead Auditor (AI Management) and ISO/IEC 27001:2022 Lead Auditor
+              (Information Security), plus KVKK / GDPR / EU-AI-Act-aware engineering. My MCV audit
+              assistant runs fully on-device to stay KVKK / EU-AI-Act compliant.</dd>
+
+            <dt>What's your strongest result?</dt>
+            <dd>On the flagship system: top-1 retrieval 43% → 86% (7-query ground truth) and 0% citation
+              hallucination across 5 end-to-end scenarios via provenance enforcement, backed by 700+ tests.</dd>
+
+            <dt>What's your tech stack?</dt>
+            <dd>LLM &amp; Agentic: Claude API, Gemini, OpenAI, MCP, LangGraph, LangChain, multi-agent,
+              function calling. RAG: Qdrant, ChromaDB, pgvector, sqlite-vec, Voyage, hybrid BM25 + dense
+              + RRF, reranking. Backend: Python, FastAPI, async, SQLAlchemy/Alembic, PostgreSQL, Redis,
+              Pydantic, Polars, scikit-learn, LightGBM. MLOps/Gov: Docker, GitHub Actions, pytest (TDD),
+              Ruff/mypy, ISO 42001 &amp; 27001.</dd>
+
+            <dt>Tell me about the Slack project.</dt>
+            <dd>As AI Fellow (top 4.7% of 31,700) I'm lead developer of a 4-person team building a Slack
+              microservice platform: Slack Bolt, async SQLAlchemy/PostgreSQL, Groq Llama 3.3 channel
+              summarization, sentence-transformers + UMAP/HDBSCAN clustering.</dd>
+
+            <dt>Are you open to work?</dt>
+            <dd>Yes — open to AI Engineer roles focused on LLM, RAG and agentic systems. Reach me at
+              fatih.e.cetin@gmail.com or on LinkedIn (in/fatih-eren-cetin).</dd>
+          </dl>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= STATS ============================================ -->
+    <section class="stats-section wrap" aria-label="Signature results">
+      <div id="stats-grid" class="stats">
+        <!-- JS renders from KB.stats; static fallback below -->
+        <div class="stat"><div class="stat__value">43% → 86%</div><div class="stat__label">top-1 retrieval (7-query ground truth)</div></div>
+        <div class="stat"><div class="stat__value">0%</div><div class="stat__label">citation hallucination (5 scenarios)</div></div>
+        <div class="stat"><div class="stat__value">9-agent</div><div class="stat__label">Claude pipeline (Sonnet 4.6 + Haiku 4.5)</div></div>
+        <div class="stat"><div class="stat__value">700+</div><div class="stat__label">automated tests (Python + Playwright)</div></div>
+        <div class="stat"><div class="stat__value">Top 4.7%</div><div class="stat__label">AI fellow of 31,700 applicants</div></div>
+        <div class="stat"><div class="stat__value">2× ISO LA</div><div class="stat__label">42001 (AI) + 27001 (InfoSec)</div></div>
+      </div>
+    </section>
+
+    <!-- ================= SELECTED WORK ==================================== -->
+    <section id="work" class="section wrap" aria-labelledby="work-h">
+      <h2 id="work-h" class="section__h">Selected work</h2>
+      <p class="section__lead">Decisions and tradeoffs, not just outcomes. Only one of these has a public repo — the rest are confidential / private, and I label that honestly rather than linking dead URLs.</p>
+      <div id="projects-grid" class="projects">
+        <!-- JS renders rich cards from KB.projects; static fallback below -->
+        <article class="card">
+          <div class="card__head"><span class="card__flag card__flag--gold">Flagship</span><span class="card__state card__state--muted">Private repository</span></div>
+          <h3 class="card__title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+          <p class="card__summary">9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python orchestrator, with dense RAG (Qdrant + Voyage-3-Large + rerank-2).</p>
+          <p class="card__rationale"><span class="card__rationale-label">Why this way: </span>Deterministic orchestrator over an open-ended agent loop for auditability; dense RAG + reranking because legislation is citation-critical.</p>
+          <ul class="card__metrics"><li class="metric">43% → 86% top-1 retrieval</li><li class="metric">0% citation hallucination</li><li class="metric">700+ tests</li></ul>
+          <div class="card__foot"><span class="card__nolink">No public link — confidential / private repo</span></div>
+        </article>
+        <article class="card">
+          <div class="card__head"><span class="card__flag card__flag--public">Public</span><span class="card__state">Open source</span></div>
+          <h3 class="card__title">RAG Systems — Chat With Your Documents</h3>
+          <p class="card__summary">FastAPI + Streamlit + Gemini + ChromaDB, hexagonal architecture, per-chunk citations, TR/EN cross-lingual, 64-test suite.</p>
+          <div class="card__foot"><a class="btn btn--ghost" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
+        </article>
+        <article class="card">
+          <div class="card__head"><span class="card__flag">Team · core dev/lead</span><span class="card__state card__state--muted">No public link</span></div>
+          <h3 class="card__title">Multi-Agent SME Operations Assistant</h3>
+          <p class="card__summary">Gemini function calling, per-agent permission scoping, Telegram + Web, API-key rotation + deterministic fallbacks.</p>
+          <div class="card__foot"><span class="card__nolink">No public link</span></div>
+        </article>
+        <article class="card">
+          <div class="card__head"><span class="card__flag">Data / Forecasting</span><span class="card__state card__state--muted">No public link</span></div>
+          <h3 class="card__title">Investment-Incentive Analytics &amp; Forecasting Platform</h3>
+          <p class="card__summary">132 sources (55 Excel + 77 Word) → 77K-record dataset; 5-model backtest, SARIMA 24% MAPE vs 93% seasonal-naive.</p>
+          <div class="card__foot"><span class="card__nolink">No public link</span></div>
+        </article>
+        <article class="card">
+          <div class="card__head"><span class="card__flag">Data / Forecasting</span><span class="card__state card__state--muted">No public link</span></div>
+          <h3 class="card__title">Financial Time-Series Forecasting</h3>
+          <p class="card__summary">30+ technical indicators, LightGBM + SARIMA/SARIMAX, Borsa İstanbul.</p>
+          <div class="card__foot"><span class="card__nolink">No public link</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ======================================= -->
+    <section id="experience" class="section wrap" aria-labelledby="exp-h">
+      <h2 id="exp-h" class="section__h">Experience</h2>
+      <div id="experience-list" class="xp-list">
+        <article class="xp">
+          <div class="xp__head"><div class="xp__left"><h3 class="xp__title">AI Engineer</h3><div class="xp__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık</div></div><div class="xp__right"><div class="xp__when">Sep 2024 – Present</div><div class="xp__where">Ankara</div></div></div>
+          <ul class="xp__bullets">
+            <li>Agentic ISO/IEC 17020 conformity-audit assistant: Claude Agent SDK + 2 MCP servers + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF), on-device and KVKK / EU-AI-Act compliant.</li>
+            <li>Full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph).</li>
+            <li>Designed &amp; delivered an internal AI training curriculum (LLMs, prompt engineering, RAG, agents).</li>
+          </ul>
+        </article>
+        <article class="xp">
+          <div class="xp__head"><div class="xp__left"><h3 class="xp__title">AI Fellow</h3><div class="xp__org">Yapay Zeka ve Teknoloji Akademisi</div></div><div class="xp__right"><div class="xp__when">Dec 2025 – Present</div><div class="xp__where">Remote</div></div></div>
+          <ul class="xp__bullets">
+            <li>Admitted in the top 4.7% of 31,700 applicants; one of 5 fellows building community tooling.</li>
+            <li>Lead developer of a 4-person team — Slack microservice platform: Slack Bolt, async SQLAlchemy/PostgreSQL, Groq Llama 3.3 summarization, sentence-transformers + UMAP/HDBSCAN clustering.</li>
+          </ul>
+        </article>
+        <article class="xp">
+          <div class="xp__head"><div class="xp__left"><h3 class="xp__title">MCV Intern · Lab Assistant · Innovation Intern</h3><div class="xp__org">Bilkent University &amp; earlier</div></div><div class="xp__right"><div class="xp__when">2022 – 2024</div><div class="xp__where">Ankara</div></div></div>
+          <ul class="xp__bullets">
+            <li>MCV Intern (2024).</li>
+            <li>Lab Assistant, Bilkent University (2022–2024) — instructed 100+ students in Python.</li>
+            <li>Innovation Intern, SA (2022).</li>
+          </ul>
+        </article>
+      </div>
+      <div class="edu-line">
+        <span class="edu-line__icon" aria-hidden="true">🎓</span>
+        <strong>BSc Mathematics (Full Scholarship)</strong> — Bilkent University, 2024 · English-medium
+      </div>
+    </section>
+
+    <!-- ================= SKILLS =========================================== -->
+    <section id="skills" class="section wrap" aria-labelledby="skills-h">
+      <h2 id="skills-h" class="section__h">Skills</h2>
+      <div id="skills-grid" class="skills">
+        <div class="skillgroup"><h3 class="skillgroup__name">LLM &amp; Agentic</h3><ul class="skillgroup__items"><li class="skillchip">Anthropic Claude API</li><li class="skillchip">Google Gemini</li><li class="skillchip">OpenAI API</li><li class="skillchip">MCP</li><li class="skillchip">LangGraph</li><li class="skillchip">LangChain</li><li class="skillchip">Multi-agent</li><li class="skillchip">Function calling</li><li class="skillchip">Structured outputs</li><li class="skillchip">Prompt engineering</li></ul></div>
+        <div class="skillgroup"><h3 class="skillgroup__name">RAG &amp; Retrieval</h3><ul class="skillgroup__items"><li class="skillchip">Qdrant</li><li class="skillchip">ChromaDB</li><li class="skillchip">pgvector</li><li class="skillchip">sqlite-vec</li><li class="skillchip">Voyage embeddings</li><li class="skillchip">Hybrid BM25 + dense</li><li class="skillchip">RRF</li><li class="skillchip">Reranking</li></ul></div>
+        <div class="skillgroup"><h3 class="skillgroup__name">Backend &amp; Data</h3><ul class="skillgroup__items"><li class="skillchip">Python</li><li class="skillchip">FastAPI</li><li class="skillchip">Async Python</li><li class="skillchip">SQLAlchemy + Alembic</li><li class="skillchip">PostgreSQL</li><li class="skillchip">Redis</li><li class="skillchip">Pydantic</li><li class="skillchip">Polars</li><li class="skillchip">scikit-learn</li><li class="skillchip">LightGBM</li></ul></div>
+        <div class="skillgroup"><h3 class="skillgroup__name">MLOps &amp; Governance</h3><ul class="skillgroup__items"><li class="skillchip">Docker / compose</li><li class="skillchip">CI/CD (GitHub Actions)</li><li class="skillchip">pytest (TDD)</li><li class="skillchip">Ruff / mypy</li><li class="skillchip">ISO/IEC 42001</li><li class="skillchip">ISO/IEC 27001</li><li class="skillchip">KVKK / GDPR / EU-AI-Act</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS =================================== -->
+    <section id="certs" class="section wrap" aria-labelledby="certs-h">
+      <h2 id="certs-h" class="section__h">Certifications</h2>
+      <ul id="certs-list" class="certs">
+        <li class="cert cert--star"><span class="cert__name">★ ISO/IEC 42001 Lead Auditor</span><span class="cert__note">AI Management System</span></li>
+        <li class="cert cert--star"><span class="cert__name">★ ISO/IEC 27001:2022 Lead Auditor</span><span class="cert__note">Information Security</span></li>
+        <li class="cert"><span class="cert__name">Miuul</span><span class="cert__note">Data Scientist Bootcamp · GenAI &amp; Prompt Eng. · Deep Learning · Time Series · Recommendation Systems · ML Summer Camp</span></li>
+        <li class="cert"><span class="cert__name">Yapay Zeka ve Teknoloji Akademisi</span><span class="cert__note">Deep Learning · Web App Development</span></li>
+      </ul>
+    </section>
+
+    <!-- ================= CONTACT ========================================= -->
+    <section id="contact" class="section wrap" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="section__h">Contact</h2>
+      <p class="contact__lead">Open to AI Engineer roles in LLM, RAG and agentic systems. The fastest path is email.</p>
+      <div class="contact__links">
+        <a class="contact__link" href="mailto:fatih.e.cetin@gmail.com">✉️ fatih.e.cetin@gmail.com</a>
+        <a class="contact__link" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer">in/fatih-eren-cetin</a>
+        <a class="contact__link" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">github.com/FatihErenCetin</a>
+        <a class="contact__link" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer">kaggle.com/fatiherencetin</a>
+        <a class="contact__link" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer">hackerrank.com/fecetinn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© 2026 Fatih Eren Çetin · Ankara, Türkiye</span>
+      <span class="footer__meta">Built as a tiny client-side RAG widget — answers grounded in this CV, no server, no tracking.</span>
+    </div>
+  </footer>
+
+  <!-- order matters: data → retriever → consumers -->
+  <script src="js/data.js"></script>
+  <script src="js/retriever.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/llm.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

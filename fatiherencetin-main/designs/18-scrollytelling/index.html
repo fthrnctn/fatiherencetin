@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+  <meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Case study: taking retrieval from 43% to 86% with 0% citation hallucination." />
+  <meta name="color-scheme" content="dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="no-js">
+  <a class="skip-link" href="#case-study">Skip to the case study</a>
+
+  <!-- ============================== HERO ============================== -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__id">
+        <img class="hero__photo" src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+             alt="Portrait of Fatih Eren Çetin" width="96" height="96" loading="eager" />
+        <div>
+          <p class="hero__eyebrow">Ankara, Türkiye · available for AI engineering roles</p>
+          <h1 class="hero__name">Fatih Eren Çetin</h1>
+          <p class="hero__role">AI Engineer <span aria-hidden="true">·</span> LLM &amp; Agentic AI</p>
+        </div>
+      </div>
+
+      <p class="hero__oneliner">
+        AI Engineer building production-grade LLM, RAG, and multi-agent systems —
+        most recently a <strong>9-agent Claude pipeline</strong> that lifted top-1
+        retrieval from <strong>43% to 86%</strong> with <strong>0% citation
+        hallucination</strong>.
+      </p>
+
+      <ul class="hero__stats" aria-label="Signature metrics">
+        <!-- populated/enhanced by JS; static fallback below -->
+        <li><b>43→86%</b><span>top-1 retrieval</span></li>
+        <li><b>0%</b><span>citation hallucination</span></li>
+        <li><b>9</b><span>Claude agents</span></li>
+        <li><b>700+</b><span>automated tests</span></li>
+        <li><b>42001 / 27001</b><span>Lead Auditor</span></li>
+        <li><b>top 4.7%</b><span>AI fellow (of 31,700)</span></li>
+      </ul>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#case-study">
+          Read the case study
+          <span class="btn__sub">43% → 86%, 0% hallucination</span>
+        </a>
+        <a class="btn btn--ghost" href="#projects">Projects</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero__scrollcue" aria-hidden="true">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v14M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================= CASE STUDY ========================= -->
+    <section class="cs" id="case-study" aria-labelledby="cs-title">
+      <div class="cs__intro">
+        <p class="cs__tag">Case study · flagship project</p>
+        <h2 class="cs__title" id="cs-title">
+          How I took retrieval from <span class="hl">43%</span> to
+          <span class="hl">86%</span> with <span class="hl">0% hallucination</span>
+        </h2>
+        <p class="cs__sub">
+          Multi-Agent LLM System — Citation-Backed Regulatory Documents.
+          <span class="cs__statebadge cs__statebadge--private">private repo</span>
+          <span class="cs__note">Described at capability level — no proprietary or client specifics.</span>
+        </p>
+      </div>
+
+      <!-- The scrolly: sticky graphic (left) + scrolling steps (right).
+           No-JS / reduced-motion: graphic shows final state, steps stack. -->
+      <div class="scrolly" id="scrolly">
+        <div class="scrolly__sticky" aria-hidden="false">
+          <figure class="diagram" id="diagram">
+            <figcaption class="diagram__cap">
+              <span class="diagram__caplabel" id="diagram-caplabel" aria-live="polite">Pipeline overview</span>
+            </figcaption>
+            <!-- JS replaces this with the interactive SVG. With JS off (or before
+                 it loads) this static, fully-legible HTML pipeline is the fallback
+                 final state — no clipping at any width. -->
+            <div class="diagram__svgwrap" id="diagram-svgwrap">
+              <ol class="diagram__fallback" aria-label="Pipeline stages, in order">
+                <li><b>User question</b><span>regulatory Q</span></li>
+                <li><b>Deterministic orchestrator</b><span>plain Python</span></li>
+                <li><b>Article-aware chunking</b><span>structure-aware</span></li>
+                <li><b>Dense retrieval</b><span>Qdrant · Voyage-3-Large</span></li>
+                <li><b>Rerank</b><span>Voyage rerank-2</span></li>
+                <li><b>9 Claude agents</b><span>Sonnet 4.6 · Haiku 4.5</span></li>
+                <li><b>Citation verify</b><span>provenance gate</span></li>
+                <li><b>Human-in-the-loop</b><span>review gate</span></li>
+                <li><b>Cited answer</b><span>0% hallucination</span></li>
+              </ol>
+            </div>
+          </figure>
+        </div>
+
+        <div class="scrolly__steps" id="scrolly-steps">
+          <!-- STEP 1 -->
+          <article class="step" data-step="problem" id="step-problem">
+            <p class="step__kicker">01 · The problem</p>
+            <h3 class="step__title">Wrong citations are worse than no answer.</h3>
+            <p class="step__body">
+              The task: answer regulatory questions and back every claim with the
+              exact article it came from. In a compliance setting a confident answer
+              citing the wrong clause is a liability, not a convenience. So the bar
+              was not “sounds right” — it was <em>provenance</em>: every sentence
+              traceable to a real source, or it doesn’t ship.
+            </p>
+            <div class="decision">
+              <p class="decision__label">Framing decision</p>
+              <p class="decision__choice">Optimise for citation correctness, not fluency.</p>
+              <p class="decision__why">A fluent answer with a bad citation passes a demo and fails an audit. The whole system is built backwards from that constraint.</p>
+            </div>
+          </article>
+
+          <!-- STEP 2 -->
+          <article class="step" data-step="architecture" id="step-architecture">
+            <p class="step__kicker">02 · Architecture</p>
+            <h3 class="step__title">A deterministic orchestrator driving 9 specialised agents.</h3>
+            <p class="step__body">
+              Rather than one big autonomous loop, control flow lives in plain
+              Python — a deterministic orchestrator that calls 9 narrow Claude
+              agents (retrieve, draft, verify-citation, critique, …). Determinism
+              where it matters; model intelligence only at the steps that need it.
+            </p>
+            <div class="decision">
+              <p class="decision__label">Cost / quality decision</p>
+              <p class="decision__choice">Sonnet 4.6 for hard reasoning steps, Haiku 4.5 for cheap ones — not one model everywhere.</p>
+              <p class="decision__why">Running the strongest model on every step is wasteful; running a cheap model on the hard steps is fragile. Routing by step keeps verification and synthesis sharp while classification and formatting stay fast and cheap.</p>
+            </div>
+          </article>
+
+          <!-- STEP 3 -->
+          <article class="step" data-step="retrieval" id="step-retrieval">
+            <p class="step__kicker">03 · Retrieval</p>
+            <h3 class="step__title">Article-aware chunking + dense RAG.</h3>
+            <p class="step__body">
+              Legislation has structure — articles, clauses, sub-items. Chunking on
+              that structure (instead of fixed token windows) keeps a citation unit
+              intact. Retrieval is dense: Qdrant over Voyage-3-Large embeddings, then
+              Voyage rerank-2 re-scores the shortlist before anything reaches an agent.
+            </p>
+            <div class="decision">
+              <p class="decision__label">Retrieval decision</p>
+              <p class="decision__choice">Dense embeddings + a reranker, over naive keyword search.</p>
+              <p class="decision__why">Regulatory questions paraphrase the law — they rarely share surface keywords with the clause that answers them. Dense retrieval matches meaning; the reranker fixes the “close but not top-1” cases that sink citation accuracy.</p>
+            </div>
+          </article>
+
+          <!-- STEP 4 — the reveal -->
+          <article class="step step--reveal" data-step="result" id="step-result">
+            <p class="step__kicker">04 · The result</p>
+            <h3 class="step__title">Top-1 retrieval: <span class="hl">43% → 86%</span>.</h3>
+            <p class="step__body">
+              On a 7-query legislation ground-truth set, the share of questions whose
+              single best-retrieved chunk was the correct article doubled — from 43%
+              to 86%. Top-1 is the metric that matters here: the verifier trusts the
+              first result, so getting the right clause to rank first is what actually
+              moves citation quality.
+            </p>
+
+            <div class="reveal" id="reveal" aria-hidden="false">
+              <div class="reveal__row">
+                <span class="reveal__cap">Before</span>
+                <div class="reveal__track"><div class="reveal__bar reveal__bar--before" data-pct="43"><span class="reveal__pct">43%</span></div></div>
+              </div>
+              <div class="reveal__row">
+                <span class="reveal__cap">After</span>
+                <div class="reveal__track"><div class="reveal__bar reveal__bar--after" data-pct="86"><span class="reveal__pct">86%</span></div></div>
+              </div>
+              <p class="reveal__foot">top-1 retrieval · 7-query legislation ground-truth set</p>
+            </div>
+
+            <div class="decision">
+              <p class="decision__label">How it was measured</p>
+              <p class="decision__choice">An offline ground-truth set, scored top-1 — not vibes.</p>
+              <p class="decision__why">A small hand-labelled set you can re-run on every change is worth more than a big one you measure once. Each retrieval tweak was scored against the same 7 queries, so the 43→86 gain is reproducible.</p>
+            </div>
+          </article>
+
+          <!-- STEP 5 -->
+          <article class="step" data-step="reliability" id="step-reliability">
+            <p class="step__kicker">05 · Reliability</p>
+            <h3 class="step__title">0% citation hallucination — enforced, not hoped for.</h3>
+            <p class="step__body">
+              A dedicated agent re-checks every cited claim against its source before
+              the answer is returned; unverifiable claims are dropped or flagged for a
+              human. Across 5 end-to-end scenarios, zero hallucinated citations. The
+              whole pipeline is covered by 700+ tests (Python + Playwright) with
+              per-step token, cost and latency auditing.
+            </p>
+            <div class="decision">
+              <p class="decision__label">Reliability decision</p>
+              <p class="decision__choice">Provenance enforcement + human-in-the-loop, over “trust the model”.</p>
+              <p class="decision__why">You can’t prompt your way to a guarantee. A verification step that can refuse to answer — plus a human review gate — is what turns 0% hallucination from a lucky run into a property of the system.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="cs__stack">
+        Stack: 9 Claude agents (Sonnet 4.6 + Haiku 4.5) · deterministic Python
+        orchestrator · dense RAG (Qdrant + Voyage-3-Large + rerank-2) · async
+        FastAPI + Arq/Redis + PostgreSQL · 700+ tests (Python + Playwright).
+      </p>
+    </section>
+
+    <!-- ========================= PROJECTS ========================= -->
+    <section class="block" id="projects" aria-labelledby="projects-title">
+      <div class="block__head">
+        <h2 class="block__title" id="projects-title">Other projects</h2>
+        <p class="block__lede">The flagship above is private. These show the same instincts — rationale and tradeoffs, with the metrics that back them.</p>
+      </div>
+      <div class="grid" id="projects-grid">
+        <!-- Static fallback cards; JS re-renders identical content from data.js -->
+        <article class="card">
+          <header class="card__head">
+            <h3 class="card__title">RAG Systems — Chat With Your Documents</h3>
+            <span class="badge badge--public">public</span>
+          </header>
+          <p class="card__blurb">FastAPI + Streamlit + Google Gemini + ChromaDB. Hexagonal (ports &amp; adapters) architecture so the LLM and vector store are swappable adapters, not load-bearing dependencies.</p>
+          <p class="card__why"><span>Why:</span> Hexagonal kept Gemini and ChromaDB at the edges — the core stays testable and the providers are replaceable.</p>
+          <ul class="card__metrics"><li>per-chunk citations</li><li>TR / EN cross-lingual</li><li>64-test suite</li></ul>
+          <a class="card__link" href="https://github.com/FatihErenCetin/RAG-System" rel="noopener">View on GitHub →</a>
+        </article>
+        <article class="card">
+          <header class="card__head">
+            <h3 class="card__title">Multi-Agent SME Operations Assistant</h3>
+            <span class="badge badge--team">team · core dev</span>
+          </header>
+          <p class="card__blurb">Gemini function-calling assistant over Telegram + Web, with per-agent permission scoping so each agent can only touch what its role allows.</p>
+          <p class="card__why"><span>Why:</span> API-key rotation + deterministic fallbacks — when the model or a key is unavailable, it degrades to a predictable path instead of failing the user.</p>
+          <ul class="card__metrics"><li>per-agent permission scoping</li><li>API-key rotation</li><li>deterministic fallbacks</li></ul>
+          <span class="card__nolink">Private — no public repo</span>
+        </article>
+        <article class="card">
+          <header class="card__head">
+            <h3 class="card__title">Investment-Incentive Analytics &amp; Forecasting Platform</h3>
+            <span class="badge badge--private">private</span>
+          </header>
+          <p class="card__blurb">Reconciled 132 official sources (55 Excel + 77 Word) into a single 77K-record dataset (Parquet + SQLite), then forecast incentive activity.</p>
+          <p class="card__why"><span>Why:</span> Out-of-sample backtest across 5 models — SARIMA reached 24% MAPE vs a 93% seasonal-naive baseline. The baseline is what proves the model earned its place.</p>
+          <ul class="card__metrics"><li>132 sources → 77K records</li><li>5-model backtest</li><li>SARIMA 24% MAPE vs 93% naive</li></ul>
+          <span class="card__nolink">Private — no public repo</span>
+        </article>
+        <article class="card">
+          <header class="card__head">
+            <h3 class="card__title">Financial Time-Series Forecasting</h3>
+            <span class="badge badge--private">private</span>
+          </header>
+          <p class="card__blurb">30+ technical indicators (RSI, MACD, Bollinger, …) feeding a LightGBM + SARIMA/SARIMAX ensemble over Borsa İstanbul series.</p>
+          <p class="card__why"><span>Why:</span> Pairing a gradient-boosted model with classical seasonal models covers both non-linear feature interactions and explicit seasonality.</p>
+          <ul class="card__metrics"><li>30+ indicators</li><li>LightGBM + SARIMA/SARIMAX</li><li>Borsa İstanbul</li></ul>
+          <span class="card__nolink">Private — no public repo</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================= EXPERIENCE ========================= -->
+    <section class="block" id="experience" aria-labelledby="exp-title">
+      <div class="block__head">
+        <h2 class="block__title" id="exp-title">Experience</h2>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li class="tl">
+          <div class="tl__head"><h3 class="tl__role">AI Engineer</h3><span class="tl__dates">09/2024 – Present</span></div>
+          <p class="tl__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</p>
+          <ul class="tl__bullets">
+            <li>Agentic ISO/IEC 17020 conformity-audit assistant: Claude Agent SDK + 2 MCP servers + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF) — on-device, KVKK / EU-AI-Act compliant.</li>
+            <li>Full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph).</li>
+            <li>Designed &amp; delivered an internal AI training curriculum (LLM, prompt engineering, RAG, agents).</li>
+          </ul>
+        </li>
+        <li class="tl">
+          <div class="tl__head"><h3 class="tl__role">AI Fellow</h3><span class="tl__dates">12/2025 – Present</span></div>
+          <p class="tl__org">Yapay Zeka ve Teknoloji Akademisi · Remote</p>
+          <ul class="tl__bullets">
+            <li>Selected top 4.7% of 31,700 applicants; one of 5 fellows building community tooling.</li>
+            <li>Lead developer of a 4-person team — Slack microservice platform: Slack Bolt, async SQLAlchemy / PostgreSQL, Groq Llama 3.3 summarization, sentence-transformers + UMAP/HDBSCAN clustering.</li>
+          </ul>
+        </li>
+        <li class="tl">
+          <div class="tl__head"><h3 class="tl__role">Earlier roles</h3><span class="tl__dates">2022 – 2024</span></div>
+          <p class="tl__org">MCV · Bilkent University · SA</p>
+          <ul class="tl__bullets">
+            <li>MCV Intern (2024).</li>
+            <li>Lab Assistant, Bilkent University (2022–2024) — instructed 100+ students in Python.</li>
+            <li>SA Innovation Intern (2022).</li>
+          </ul>
+        </li>
+      </ol>
+      <p class="edu">
+        <strong>Education.</strong> BSc Mathematics (Full Scholarship) — Bilkent
+        University, 2024 · English-medium.
+      </p>
+    </section>
+
+    <!-- ========================= SKILLS ========================= -->
+    <section class="block" id="skills" aria-labelledby="skills-title">
+      <div class="block__head"><h2 class="block__title" id="skills-title">Skills</h2></div>
+      <div class="skills" id="skills-grid">
+        <div class="skillgroup"><h3>LLM &amp; Agentic</h3><ul><li>Anthropic Claude API</li><li>Google Gemini</li><li>OpenAI API</li><li>MCP</li><li>LangGraph</li><li>LangChain</li><li>Multi-agent systems</li><li>Function calling</li><li>Structured outputs</li><li>Prompt engineering</li></ul></div>
+        <div class="skillgroup"><h3>RAG &amp; Retrieval</h3><ul><li>Qdrant</li><li>ChromaDB</li><li>pgvector</li><li>sqlite-vec</li><li>Voyage embeddings</li><li>Hybrid BM25 + dense + RRF</li><li>Reranking</li></ul></div>
+        <div class="skillgroup"><h3>Backend &amp; Data</h3><ul><li>Python</li><li>FastAPI</li><li>Async Python</li><li>SQLAlchemy + Alembic</li><li>PostgreSQL</li><li>Redis</li><li>Pydantic</li><li>Polars</li><li>scikit-learn</li><li>LightGBM</li></ul></div>
+        <div class="skillgroup"><h3>MLOps &amp; Governance</h3><ul><li>Docker &amp; docker-compose</li><li>CI/CD (GitHub Actions)</li><li>pytest (TDD)</li><li>Ruff / mypy</li><li>ISO/IEC 42001</li><li>ISO/IEC 27001</li><li>KVKK / GDPR / EU-AI-Act-aware</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ========================= CERTIFICATIONS ========================= -->
+    <section class="block" id="certs" aria-labelledby="certs-title">
+      <div class="block__head"><h2 class="block__title" id="certs-title">Certifications</h2></div>
+      <ul class="certs" id="certs-list">
+        <li class="cert cert--star"><span class="cert__name">ISO/IEC 42001 Lead Auditor</span><span class="cert__note">AI Management System</span></li>
+        <li class="cert cert--star"><span class="cert__name">ISO/IEC 27001:2022 Lead Auditor</span><span class="cert__note">Information Security</span></li>
+        <li class="cert"><span class="cert__name">Miuul</span><span class="cert__note">Data Scientist Bootcamp · Generative AI &amp; Prompt Engineering · Deep Learning · Time Series · Recommendation Systems · ML Summer Camp</span></li>
+        <li class="cert"><span class="cert__name">Yapay Zeka ve Teknoloji Akademisi</span><span class="cert__note">Deep Learning · Web App Development</span></li>
+      </ul>
+    </section>
+
+    <!-- ========================= CONTACT ========================= -->
+    <section class="block block--contact" id="contact" aria-labelledby="contact-title">
+      <div class="block__head"><h2 class="block__title" id="contact-title">Contact</h2></div>
+      <p class="contact__lede">Open to AI engineering roles. The fastest way to reach me:</p>
+      <div class="contact__links">
+        <a class="contact__email" href="mailto:fatih.e.cetin@gmail.com">fatih.e.cetin@gmail.com</a>
+        <nav class="contact__socials" aria-label="Profiles">
+          <a href="https://linkedin.com/in/fatih-eren-cetin" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/FatihErenCetin" rel="noopener">GitHub</a>
+          <a href="https://kaggle.com/fatiherencetin" rel="noopener">Kaggle</a>
+          <a href="https://hackerrank.com/fecetinn" rel="noopener">HackerRank</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Fatih Eren Çetin · AI Engineer · Ankara, Türkiye</p>
+    <p class="foot__note">This page is a working artifact: the pipeline diagram and the 43→86% reveal are driven by vanilla JS over real, verified content — no framework, no build step.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

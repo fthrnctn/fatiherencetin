@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+<meta name="description" content="AI Engineer building production-grade LLM, RAG and multi-agent systems — a 9-agent Claude pipeline that lifted top-1 retrieval from 43% to 86% at 0% citation hallucination." />
+<meta name="theme-color" content="#0D1117" />
+<meta name="author" content="Fatih Eren Çetin" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23161B22'/%3E%3Ctext%20x='6'%20y='22'%20font-family='monospace'%20font-size='17'%20fill='%237EE787'%3E%24_%3C/text%3E%3C/svg%3E" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI" />
+<meta property="og:description" content="Production-grade LLM, RAG and multi-agent systems, with ISO/IEC 42001 &amp; 27001 governance rigor." />
+
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#editor">Skip to content</a>
+
+<main class="ide" aria-label="Fatih Eren Çetin — portfolio, presented as a code editor">
+
+  <!-- ── window title bar ─────────────────────────────────────── -->
+  <header class="titlebar">
+    <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+    <nav class="menu" aria-hidden="true">
+      <span>File</span><span>Edit</span><span>View</span><span>Run</span><span>Help</span>
+    </nav>
+    <h1 class="wintitle">fatiherencetin — ~/portfolio</h1>
+    <span class="who" aria-hidden="true"><i class="fa-solid fa-location-dot"></i> Ankara, Türkiye</span>
+  </header>
+
+  <div class="workbench">
+
+    <!-- ── file explorer (the tablist) ───────────────────────── -->
+    <nav class="sidebar" aria-label="File explorer">
+      <p class="sidebar__head">Explorer</p>
+      <p class="tree-root"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i> fatiherencetin</p>
+      <ul class="tree" id="filetree" role="tablist" aria-orientation="vertical" aria-label="Portfolio files">
+        <li role="presentation">
+          <button class="tree__item ft-md" role="tab" id="tab-about" aria-controls="pane-about" aria-selected="true" tabindex="0" data-file="about.md" data-lang="Markdown" data-verb="cat" data-icon="fa-brands fa-markdown">
+            <i class="fa-brands fa-markdown" aria-hidden="true"></i><span>about.md</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="tree__item ft-git" role="tab" id="tab-exp" aria-controls="pane-exp" aria-selected="false" tabindex="-1" data-file="experience/" data-lang="Git" data-verb="git log --oneline" data-icon="fa-solid fa-code-branch">
+            <i class="fa-solid fa-code-branch" aria-hidden="true"></i><span>experience/</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="tree__item ft-py" role="tab" id="tab-proj" aria-controls="pane-proj" aria-selected="false" tabindex="-1" data-file="projects/" data-lang="Python" data-verb="ls" data-icon="fa-brands fa-python">
+            <i class="fa-brands fa-python" aria-hidden="true"></i><span>projects/</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="tree__item ft-json" role="tab" id="tab-skills" aria-controls="pane-skills" aria-selected="false" tabindex="-1" data-file="skills.json" data-lang="JSON" data-verb="cat" data-icon="fa-solid fa-code">
+            <i class="fa-solid fa-code" aria-hidden="true"></i><span>skills.json</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="tree__item ft-md" role="tab" id="tab-certs" aria-controls="pane-certs" aria-selected="false" tabindex="-1" data-file="certifications.md" data-lang="Markdown" data-verb="cat" data-icon="fa-brands fa-markdown">
+            <i class="fa-brands fa-markdown" aria-hidden="true"></i><span>certifications.md</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="tree__item ft-sh" role="tab" id="tab-contact" aria-controls="pane-contact" aria-selected="false" tabindex="-1" data-file="contact.sh" data-lang="Shell" data-verb="./" data-icon="fa-solid fa-terminal">
+            <i class="fa-solid fa-terminal" aria-hidden="true"></i><span>contact.sh</span>
+          </button>
+        </li>
+      </ul>
+      <p class="sidebar__foot" aria-hidden="true">6 files · 0 untracked</p>
+    </nav>
+
+    <!-- ── editor column ─────────────────────────────────────── -->
+    <section class="main">
+
+      <!-- open-file tab strip (decorative, mirrors selection) -->
+      <div class="tabbar" aria-hidden="true">
+        <span class="open-tab"><i id="openIcon" class="fa-brands fa-markdown open-tab__icon"></i><span id="openName">about.md</span><span class="open-tab__dot"></span></span>
+        <span class="tabbar__pad"></span>
+        <span class="tabbar__hint">click a file to open it</span>
+      </div>
+
+      <!-- editor panes -->
+      <div class="editor" id="editor">
+
+        <!-- about.md -->
+        <article class="pane is-active" id="pane-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+          <p class="pane-name"><i class="fa-brands fa-markdown" aria-hidden="true"></i> about.md</p>
+          <figure class="img-preview">
+            <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg" alt="Portrait of Fatih Eren Çetin" width="124" height="124" loading="lazy" decoding="async" />
+            <figcaption>FATIH_EREN_CETIN.jpg</figcaption>
+          </figure>
+          <div class="code">
+            <span class="l"><span class="c">&lt;!-- about.md · who is behind the commits --&gt;</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c">#</span> <span class="h1">Fatih Eren Çetin</span></span>
+            <span class="l"><span class="s">`AI Engineer`</span> · LLM &amp; Agentic AI · Ankara, Türkiye</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="quote">&gt; Building production-grade LLM, RAG &amp; multi-agent systems.</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l">Mathematics BSc <span class="dim">(full scholarship, Bilkent University)</span></span>
+            <span class="l">turned AI Engineer. I build production-grade LLM, RAG and</span>
+            <span class="l">multi-agent systems that act over tools, APIs and data —</span>
+            <span class="l">paired with <span class="strong">ISO/IEC 42001</span> (AI Management) &amp;</span>
+            <span class="l"><span class="strong">27001 Lead Auditor</span> governance and reliability rigor.</span>
+            <span class="l">Foundations from instructing <span class="n">100+</span> students in Python.</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c">[//]: # (run ./profile.py in the terminal below ↓)</span></span>
+          </div>
+        </article>
+
+        <!-- experience -->
+        <article class="pane" id="pane-exp" role="tabpanel" aria-labelledby="tab-exp" tabindex="0">
+          <p class="pane-name"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> experience/ — career.gitlog</p>
+          <div class="code">
+            <span class="l"><span class="c">$ git log --oneline --graph career/</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="graph">*</span> <span class="hash">8f3a2c1</span> <span class="ref">(HEAD -&gt; main)</span> <span class="n">2025-12</span> <span class="f">AI Fellow</span> — Yapay Zeka ve Teknoloji Akademisi · remote</span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">top <span class="n">4.7%</span> of <span class="n">31,700</span> applicants · lead dev of a 4-person team</span></span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">Slack microservice — Bolt · async SQLAlchemy/PostgreSQL · Groq Llama 3.3</span></span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">sentence-transformers + UMAP/HDBSCAN clustering</span></span>
+            <span class="l"><span class="graph">|</span></span>
+            <span class="l"><span class="graph">*</span> <span class="hash">1b9d740</span> <span class="n">2024-09</span> <span class="f">AI Engineer</span> — MCV Uluslararası Uygunluk Değerlendirme · Ankara</span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">agentic ISO/IEC 17020 audit assistant — Claude Agent SDK + 2 MCP + hybrid RAG</span></span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">multi-agent import-compliance assistant (FastAPI + LangGraph)</span></span>
+            <span class="l"><span class="graph">|</span> &nbsp; <span class="dim">internal AI training curriculum (LLM · prompt eng · RAG · agents)</span></span>
+            <span class="l"><span class="graph">|</span></span>
+            <span class="l"><span class="graph">*</span> <span class="hash">a4c0e15</span> <span class="n">2024</span> &nbsp; &nbsp;<span class="f">AI Engineering Intern</span> — MCV</span>
+            <span class="l"><span class="graph">|</span></span>
+            <span class="l"><span class="graph">*</span> <span class="hash">6d22b8f</span> <span class="n">2022-24</span> <span class="f">Lab Assistant</span> — Bilkent University · taught <span class="n">100+</span> students Python</span>
+            <span class="l"><span class="graph">|</span></span>
+            <span class="l"><span class="graph">*</span> <span class="hash">0e1f9a3</span> <span class="n">2022</span> &nbsp; &nbsp;<span class="f">Innovation Intern</span> — SA</span>
+            <span class="l"><span class="graph">|</span></span>
+            <span class="l"><span class="graph">*</span> <span class="hash">c0ffee0</span> <span class="ref">(root)</span> <span class="n">2024</span> <span class="f">BSc Mathematics</span> <span class="dim">(Full Scholarship)</span> — Bilkent University</span>
+          </div>
+        </article>
+
+        <!-- projects -->
+        <article class="pane" id="pane-proj" role="tabpanel" aria-labelledby="tab-proj" tabindex="0">
+          <p class="pane-name"><i class="fa-brands fa-python" aria-hidden="true"></i> projects/__init__.py</p>
+          <div class="code">
+            <span class="l"><span class="c"># projects/ — production LLM · RAG · multi-agent systems</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="v">flagship</span> = <span class="f">Project</span>( &nbsp;<span class="c"># 🔒 private repo · citation-backed regulatory docs</span></span>
+            <span class="l">&nbsp; &nbsp; <span class="p">name</span> &nbsp; &nbsp;= <span class="s">"Multi-Agent LLM System — Citation-Backed Documents"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">agents</span> &nbsp;= <span class="n">9</span>, &nbsp;<span class="c"># Claude Sonnet 4.6 + Haiku 4.5, deterministic orchestrator</span></span>
+            <span class="l">&nbsp; &nbsp; <span class="p">rag</span> &nbsp; &nbsp; = <span class="s">"dense · Qdrant + Voyage-3-Large + rerank-2"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">metrics</span> = {<span class="s">"top1"</span>: <span class="s">"43% → 86%"</span>, <span class="s">"halluc"</span>: <span class="s">"0%"</span>, <span class="s">"tests"</span>: <span class="s">"700+"</span>},</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">stack</span> &nbsp; = [<span class="s">"async FastAPI"</span>, <span class="s">"Arq/Redis"</span>, <span class="s">"PostgreSQL"</span>, <span class="s">"HITL"</span>],</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">link</span> &nbsp; &nbsp;= <span class="k">None</span>, &nbsp;<span class="c"># private — see github.com/FatihErenCetin</span></span>
+            <span class="l">)</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="v">rag_system</span> = <span class="f">Project</span>( &nbsp;<span class="c"># ↗ public</span></span>
+            <span class="l">&nbsp; &nbsp; <span class="p">name</span> &nbsp;= <span class="s">"RAG Systems — Chat With Your Documents"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">stack</span> = [<span class="s">"FastAPI"</span>, <span class="s">"Streamlit"</span>, <span class="s">"Gemini"</span>, <span class="s">"ChromaDB"</span>],</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">notes</span> = <span class="s">"hexagonal · per-chunk citations · TR/EN · 64 tests"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">link</span> &nbsp;= <a class="lnk" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer"><span class="s">"github.com/FatihErenCetin/RAG-System"</span></a>,</span>
+            <span class="l">)</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="v">sme_assistant</span> = <span class="f">Project</span>( &nbsp;<span class="c"># team · core developer / lead</span></span>
+            <span class="l">&nbsp; &nbsp; <span class="p">name</span> &nbsp;= <span class="s">"Multi-Agent SME Operations Assistant"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">stack</span> = [<span class="s">"Gemini function calling"</span>, <span class="s">"Telegram"</span>, <span class="s">"Web"</span>],</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">notes</span> = <span class="s">"per-agent permission scoping · graceful degradation"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">link</span> &nbsp;= <span class="k">None</span>,</span>
+            <span class="l">)</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="v">incentive_platform</span> = <span class="f">Project</span>(</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">name</span> &nbsp; &nbsp; = <span class="s">"Investment-Incentive Analytics &amp; Forecasting"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">sources</span> &nbsp;= <span class="n">132</span>, &nbsp;<span class="c"># 55 Excel + 77 Word → 77K-record dataset</span></span>
+            <span class="l">&nbsp; &nbsp; <span class="p">backtest</span> = <span class="s">"5-model · SARIMA 24% MAPE vs 93% seasonal-naive"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">stack</span> &nbsp; &nbsp;= [<span class="s">"Polars"</span>, <span class="s">"SQLite"</span>, <span class="s">"Streamlit"</span>, <span class="s">"Plotly"</span>],</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">link</span> &nbsp; &nbsp; = <span class="k">None</span>,</span>
+            <span class="l">)</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="v">ts_forecasting</span> = <span class="f">Project</span>(</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">name</span> &nbsp; &nbsp;= <span class="s">"Financial Time-Series Forecasting"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">signals</span> = <span class="s">"30+ indicators (RSI · MACD · Bollinger)"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">models</span> &nbsp;= [<span class="s">"LightGBM"</span>, <span class="s">"SARIMA"</span>, <span class="s">"SARIMAX"</span>],</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">market</span> &nbsp;= <span class="s">"Borsa İstanbul"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="p">link</span> &nbsp; &nbsp;= <span class="k">None</span>,</span>
+            <span class="l">)</span>
+          </div>
+        </article>
+
+        <!-- skills -->
+        <article class="pane" id="pane-skills" role="tabpanel" aria-labelledby="tab-skills" tabindex="0">
+          <p class="pane-name"><i class="fa-solid fa-code" aria-hidden="true"></i> skills.json</p>
+          <div class="code">
+            <span class="l">{</span>
+            <span class="l">&nbsp; <span class="p">"llm_agentic"</span>: [</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"Anthropic Claude API"</span>, <span class="s">"Google Gemini"</span>, <span class="s">"OpenAI API"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"MCP"</span>, <span class="s">"LangGraph"</span>, <span class="s">"LangChain"</span>, <span class="s">"multi-agent systems"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"function calling"</span>, <span class="s">"structured outputs"</span>, <span class="s">"prompt engineering"</span></span>
+            <span class="l">&nbsp; ],</span>
+            <span class="l">&nbsp; <span class="p">"rag_retrieval"</span>: [</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"Qdrant"</span>, <span class="s">"ChromaDB"</span>, <span class="s">"pgvector"</span>, <span class="s">"sqlite-vec"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"Voyage embeddings"</span>, <span class="s">"hybrid BM25+dense · RRF"</span>, <span class="s">"reranking"</span></span>
+            <span class="l">&nbsp; ],</span>
+            <span class="l">&nbsp; <span class="p">"backend_data"</span>: [</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"Python"</span>, <span class="s">"FastAPI"</span>, <span class="s">"async Python"</span>, <span class="s">"SQLAlchemy + Alembic"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"PostgreSQL"</span>, <span class="s">"Redis"</span>, <span class="s">"Pydantic"</span>, <span class="s">"Polars"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"scikit-learn"</span>, <span class="s">"LightGBM"</span></span>
+            <span class="l">&nbsp; ],</span>
+            <span class="l">&nbsp; <span class="p">"mlops_governance"</span>: [</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"Docker &amp; docker-compose"</span>, <span class="s">"CI/CD (GitHub Actions)"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"pytest (TDD)"</span>, <span class="s">"Ruff / mypy"</span>,</span>
+            <span class="l">&nbsp; &nbsp; <span class="s">"ISO/IEC 42001"</span>, <span class="s">"ISO/IEC 27001"</span>, <span class="s">"KVKK · GDPR · EU-AI-Act"</span></span>
+            <span class="l">&nbsp; ]</span>
+            <span class="l">}</span>
+          </div>
+        </article>
+
+        <!-- certifications -->
+        <article class="pane" id="pane-certs" role="tabpanel" aria-labelledby="tab-certs" tabindex="0">
+          <p class="pane-name"><i class="fa-brands fa-markdown" aria-hidden="true"></i> certifications.md</p>
+          <div class="code">
+            <span class="l"><span class="c">#</span> <span class="h1">Certifications</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c">##</span> <span class="h2">Lead Auditor</span></span>
+            <span class="l">- <span class="star">★</span> <span class="strong">ISO/IEC 42001 Lead Auditor</span> &nbsp; &nbsp; &nbsp;<span class="dim">— AI Management System</span></span>
+            <span class="l">- <span class="star">★</span> <span class="strong">ISO/IEC 27001:2022 Lead Auditor</span> <span class="dim">— Information Security</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c">##</span> <span class="h2">Miuul</span></span>
+            <span class="l">- Data Scientist Bootcamp</span>
+            <span class="l">- Generative AI &amp; Prompt Engineering</span>
+            <span class="l">- Deep Learning · Time Series · Recommendation Systems</span>
+            <span class="l">- ML Summer Camp</span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c">##</span> <span class="h2">Yapay Zeka ve Teknoloji Akademisi</span></span>
+            <span class="l">- Deep Learning · Web App Development</span>
+          </div>
+        </article>
+
+        <!-- contact -->
+        <article class="pane" id="pane-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0">
+          <p class="pane-name"><i class="fa-solid fa-terminal" aria-hidden="true"></i> contact.sh</p>
+          <div class="code">
+            <span class="l"><span class="c">#!/usr/bin/env bash</span></span>
+            <span class="l"><span class="c"># contact.sh — reach out, I read every message</span></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="f">email</span> &nbsp; &nbsp; &nbsp;<a class="lnk" href="mailto:fatih.e.cetin@gmail.com"><span class="s">"fatih.e.cetin@gmail.com"</span></a></span>
+            <span class="l"><span class="f">linkedin</span> &nbsp; <a class="lnk" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer"><span class="s">"linkedin.com/in/fatih-eren-cetin"</span></a></span>
+            <span class="l"><span class="f">github</span> &nbsp; &nbsp;<a class="lnk" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer"><span class="s">"github.com/FatihErenCetin"</span></a> &nbsp;<span class="c"># primary</span></span>
+            <span class="l"><span class="f">kaggle</span> &nbsp; &nbsp;<a class="lnk" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer"><span class="s">"kaggle.com/fatiherencetin"</span></a></span>
+            <span class="l"><span class="f">hackerrank</span> <a class="lnk" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer"><span class="s">"hackerrank.com/fecetinn"</span></a></span>
+            <span class="l">&nbsp;</span>
+            <span class="l"><span class="c"># older data-science work lives under github.com/fecetinn</span></span>
+          </div>
+          <div class="contact-actions" role="group" aria-label="Contact links">
+            <a class="cbtn" href="mailto:fatih.e.cetin@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+            <a class="cbtn" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+            <a class="cbtn" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="cbtn" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-kaggle" aria-hidden="true"></i> Kaggle</a>
+            <a class="cbtn" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-hackerrank" aria-hidden="true"></i> HackerRank</a>
+          </div>
+        </article>
+
+      </div><!-- /.editor -->
+
+      <!-- ── terminal (hero output) ──────────────────────────── -->
+      <section class="terminal" aria-label="Terminal">
+        <div class="term__bar">
+          <span class="term__tab is-on">TERMINAL</span>
+          <span class="term__tab">OUTPUT</span>
+          <span class="term__tab">PROBLEMS</span>
+          <span class="term__bar-pad"></span>
+          <span class="term__shell">bash — profile.py</span>
+        </div>
+        <div class="term__body" id="termBody">
+          <p class="term__promptline"><span class="usr">fatih@portfolio</span> <span class="pth">~/portfolio</span> <span class="git">(main)</span></p>
+          <p class="term__cmdline">$ <span id="termCmd" data-cmd="./profile.py --summary">./profile.py --summary</span><span class="caret cmd-caret" id="cmdCaret" aria-hidden="true">▮</span></p>
+          <div class="term__out" id="termOut">
+            <p class="out-line summary">&gt; AI Engineer building production-grade LLM, RAG, and multi-agent</p>
+            <p class="out-line summary">&nbsp;&nbsp;systems — most recently a 9-agent Claude pipeline that lifted</p>
+            <p class="out-line summary">&nbsp;&nbsp;top-1 retrieval from <span class="n">43%</span> → <span class="n">86%</span> with <span class="n">0%</span> citation hallucination.</p>
+            <p class="out-line spacer">&nbsp;</p>
+            <p class="out-line metric"><span class="m-k">top1_retrieval</span><span class="m-v"><span class="n">43% → 86%</span></span></p>
+            <p class="out-line metric"><span class="m-k">citation_halluc</span><span class="m-v"><span class="n">0%</span> <span class="dim">· 5 end-to-end scenarios</span></span></p>
+            <p class="out-line metric"><span class="m-k">automated_tests</span><span class="m-v"><span class="n">700+</span> <span class="dim">· Python + Playwright E2E</span></span></p>
+            <p class="out-line metric"><span class="m-k">claude_pipeline</span><span class="m-v"><span class="n">9</span> agents <span class="dim">· Sonnet 4.6 + Haiku 4.5</span></span></p>
+            <p class="out-line metric"><span class="m-k">governance</span><span class="m-v">ISO/IEC <span class="n">42001</span> + <span class="n">27001</span> Lead Auditor</span></p>
+            <p class="out-line metric"><span class="m-k">scholarship</span><span class="m-v">Mathematics BSc <span class="dim">· full ride</span></span></p>
+            <p class="out-line metric"><span class="m-k">ai_fellow</span><span class="m-v">top <span class="n">4.7%</span> of <span class="n">31,700</span></span></p>
+            <p class="out-line spacer">&nbsp;</p>
+            <p class="out-line exit"><span class="ok">[ process exited with code 0 ]</span></p>
+          </div>
+          <p class="term__live"><span class="usr">fatih@portfolio</span> <span class="pth">~/portfolio</span> $ <span id="liveVerb">cat</span> <span id="termFile">about.md</span> <span class="caret" aria-hidden="true">▮</span></p>
+        </div>
+      </section>
+
+    </section><!-- /.main -->
+  </div><!-- /.workbench -->
+
+  <!-- ── status bar ─────────────────────────────────────────── -->
+  <footer class="statusbar" aria-hidden="true">
+    <span class="sb sb--accent"><i class="fa-solid fa-code-branch"></i> main</span>
+    <span class="sb"><i class="fa-solid fa-circle-check"></i> 0</span>
+    <span class="sb"><i class="fa-solid fa-triangle-exclamation"></i> 0</span>
+    <span class="sb sb--spacer"></span>
+    <span class="sb" id="sb-file">about.md</span>
+    <span class="sb">UTF-8</span>
+    <span class="sb">LF</span>
+    <span class="sb" id="sb-lang">Markdown</span>
+    <span class="sb">Ankara · TR</span>
+  </footer>
+
+</main>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

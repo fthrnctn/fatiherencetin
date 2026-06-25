@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+<meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. A computational-notebook portfolio." />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23F37726'/%3E%3Cpath d='M9 7l7 5-7 5z' fill='white'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#nb-main">Skip to notebook content</a>
+
+<!-- ================= TOOLBAR / KERNEL CHROME ================= -->
+<header class="nb-bar">
+  <div class="nb-bar__inner">
+    <div class="nb-bar__brand">
+      <span class="nb-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><rect width="24" height="24" rx="6" fill="#F37726"/><path d="M9 7l7 5-7 5z" fill="#fff"/></svg>
+      </span>
+      <span class="nb-file">
+        <span class="nb-file__name">fatih_eren_cetin.ipynb</span>
+        <span class="nb-file__meta" id="saveState">autosaved</span>
+      </span>
+    </div>
+
+    <nav class="nb-menu" aria-hidden="true">
+      <span>File</span><span>Edit</span><span>View</span><span>Run</span><span>Kernel</span><span>Help</span>
+    </nav>
+
+    <div class="nb-bar__right">
+      <div class="nb-tools" role="toolbar" aria-label="Notebook actions">
+        <button class="nb-ic" type="button" disabled aria-hidden="true" title="Save"><i class="fa-regular fa-floppy-disk"></i></button>
+        <button class="nb-ic" type="button" disabled aria-hidden="true" title="Insert cell"><i class="fa-solid fa-plus"></i></button>
+        <button class="nb-ic" type="button" disabled aria-hidden="true" title="Cut"><i class="fa-solid fa-scissors"></i></button>
+        <button class="nb-ic" type="button" disabled aria-hidden="true" title="Copy"><i class="fa-regular fa-copy"></i></button>
+        <span class="nb-sep" aria-hidden="true"></span>
+        <button class="nb-ic nb-ic--run" id="btnRun" type="button" title="Run all cells" aria-label="Run all cells"><i class="fa-solid fa-play"></i></button>
+        <button class="nb-ic" id="btnStop" type="button" title="Interrupt — reveal all outputs" aria-label="Interrupt the kernel and reveal all outputs"><i class="fa-solid fa-stop"></i></button>
+        <button class="nb-ic" id="btnRestart" type="button" title="Restart &amp; run all" aria-label="Restart kernel and run all cells"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <span class="nb-celltype" aria-hidden="true">Code <i class="fa-solid fa-caret-down"></i></span>
+      </div>
+      <button class="nb-runall" id="btnRunAll" type="button">
+        <i class="fa-solid fa-forward-step" aria-hidden="true"></i> Run&nbsp;all
+      </button>
+      <div class="nb-kernel" id="kernel" data-state="idle">
+        <span class="nb-kernel__name">Python 3</span>
+        <span class="nb-kernel__dot" aria-hidden="true"></span>
+        <span class="nb-kernel__state" id="kernelState">idle</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="notebook" id="nb-main">
+
+  <!-- ============ MARKDOWN: TITLE CELL ============ -->
+  <section class="cell cell--md cell--title">
+    <div class="cell__io cell__io--md">
+      <div class="cell__prompt cell__prompt--md" aria-hidden="true"></div>
+      <div class="cell__markdown md md--title">
+        <div class="title-grid">
+          <div class="title-grid__text">
+            <h1 class="md-h1">
+              <span class="md-hash" aria-hidden="true">#</span> Fatih Eren Çetin
+              <a class="anchor" href="#nb-main" aria-label="Permalink to title">¶</a>
+            </h1>
+            <p class="md-sub"><strong>AI Engineer</strong> · LLM &amp; Agentic AI · <span class="md-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ankara, Türkiye</span></p>
+            <blockquote class="md-quote">Building production-grade LLM, RAG &amp; multi-agent systems that act over tools, APIs and data.</blockquote>
+          </div>
+          <figure class="title-grid__photo">
+            <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg" width="300" height="400"
+                 alt="Portrait of Fatih Eren Çetin" loading="eager" decoding="async" />
+            <figcaption class="title-grid__cap"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Trusted notebook</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [1]: summary() ============ -->
+  <section class="cell cell--code" data-exec="1">
+    <h2 class="sr-only">Profile summary</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">1</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-k">import</span> <span class="t-mod">fatih</span> <span class="t-k">as</span> <span class="t-mod">fec</span>
+<span class="t-v">fec</span>.<span class="t-f">summary</span>()</code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">1</span>]:</div>
+        <div class="cell__output">
+          <pre class="stream">AI Engineer building production-grade LLM, RAG, and multi-agent systems —
+most recently a 9-agent Claude pipeline that lifted top-1 retrieval from
+43% to 86% with 0% citation hallucination.</pre>
+
+          <div class="df-wrap" role="region" aria-label="Summary as a data frame">
+            <table class="df">
+              <thead>
+                <tr><th class="df__corner" scope="col"></th><th class="df__col" scope="col">value</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row" class="df__idx">role</th><td>AI Engineer · LLM &amp; Agentic AI</td></tr>
+                <tr><th scope="row" class="df__idx">location</th><td>Ankara, Türkiye</td></tr>
+                <tr><th scope="row" class="df__idx">focus</th><td>production LLM · RAG · multi-agent</td></tr>
+                <tr><th scope="row" class="df__idx">flagship_pipeline</th><td>9-agent Claude (Sonnet&nbsp;4.6&nbsp;+&nbsp;Haiku&nbsp;4.5)</td></tr>
+                <tr class="df__hi"><th scope="row" class="df__idx">top1_retrieval</th><td>
+                  <span class="spark" style="--from:43;--to:86;">
+                    <span class="spark__track" aria-hidden="true"><span class="spark__base"></span><span class="spark__gain"></span></span>
+                    <span class="spark__nums"><b>43%</b> <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i> <b>86%</b></span>
+                  </span>
+                </td></tr>
+                <tr><th scope="row" class="df__idx">citation_hallucination</th><td><span class="num">0%</span> <span class="muted">(5 end-to-end scenarios)</span></td></tr>
+                <tr><th scope="row" class="df__idx">automated_tests</th><td><span class="num">700+</span> <span class="muted">(pytest + Playwright)</span></td></tr>
+                <tr><th scope="row" class="df__idx">governance</th><td>ISO/IEC 42001 &amp; 27001 Lead Auditor</td></tr>
+                <tr><th scope="row" class="df__idx">education</th><td>Mathematics BSc — full scholarship</td></tr>
+                <tr><th scope="row" class="df__idx">fellowship</th><td>AI fellow — top 4.7% of 31,700</td></tr>
+              </tbody>
+            </table>
+            <div class="df__meta">10 rows × 1 columns</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKDOWN: ABOUT ============ -->
+  <section class="cell cell--md">
+    <div class="cell__io cell__io--md">
+      <div class="cell__prompt cell__prompt--md" aria-hidden="true"></div>
+      <div class="cell__markdown md">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> About<a class="anchor" href="#nb-main" aria-label="Permalink to About">¶</a></h2>
+        <p>Mathematics BSc (full scholarship, <strong>Bilkent University</strong>) turned AI Engineer. I build
+        production-grade LLM, RAG and multi-agent systems that act over tools, APIs and data — paired with
+        <strong>ISO/IEC 42001</strong> (AI Management) &amp; <strong>27001</strong> Lead&nbsp;Auditor governance and
+        reliability rigor. Foundations from instructing <strong>100+ students</strong> in Python.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [2]: experience ============ -->
+  <section class="cell cell--code" data-exec="2">
+    <h2 class="sr-only">Work experience</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">2</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-v">fec</span>.<span class="t-at">experience</span>  <span class="t-c"># career — most recent first</span></code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">2</span>]:</div>
+        <div class="cell__output">
+          <ol class="tl" aria-label="Work experience timeline">
+            <li class="tl__item">
+              <span class="tl__node" aria-hidden="true"></span>
+              <div class="tl__card">
+                <div class="tl__head"><span class="tl__role">AI Engineer</span><span class="tl__dates">09/2024 – Present</span></div>
+                <div class="tl__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</div>
+                <ul class="tl__bullets">
+                  <li>Agentic ISO/IEC 17020 conformity-audit assistant — Claude Agent SDK + 2 MCP servers + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF); on-device, KVKK / EU-AI-Act compliant.</li>
+                  <li>Full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph).</li>
+                  <li>Designed &amp; delivered an internal AI training curriculum (LLM, prompt eng., RAG, agents).</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tl__item">
+              <span class="tl__node" aria-hidden="true"></span>
+              <div class="tl__card">
+                <div class="tl__head"><span class="tl__role">AI Fellow</span><span class="tl__dates">12/2025 – Present</span></div>
+                <div class="tl__org">Yapay Zeka ve Teknoloji Akademisi · Remote</div>
+                <ul class="tl__bullets">
+                  <li>Selected in the top <strong>4.7% of 31,700</strong> applicants; one of 5 fellows building community tooling.</li>
+                  <li>Lead developer of a 4-person team — Slack microservice platform: Slack Bolt, async SQLAlchemy/PostgreSQL, Groq Llama 3.3 summarization, sentence-transformers + UMAP/HDBSCAN clustering.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tl__item tl__item--past">
+              <span class="tl__node" aria-hidden="true"></span>
+              <div class="tl__card">
+                <div class="tl__head"><span class="tl__role">Earlier</span><span class="tl__dates">2022 – 2024</span></div>
+                <div class="tl__org">Foundations</div>
+                <ul class="tl__bullets">
+                  <li>MCV Intern (2024); Lab Assistant, Bilkent University (2022–2024, taught Python to 100+ students); SA Innovation Intern (2022).</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKDOWN: EDUCATION ============ -->
+  <section class="cell cell--md">
+    <div class="cell__io cell__io--md">
+      <div class="cell__prompt cell__prompt--md" aria-hidden="true"></div>
+      <div class="cell__markdown md">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Education<a class="anchor" href="#nb-main" aria-label="Permalink to Education">¶</a></h2>
+        <p class="md-edu"><strong>BSc Mathematics</strong> <span class="md-tag">Full Scholarship</span> — Bilkent University, 2024 · English-medium.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [3]: projects ============ -->
+  <section class="cell cell--code" data-exec="3">
+    <h2 class="sr-only">Projects</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">3</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-v">fec</span>.<span class="t-at">projects</span>.<span class="t-f">sort_values</span>(<span class="t-s">"impact"</span>, <span class="t-kw2">ascending</span><span class="t-o">=</span><span class="t-b">False</span>)</code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">3</span>]:</div>
+        <div class="cell__output">
+          <div class="proj">
+
+            <article class="proj__card proj__card--flagship">
+              <div class="proj__top">
+                <h3 class="proj__title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+                <span class="badge badge--flagship">flagship</span>
+              </div>
+              <p class="proj__desc">9 specialized Claude agents (Sonnet&nbsp;4.6 + Haiku&nbsp;4.5) over a deterministic Python orchestrator; dense RAG (Qdrant + Voyage-3-Large + rerank-2). 43→86% top-1, 0% hallucination, 700+ tests. Async FastAPI + Arq/Redis + PostgreSQL, human-in-the-loop review.</p>
+              <ul class="chips">
+                <li class="chip">Claude</li><li class="chip">Multi-Agent</li><li class="chip">RAG</li><li class="chip">FastAPI</li><li class="chip">Qdrant</li>
+              </ul>
+              <div class="proj__foot">
+                <span class="repo-state repo-state--private"><i class="fa-solid fa-lock" aria-hidden="true"></i> private repo</span>
+                <a class="repo-link" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">GitHub profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="proj__card">
+              <div class="proj__top">
+                <h3 class="proj__title">RAG Systems — Chat With Your Documents</h3>
+                <span class="badge badge--public">public</span>
+              </div>
+              <p class="proj__desc">FastAPI + Streamlit + Google Gemini + ChromaDB; hexagonal (Ports &amp; Adapters) architecture, per-chunk source citations, TR/EN cross-lingual, 64-test suite.</p>
+              <ul class="chips">
+                <li class="chip">FastAPI</li><li class="chip">Streamlit</li><li class="chip">Gemini</li><li class="chip">ChromaDB</li>
+              </ul>
+              <div class="proj__foot">
+                <a class="repo-link repo-link--primary" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Open repo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="proj__card">
+              <div class="proj__top">
+                <h3 class="proj__title">Multi-Agent SME Operations Assistant</h3>
+                <span class="badge badge--team">team · lead</span>
+              </div>
+              <p class="proj__desc">Google Gemini function calling, per-agent permission scoping, graceful degradation (API-key rotation + deterministic fallbacks). Telegram + Web surfaces.</p>
+              <ul class="chips">
+                <li class="chip">Gemini</li><li class="chip">Function Calling</li><li class="chip">Multi-Agent</li><li class="chip">Telegram</li>
+              </ul>
+              <div class="proj__foot">
+                <span class="repo-state"><i class="fa-solid fa-users" aria-hidden="true"></i> team project — no public repo</span>
+              </div>
+            </article>
+
+            <article class="proj__card">
+              <div class="proj__top">
+                <h3 class="proj__title">Investment-Incentive Analytics &amp; Forecasting Platform</h3>
+              </div>
+              <p class="proj__desc">132 official sources (55 Excel + 77 Word), 77K-record dataset (Parquet + SQLite); 5-model out-of-sample backtest — SARIMA 24% MAPE vs 93% seasonal-naive; Streamlit/Plotly.</p>
+              <ul class="chips">
+                <li class="chip">SARIMA</li><li class="chip">Forecasting</li><li class="chip">Polars</li><li class="chip">Streamlit</li>
+              </ul>
+              <div class="proj__foot">
+                <span class="repo-state"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> internal — no public repo</span>
+              </div>
+            </article>
+
+            <article class="proj__card">
+              <div class="proj__top">
+                <h3 class="proj__title">Financial Time-Series Forecasting</h3>
+              </div>
+              <p class="proj__desc">30+ technical indicators (RSI, MACD, Bollinger…), LightGBM + SARIMA/SARIMAX, Borsa İstanbul.</p>
+              <ul class="chips">
+                <li class="chip">LightGBM</li><li class="chip">SARIMAX</li><li class="chip">Time-Series</li>
+              </ul>
+              <div class="proj__foot">
+                <span class="repo-state"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> internal — no public repo</span>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="df-wrap" role="region" aria-label="Project benchmarks">
+            <table class="df df--bench">
+              <thead>
+                <tr><th class="df__corner" scope="col"></th><th class="df__col" scope="col">metric</th><th class="df__col df__col--num" scope="col">result</th><th class="df__col df__col--num" scope="col">baseline</th></tr>
+              </thead>
+              <tbody>
+                <tr class="df__hi"><th scope="row" class="df__idx">flagship</th><td>top-1 retrieval</td><td class="num"><span class="up">86%</span></td><td class="num muted">43%</td></tr>
+                <tr><th scope="row" class="df__idx">flagship</th><td>citation hallucination</td><td class="num">0%</td><td class="num muted">—</td></tr>
+                <tr><th scope="row" class="df__idx">flagship</th><td>automated tests</td><td class="num">700+</td><td class="num muted">—</td></tr>
+                <tr class="df__hi"><th scope="row" class="df__idx">investment</th><td>SARIMA MAPE <span class="muted">(lower = better)</span></td><td class="num"><span class="up">24%</span></td><td class="num muted">93%</td></tr>
+                <tr><th scope="row" class="df__idx">rag-system</th><td>test suite</td><td class="num">64</td><td class="num muted">—</td></tr>
+              </tbody>
+            </table>
+            <div class="df__meta">5 rows × 4 columns</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [4]: skills ============ -->
+  <section class="cell cell--code" data-exec="4">
+    <h2 class="sr-only">Skills</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">4</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-v">fec</span>.<span class="t-at">skills</span></code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">4</span>]:</div>
+        <div class="cell__output">
+          <div class="pydict" role="region" aria-label="Skills grouped as a dict">
+            <span class="pydict__brace">{</span>
+            <div class="pydict__group">
+              <span class="pydict__key">'llm_agentic'</span><span class="pydict__colon">:</span>
+              <ul class="chips chips--out">
+                <li class="chip">Anthropic Claude API</li><li class="chip">Google Gemini</li><li class="chip">OpenAI API</li><li class="chip">MCP</li><li class="chip">LangGraph</li><li class="chip">LangChain</li><li class="chip">multi-agent systems</li><li class="chip">function calling</li><li class="chip">structured outputs</li><li class="chip">prompt engineering</li>
+              </ul>
+            </div>
+            <div class="pydict__group">
+              <span class="pydict__key">'rag_retrieval'</span><span class="pydict__colon">:</span>
+              <ul class="chips chips--out">
+                <li class="chip">Qdrant</li><li class="chip">ChromaDB</li><li class="chip">pgvector</li><li class="chip">sqlite-vec</li><li class="chip">Voyage embeddings</li><li class="chip">hybrid BM25 + dense + RRF</li><li class="chip">reranking</li>
+              </ul>
+            </div>
+            <div class="pydict__group">
+              <span class="pydict__key">'backend_data'</span><span class="pydict__colon">:</span>
+              <ul class="chips chips--out">
+                <li class="chip">Python</li><li class="chip">FastAPI</li><li class="chip">async Python</li><li class="chip">SQLAlchemy + Alembic</li><li class="chip">PostgreSQL</li><li class="chip">Redis</li><li class="chip">Pydantic</li><li class="chip">Polars</li><li class="chip">scikit-learn</li><li class="chip">LightGBM</li>
+              </ul>
+            </div>
+            <div class="pydict__group">
+              <span class="pydict__key">'mlops_governance'</span><span class="pydict__colon">:</span>
+              <ul class="chips chips--out">
+                <li class="chip">Docker &amp; docker-compose</li><li class="chip">CI/CD (GitHub Actions)</li><li class="chip">pytest (TDD)</li><li class="chip">Ruff / mypy</li><li class="chip">ISO/IEC 42001</li><li class="chip">ISO/IEC 27001</li><li class="chip">KVKK / GDPR / EU-AI-Act</li>
+              </ul>
+            </div>
+            <span class="pydict__brace">}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [5]: certifications ============ -->
+  <section class="cell cell--code" data-exec="5">
+    <h2 class="sr-only">Certifications</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">5</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-v">fec</span>.<span class="t-at">certifications</span></code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">5</span>]:</div>
+        <div class="cell__output">
+          <ul class="certs" role="region" aria-label="Certifications">
+            <li class="cert cert--star">
+              <span class="cert__star" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+              <span class="cert__name">ISO/IEC 42001 Lead Auditor</span>
+              <span class="cert__domain">AI Management System</span>
+            </li>
+            <li class="cert cert--star">
+              <span class="cert__star" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+              <span class="cert__name">ISO/IEC 27001:2022 Lead Auditor</span>
+              <span class="cert__domain">Information Security</span>
+            </li>
+            <li class="cert">
+              <span class="cert__name">Miuul</span>
+              <span class="cert__domain">Data Scientist Bootcamp · Generative AI &amp; Prompt Engineering · Deep Learning · Time Series · Recommendation Systems · ML Summer Camp</span>
+            </li>
+            <li class="cert">
+              <span class="cert__name">Yapay Zeka ve Teknoloji Akademisi</span>
+              <span class="cert__domain">Deep Learning · Web App Development</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CODE [6]: contact() ============ -->
+  <section class="cell cell--code" data-exec="6">
+    <h2 class="sr-only">Contact</h2>
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[<span class="exec">6</span>]:</div>
+      <div class="cell__source">
+        <pre class="src"><code><span class="t-v">fec</span>.<span class="t-f">contact</span>()</code></pre>
+      </div>
+    </div>
+    <div class="cell__out">
+      <div class="cell__io cell__io--out">
+        <div class="cell__prompt cell__prompt--out">Out[<span class="exec">6</span>]:</div>
+        <div class="cell__output">
+          <div class="contact" role="region" aria-label="Contact links">
+            <a class="link-btn" href="mailto:fatih.e.cetin@gmail.com">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span class="link-btn__txt"><span class="link-btn__k">email</span><span class="link-btn__v">fatih.e.cetin@gmail.com</span></span>
+            </a>
+            <a class="link-btn" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              <span class="link-btn__txt"><span class="link-btn__k">linkedin</span><span class="link-btn__v">in/fatih-eren-cetin</span></span>
+            </a>
+            <a class="link-btn" href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="link-btn__txt"><span class="link-btn__k">github</span><span class="link-btn__v">FatihErenCetin</span></span>
+            </a>
+            <a class="link-btn" href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-kaggle" aria-hidden="true"></i>
+              <span class="link-btn__txt"><span class="link-btn__k">kaggle</span><span class="link-btn__v">fatiherencetin</span></span>
+            </a>
+            <a class="link-btn" href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-hackerrank" aria-hidden="true"></i>
+              <span class="link-btn__txt"><span class="link-btn__k">hackerrank</span><span class="link-btn__v">fecetinn</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAILING EMPTY CELL ============ -->
+  <section class="cell cell--code cell--empty" aria-hidden="true">
+    <div class="cell__io cell__io--in">
+      <div class="cell__prompt cell__prompt--in">In&#8202;[ ]:</div>
+      <div class="cell__source cell__source--empty"><pre class="src"><code> </code></pre></div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <p>Rendered as a Jupyter-style notebook · hand-built in HTML/CSS, no framework · content verified against CV.</p>
+    <p class="colophon__k">Kernel: Python 3 · © 2026 Fatih Eren Çetin</p>
+  </footer>
+
+</main>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

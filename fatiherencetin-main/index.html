@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fatih Eren Çetin - AI Engineer & Data Scientist Portfolio">
+    <meta name="keywords" content="AI, Machine Learning, Data Science, Portfolio">
+    <meta name="author" content="Fatih Eren Çetin">
+
+    <title>Fatih Eren Çetin | AI Engineer & Data Scientist</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">FEC</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Fatih Eren Çetin</h1>
+            <p class="hero-subtitle">AI Engineer & Data Scientist</p>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section" id="projects">
+        <div class="bento-grid">
+
+            <!-- About Me Card - Large 2x2 -->
+            <div class="bento-card card-about" data-card="about" data-expandable="true">
+                <div class="card-about-content">
+                    <div class="about-top-row">
+                        <div class="about-photo">
+                            <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg" alt="Fatih Eren Çetin">
+                        </div>
+                        <h3 class="card-title">Hi, I'm Fatih! 👋</h3>
+                    </div>
+                    <p class="card-preview">AI Engineer specializing in NLP and ML solutions. Mathematics graduate
+                        from Bilkent University. Building intelligent systems and data pipelines.</p>
+                </div>
+                <div class="card-expand-hint">
+                    <i class="fas fa-expand-alt"></i>
+                </div>
+            </div>
+
+            <!-- AI/ML Projects Card - Medium 2x1 -->
+            <div class="bento-card card-ai" data-card="ai" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="card-title">AI/ML Projects</h3>
+                </div>
+                <ul class="card-project-list inline-list">
+                    <li><a href="https://github.com/fecetinn/neural-network" target="_blank" class="project-link"><i
+                                class="fas fa-brain"></i> Neural Network</a></li>
+                    <li><a href="https://github.com/fecetinn/nlp-chatbot" target="_blank" class="project-link"><i
+                                class="fas fa-comments"></i> NLP Chatbot</a></li>
+                    <li><a href="https://github.com/fecetinn/cv-model" target="_blank" class="project-link"><i
+                                class="fas fa-eye"></i> CV Model</a></li>
+                </ul>
+            </div>
+
+            <!-- Data Science Card - Medium 1x2 -->
+            <div class="bento-card card-data" data-card="data" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="card-title">Data Science</h3>
+                </div>
+                <div class="blog-scroll-container data-scroll-full">
+                    <a href="https://github.com/fecetinn/RFM-CLTV-Analysis-Online-Retail" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-users"></i>
+                        <span>RFM-CLTV Analysis</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Product-Rating-Review-Sorting-Analysis" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-star"></i>
+                        <span>Rating & Review Sorting</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/A-B-Testing-Bidding-Strategies-Analysis" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-flask"></i>
+                        <span>A/B Testing Analysis</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/CLTV-Prediction-with-BN-BGD-and-Gamma-Gamma" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>CLTV Prediction</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Customer_Segmentation_with_RFM" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Customer Segmentation</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/rule-based-segmentation-customer-value" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Rule-Based Segmentation</span>
+                    </a>
+                    <a href="https://github.com/fecetinn/Telcom_Customer_Churn" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fas fa-user-slash"></i>
+                        <span>Telco Customer Churn</span>
+                    </a>
+                    <a href="https://www.kaggle.com/code/fatiherencetin/telco-customer-churn" target="_blank"
+                        class="blog-latest-link">
+                        <i class="fab fa-kaggle"></i>
+                        <span>Kaggle: Churn Analysis</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Card - Medium 1x2 with vertical scroll -->
+            <div class="bento-card card-blog" data-card="blog" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h3 class="card-title">Blog</h3>
+                </div>
+                <div class="blog-scroll-container data-scroll-full">
+                    <a href="https://medium.com/@username/ml-guide" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>ML'e Giriş Rehberi</span>
+                    </a>
+                    <a href="https://medium.com/@username/python-tips" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-code"></i>
+                        <span>Python İpuçları</span>
+                    </a>
+                    <a href="https://medium.com/@username/data-viz" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Veri Görselleştirme</span>
+                    </a>
+                    <a href="https://medium.com/@username/deep-learning" target="_blank" class="blog-latest-link">
+                        <i class="fas fa-brain"></i>
+                        <span>Derin Öğrenme 101</span>
+                    </a>
+                    <a href="https://medium.com/@username/docker-basics" target="_blank" class="blog-latest-link">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker Temelleri</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills Card - Medium 2x1 -->
+            <div class="bento-card card-skills" data-card="skills" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="card-title">Skills</h3>
+                </div>
+                <div class="scroll-container" data-scroll="skills">
+                    <button class="scroll-btn scroll-left" data-target="skills"><i
+                            class="fas fa-chevron-left"></i></button>
+                    <div class="tech-icons scroll-content" id="skills-scroll">
+                        <a href="https://docs.python.org/" target="_blank" class="tech-icon clickable-icon"
+                            title="Python">
+                            <i class="fab fa-python"></i>
+                            <span class="icon-label">Python</span>
+                        </a>
+                        <a href="https://www.tensorflow.org/" target="_blank" class="tech-icon clickable-icon"
+                            title="TensorFlow">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path
+                                    d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.168 3.564.015-5.31zm21.416 5.393l-10.248 5.85v-5.85l6.168-3.564v5.85l4.08-2.286z" />
+                            </svg>
+                            <span class="icon-label">TensorFlow</span>
+                        </a>
+                        <a href="https://pytorch.org/docs/" target="_blank" class="tech-icon clickable-icon"
+                            title="PyTorch">
+                            <i class="fas fa-fire"></i>
+                            <span class="icon-label">PyTorch</span>
+                        </a>
+                        <a href="https://dev.mysql.com/doc/" target="_blank" class="tech-icon clickable-icon"
+                            title="SQL">
+                            <i class="fas fa-database"></i>
+                            <span class="icon-label">SQL</span>
+                        </a>
+                        <a href="https://aws.amazon.com/documentation/" target="_blank" class="tech-icon clickable-icon"
+                            title="AWS">
+                            <i class="fab fa-aws"></i>
+                            <span class="icon-label">AWS</span>
+                        </a>
+                        <a href="https://docs.docker.com/" target="_blank" class="tech-icon clickable-icon"
+                            title="Docker">
+                            <i class="fab fa-docker"></i>
+                            <span class="icon-label">Docker</span>
+                        </a>
+                        <a href="https://git-scm.com/doc" target="_blank" class="tech-icon clickable-icon" title="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span class="icon-label">Git</span>
+                        </a>
+                        <a href="https://reactjs.org/docs" target="_blank" class="tech-icon clickable-icon"
+                            title="React">
+                            <i class="fab fa-react"></i>
+                            <span class="icon-label">React</span>
+                        </a>
+                        <a href="https://nodejs.org/docs" target="_blank" class="tech-icon clickable-icon"
+                            title="Node.js">
+                            <i class="fab fa-node-js"></i>
+                            <span class="icon-label">Node.js</span>
+                        </a>
+                        <a href="https://www.linux.org/" target="_blank" class="tech-icon clickable-icon" title="Linux">
+                            <i class="fab fa-linux"></i>
+                            <span class="icon-label">Linux</span>
+                        </a>
+                    </div>
+                    <button class="scroll-btn scroll-right" data-target="skills"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- DIY Projects Card - Small 1x1 -->
+            <div class="bento-card card-diy" data-card="diy" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="card-title">DIY Projects</h3>
+                </div>
+                <div class="diy-icons-row">
+                    <a href="https://github.com/username/3d-printing" target="_blank" class="diy-icon-link"><i
+                            class="fas fa-cube"></i></a>
+                    <a href="https://github.com/username/rc-car" target="_blank" class="diy-icon-link"><i
+                            class="fas fa-car"></i></a>
+                    <a href="https://github.com/username/electronics" target="_blank" class="diy-icon-link"><i
+                            class="fas fa-microchip"></i></a>
+                </div>
+            </div>
+
+            <!-- GitHub Card - Small 1x1 -->
+            <div class="bento-card card-github" data-card="github" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fab fa-github"></i></div>
+                    <h3 class="card-title">GitHub</h3>
+                </div>
+                <a href="https://github.com/fecetinn/RFM-CLTV-Analysis-Online-Retail" target="_blank"
+                    class="github-latest-project">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="project-info">
+                        <span class="project-name">RFM-CLTV-Analysis</span>
+                        <span class="project-desc">Customer Analytics Project</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Spotify Card - Small 1x1 -->
+            <div class="bento-card card-spotify" data-card="spotify" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fab fa-spotify"></i></div>
+                    <h3 class="card-title">Spotify</h3>
+                </div>
+                <a href="https://open.spotify.com/playlist/37i9dQZF1DWXe9gFZP0gtP" target="_blank"
+                    class="spotify-preview inline-preview clickable-icon">
+                    <div class="playlist-cover">
+                        <i class="fas fa-headphones" style="font-size: 24px; color: var(--accent-primary);"></i>
+                    </div>
+                    <span class="playlist-name">Stress Relief 🎵</span>
+                </a>
+            </div>
+
+            <!-- Social Links Card - Small 1x1 -->
+            <div class="bento-card card-social" data-card="social" data-expandable="true">
+                <div class="card-header-row">
+                    <div class="card-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3 class="card-title">Social</h3>
+                </div>
+                <div class="social-icons-row">
+                    <a href="https://www.linkedin.com/in/fatih-eren-cetin" target="_blank" class="social-icon-link"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/fecetinn" target="_blank" class="social-icon-link"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/fatiherencetin" target="_blank" class="social-icon-link"><i
+                            class="fab fa-kaggle"></i></a>
+                    <a href="https://www.hackerrank.com/profile/fecetinn" target="_blank" class="social-icon-link"><i
+                            class="fab fa-hackerrank"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Card - Small 1x1 (No Expand) -->
+            <a href="mailto:fatih.e.cetin@gmail.com" class="bento-card card-contact" data-expandable="false">
+                <div class="card-icon contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="card-title">Contact</h3>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <!-- Empty for now -->
+        </div>
+    </footer>
+
+    <!-- Modal Overlay for Expanded Cards -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

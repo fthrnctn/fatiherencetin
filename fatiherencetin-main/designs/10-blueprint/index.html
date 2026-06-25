@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-sheet="blue">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatih Eren Çetin — AI Engineer · LLM &amp; Agentic AI</title>
+  <meta name="description"
+    content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Most recently a 9-agent Claude pipeline that lifted top-1 retrieval from 43% to 86% with 0% citation hallucination." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B2A4A'/%3E%3Cg fill='none' stroke='%239FD8FF' stroke-width='1.4'%3E%3Ccircle cx='16' cy='16' r='11'/%3E%3Cpath d='M16 3v26M3 16h26' stroke-width='0.7'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3' fill='%23F2C14E'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#architecture">Skip to content</a>
+
+  <!-- ============================ TOP BORDER / TITLE STRIP ============================ -->
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <div class="firm">
+        <span class="firm__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9.2" />
+            <path d="M12 2.8V21.2 M2.8 12H21.2 M5.4 5.4l13.2 13.2 M18.6 5.4 5.4 18.6" stroke-width="0.7" />
+            <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
+        <span class="firm__name">F.&nbsp;E.&nbsp;ÇETİN</span>
+        <span class="firm__tag">DRAWING&nbsp;OFFICE</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#architecture">01·System</a>
+        <a href="#about">02·Notes</a>
+        <a href="#experience">03·Timeline</a>
+        <a href="#projects">04·Parts</a>
+        <a href="#skills">05·Legend</a>
+        <a href="#certifications">06·Stamps</a>
+        <a href="#contact">07·Block</a>
+      </nav>
+
+      <button id="sheet-toggle" class="sheet-toggle" type="button" aria-pressed="false"
+        title="Invert the sheet (blueprint ⇄ whiteprint)">
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        <span class="sheet-toggle__label">INVERT&nbsp;SHEET</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="sheet">
+    <!-- corner registration marks -->
+    <span class="reg reg--tl" aria-hidden="true"></span>
+    <span class="reg reg--tr" aria-hidden="true"></span>
+    <span class="reg reg--bl" aria-hidden="true"></span>
+    <span class="reg reg--br" aria-hidden="true"></span>
+
+    <!-- ============================ HERO / SHEET 01 ============================ -->
+    <section id="architecture" class="hero" aria-labelledby="hero-title">
+      <div class="hero__head">
+        <p class="eyebrow">
+          <span class="eyebrow__dot" aria-hidden="true"></span>
+          PORTFOLIO · SHEET 01 / 07 · ISSUE 2026-06 · NOT FOR CONSTRUCTION
+        </p>
+        <p class="hero__name">FATİH EREN ÇETİN</p>
+        <h1 id="hero-title" class="hero__title">
+          AI Engineer<span class="hero__title-sep">—</span><span class="hero__title-sub">LLM &amp; Agentic AI</span>
+        </h1>
+        <p class="hero__lede">
+          I design and ship production-grade <strong>LLM</strong>, <strong>RAG</strong> and
+          <strong>multi-agent</strong> systems that act over tools, APIs and data. Most recently a
+          <strong>9-agent Claude pipeline</strong> that lifted top-1 retrieval from
+          <span class="hl">43% → 86%</span> with <span class="hl">0% citation hallucination</span>.
+        </p>
+        <ul class="hero__meta" aria-label="Operator details">
+          <li><span class="k">OPERATOR</span><span class="v">Fatih Eren Çetin</span></li>
+          <li><span class="k">DISCIPLINE</span><span class="v">AI / LLM Engineering</span></li>
+          <li><span class="k">DATUM</span><span class="v">Ankara, Türkiye</span></li>
+          <li><span class="k">STATUS</span><span class="v">Open to work</span></li>
+        </ul>
+      </div>
+
+      <!-- ===== SIGNATURE: EXPLODED-VIEW SCHEMATIC ===== -->
+      <figure class="schematic-figure">
+        <figcaption class="schematic-cap">
+          <span class="schematic-cap__id">FIG. 1</span>
+          <span class="schematic-cap__txt">FLAGSHIP — CITATION-BACKED REGULATORY DOCUMENT PIPELINE · EXPLODED VIEW</span>
+          <span class="schematic-cap__scroll" aria-hidden="true"><i class="fa-solid fa-arrows-left-right"></i> drag to pan</span>
+        </figcaption>
+
+        <div class="schematic-wrap">
+          <svg class="schematic" viewBox="0 0 1450 645" role="img"
+            aria-label="Exploded schematic of the flagship system: a query enters a deterministic Python orchestrator, which dispatches a pool of nine Claude agents (Sonnet 4.6 and Haiku 4.5). The agents call a dense-RAG retriever built on Qdrant, Voyage-3-Large embeddings and rerank-2, which lifted top-1 retrieval from 43% to 86%. Results pass a human-in-the-loop review gate with 0% citation hallucination before producing a cited document. The system is covered by 700-plus automated tests.">
+            <defs>
+              <marker id="arw" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7"
+                orient="auto-start-reverse">
+                <path d="M0.5 0.8 L9 5 L0.5 9.2" fill="none" class="s-line s-arw" />
+              </marker>
+              <marker id="arw-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7"
+                orient="auto-start-reverse">
+                <path d="M0.5 0.8 L9 5 L0.5 9.2" fill="none" class="s-line s-amber s-arw" />
+              </marker>
+            </defs>
+
+            <!-- ===== TOP DIMENSION : 9 AGENTS ===== -->
+            <g class="s-dimgrp">
+              <line class="s-dim draw d6" pathLength="1" x1="545" y1="218" x2="545" y2="190" />
+              <line class="s-dim draw d6" pathLength="1" x1="699" y1="218" x2="699" y2="190" />
+              <line class="s-dim draw d6" pathLength="1" x1="545" y1="196" x2="699" y2="196" marker-start="url(#arw)" marker-end="url(#arw)" />
+            </g>
+            <text class="s-dimtext" x="622" y="184" text-anchor="middle">× 9 AGENTS</text>
+
+            <!-- ===== CONNECTORS ===== -->
+            <g class="conns">
+              <line class="s-line draw d1" pathLength="1" x1="186" y1="300" x2="266" y2="300" marker-end="url(#arw)" />
+              <line class="s-line draw d2" pathLength="1" x1="452" y1="300" x2="541" y2="300" marker-end="url(#arw)" />
+              <line class="s-line draw d3" pathLength="1" x1="701" y1="300" x2="756" y2="300" marker-end="url(#arw)" />
+              <line class="s-line draw d4" pathLength="1" x1="962" y1="300" x2="1026" y2="300" marker-end="url(#arw)" />
+              <line class="s-line draw d5" pathLength="1" x1="1152" y1="300" x2="1226" y2="300" marker-end="url(#arw)" />
+            </g>
+
+            <!-- ===== HUMAN-IN-THE-LOOP RETURN (dashed feedback path) ===== -->
+            <path class="s-line s-dash" d="M1090 357 L1090 432 L360 432 L360 367" fill="none"
+              marker-end="url(#arw)" />
+            <text class="s-sub" x="725" y="426" text-anchor="middle">↺ HUMAN-IN-THE-LOOP · REVISION RETURN</text>
+
+            <!-- ===== STAGE 1 : QUERY ===== -->
+            <g>
+              <rect class="s-box draw d1" x="52" y="252" width="134" height="96" pathLength="1" />
+              <text class="s-label" x="119" y="294" text-anchor="middle">QUERY</text>
+              <text class="s-sub" x="119" y="314" text-anchor="middle">regulatory ask</text>
+              <text class="s-ref" x="60" y="268">A·1</text>
+            </g>
+
+            <!-- ===== STAGE 2 : ORCHESTRATOR ===== -->
+            <g>
+              <rect class="s-box draw d2" x="270" y="235" width="182" height="130" pathLength="1" />
+              <text class="s-label" x="361" y="288" text-anchor="middle">ORCHESTRATOR</text>
+              <text class="s-sub" x="361" y="308" text-anchor="middle">deterministic · python</text>
+              <text class="s-sub" x="361" y="324" text-anchor="middle">async · stateful</text>
+              <text class="s-ref" x="278" y="251">A·2</text>
+            </g>
+
+            <!-- ===== STAGE 3 : 9-AGENT POOL (exploded) ===== -->
+            <g class="pool">
+              <!-- row 1 -->
+              <rect class="s-cell draw d3" x="545" y="223" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="601" y="223" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="657" y="223" width="42" height="42" pathLength="1" />
+              <!-- row 2 -->
+              <rect class="s-cell draw d3" x="545" y="279" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="601" y="279" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="657" y="279" width="42" height="42" pathLength="1" />
+              <!-- row 3 -->
+              <rect class="s-cell draw d3" x="545" y="335" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="601" y="335" width="42" height="42" pathLength="1" />
+              <rect class="s-cell draw d3" x="657" y="335" width="42" height="42" pathLength="1" />
+              <text class="s-cellnum" x="566" y="249" text-anchor="middle">1</text>
+              <text class="s-cellnum" x="622" y="249" text-anchor="middle">2</text>
+              <text class="s-cellnum" x="678" y="249" text-anchor="middle">3</text>
+              <text class="s-cellnum" x="566" y="305" text-anchor="middle">4</text>
+              <text class="s-cellnum" x="622" y="305" text-anchor="middle">5</text>
+              <text class="s-cellnum" x="678" y="305" text-anchor="middle">6</text>
+              <text class="s-cellnum" x="566" y="361" text-anchor="middle">7</text>
+              <text class="s-cellnum" x="622" y="361" text-anchor="middle">8</text>
+              <text class="s-cellnum" x="678" y="361" text-anchor="middle">9</text>
+            </g>
+            <!-- pool callout leader -->
+            <g>
+              <line class="s-dim draw d4" pathLength="1" x1="699" y1="356" x2="744" y2="398" />
+              <circle class="s-node" cx="744" cy="398" r="3.4" />
+            </g>
+            <text class="s-callout" x="752" y="395">9-AGENT POOL</text>
+            <text class="s-callsub" x="752" y="412">Sonnet 4.6 · Haiku 4.5</text>
+
+            <!-- ===== STAGE 4 : DENSE-RAG RETRIEVER ===== -->
+            <g>
+              <rect class="s-box draw d4" x="760" y="235" width="202" height="130" pathLength="1" />
+              <line class="s-line draw d4" x1="760" y1="270" x2="962" y2="270" pathLength="1" />
+              <text class="s-label" x="861" y="261" text-anchor="middle">DENSE-RAG RETRIEVER</text>
+              <text class="s-sub" x="861" y="293" text-anchor="middle">Qdrant · Voyage-3-Large</text>
+              <text class="s-sub" x="861" y="312" text-anchor="middle">rerank-2 · top-k</text>
+              <text class="s-sub" x="861" y="331" text-anchor="middle">dense vectors</text>
+              <text class="s-ref" x="768" y="251">A·4</text>
+            </g>
+
+            <!-- ===== STAGE 5 : HUMAN-REVIEW GATE ===== -->
+            <g>
+              <rect class="s-box draw d5" x="1030" y="247" width="122" height="106" pathLength="1" />
+              <path class="s-line draw d5" d="M1030 300 L1056 300 M1096 300 L1152 300" pathLength="1" />
+              <path class="s-line s-amber draw d5" d="M1066 300 l8 9 14 -20" fill="none" pathLength="1" />
+              <circle class="s-node" cx="1077" cy="300" r="15" />
+              <text class="s-label" x="1091" y="282" text-anchor="middle">REVIEW</text>
+              <text class="s-sub" x="1091" y="340" text-anchor="middle">approve / reject</text>
+              <text class="s-ref" x="1038" y="263">A·5</text>
+            </g>
+
+            <!-- ===== STAGE 6 : CITED OUTPUT ===== -->
+            <g>
+              <rect class="s-box draw d6" x="1230" y="252" width="168" height="96" pathLength="1" />
+              <path class="s-line draw d6" d="M1252 276 H1330 M1252 292 H1376 M1252 308 H1346" pathLength="1" />
+              <text class="s-label" x="1314" y="270" text-anchor="middle">CITED DOC</text>
+              <text class="s-sub" x="1314" y="334" text-anchor="middle">per-claim sources</text>
+              <text class="s-ref" x="1238" y="268">A·6</text>
+            </g>
+
+            <!-- ===== ANCHOR NODES ON CONNECTORS ===== -->
+            <g class="nodes">
+              <circle class="s-node" cx="186" cy="300" r="4" />
+              <circle class="s-node" cx="270" cy="300" r="4" />
+              <circle class="s-node" cx="452" cy="300" r="4" />
+              <circle class="s-node" cx="545" cy="300" r="4" />
+              <circle class="s-node" cx="699" cy="300" r="4" />
+              <circle class="s-node" cx="760" cy="300" r="4" />
+              <circle class="s-node" cx="962" cy="300" r="4" />
+              <circle class="s-node" cx="1030" cy="300" r="4" />
+              <circle class="s-node" cx="1152" cy="300" r="4" />
+              <circle class="s-node" cx="1230" cy="300" r="4" />
+            </g>
+
+            <!-- ===== DIMENSION : TOP-1 RETRIEVAL (AMBER — KEY METRIC) ===== -->
+            <g class="s-dimgrp">
+              <line class="s-dim s-amber draw d7" pathLength="1" x1="760" y1="372" x2="760" y2="512" />
+              <line class="s-dim s-amber draw d7" pathLength="1" x1="962" y1="372" x2="962" y2="512" />
+              <line class="s-dim s-amber draw d7" pathLength="1" x1="760" y1="506" x2="962" y2="506" marker-start="url(#arw-amber)"
+                marker-end="url(#arw-amber)" />
+            </g>
+            <text class="s-ambertext" x="861" y="498" text-anchor="middle">TOP-1 RETRIEVAL</text>
+            <text class="s-amberbig" x="861" y="540" text-anchor="middle">43% → 86%</text>
+
+            <!-- ===== DIMENSION : 0% HALLUCINATION ===== -->
+            <g class="s-dimgrp">
+              <line class="s-dim draw d7" pathLength="1" x1="1030" y1="360" x2="1030" y2="512" />
+              <line class="s-dim draw d7" pathLength="1" x1="1152" y1="360" x2="1152" y2="512" />
+              <line class="s-dim draw d7" pathLength="1" x1="1030" y1="506" x2="1152" y2="506" marker-start="url(#arw)" marker-end="url(#arw)" />
+            </g>
+            <text class="s-dimtext" x="1091" y="498" text-anchor="middle">CITATIONS</text>
+            <text class="s-dimbig" x="1091" y="536" text-anchor="middle">0% halluc.</text>
+
+            <!-- ===== DIMENSION : FULL SPAN — 700+ TESTS ===== -->
+            <g class="s-dimgrp">
+              <line class="s-dim draw d8" pathLength="1" x1="52" y1="372" x2="52" y2="588" />
+              <line class="s-dim draw d8" pathLength="1" x1="1398" y1="372" x2="1398" y2="588" />
+              <line class="s-dim draw d8" pathLength="1" x1="52" y1="582" x2="1398" y2="582" marker-start="url(#arw)" marker-end="url(#arw)" />
+              <!-- tick stations -->
+              <line class="s-dim draw d8" pathLength="1" x1="361" y1="576" x2="361" y2="588" />
+              <line class="s-dim draw d8" pathLength="1" x1="861" y1="576" x2="861" y2="588" />
+              <line class="s-dim draw d8" pathLength="1" x1="1091" y1="576" x2="1091" y2="588" />
+            </g>
+            <text class="s-dimtext" x="725" y="608" text-anchor="middle">END-TO-END VERIFICATION — 700+ AUTOMATED TESTS</text>
+          </svg>
+        </div>
+      </figure>
+
+      <!-- HTML stat cards: always readable, mirror the dimensions -->
+      <ul class="dims" aria-label="Key verified metrics">
+        <li class="dim dim--amber">
+          <span class="dim__val">43→86<span class="dim__unit">%</span></span>
+          <span class="dim__label">TOP-1 RETRIEVAL</span>
+          <span class="dim__note">7-query ground truth</span>
+        </li>
+        <li class="dim">
+          <span class="dim__val">0<span class="dim__unit">%</span></span>
+          <span class="dim__label">CITATION HALLUCINATION</span>
+          <span class="dim__note">5 end-to-end scenarios</span>
+        </li>
+        <li class="dim">
+          <span class="dim__val">9</span>
+          <span class="dim__label">CLAUDE AGENTS</span>
+          <span class="dim__note">Sonnet 4.6 · Haiku 4.5</span>
+        </li>
+        <li class="dim">
+          <span class="dim__val">700<span class="dim__unit">+</span></span>
+          <span class="dim__label">AUTOMATED TESTS</span>
+          <span class="dim__note">Python + Playwright E2E</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================ 02 · GENERAL NOTES / ABOUT ============================ -->
+    <section id="about" class="zone" aria-labelledby="about-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">02</span>
+        <h2 id="about-h" class="sec-head__title">General Notes</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">REV A · ABOUT</span>
+      </div>
+
+      <div class="about">
+        <figure class="portrait">
+          <div class="portrait__frame">
+            <img src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+              alt="Portrait of Fatih Eren Çetin" width="420" height="520" loading="lazy" />
+            <span class="portrait__tick portrait__tick--tl" aria-hidden="true"></span>
+            <span class="portrait__tick portrait__tick--tr" aria-hidden="true"></span>
+            <span class="portrait__tick portrait__tick--bl" aria-hidden="true"></span>
+            <span class="portrait__tick portrait__tick--br" aria-hidden="true"></span>
+          </div>
+          <figcaption class="portrait__cap">FIG. A · OPERATOR PORTRAIT · NOT TO SCALE</figcaption>
+        </figure>
+
+        <div class="about__body">
+          <ol class="notes" aria-label="General notes">
+            <li>
+              <span class="notes__n">N1</span>
+              Mathematics BSc on a <strong>full scholarship</strong> at Bilkent University, turned AI Engineer —
+              the proof-style rigor now goes into retrieval evals and agent reliability.
+            </li>
+            <li>
+              <span class="notes__n">N2</span>
+              I build <strong>production-grade LLM, RAG and multi-agent systems</strong> that act over tools,
+              APIs and data — orchestrators, dense + hybrid retrieval, function-calling agents and
+              human-in-the-loop gates.
+            </li>
+            <li>
+              <span class="notes__n">N3</span>
+              Engineering is paired with governance: <strong>ISO/IEC 42001 (AI Management)</strong> and
+              <strong>ISO/IEC 27001 Lead Auditor</strong> rigor, KVKK / GDPR / EU-AI-Act-aware by default.
+            </li>
+            <li>
+              <span class="notes__n">N4</span>
+              Foundations from teaching — instructed <strong>100+ students</strong> in Python as a lab assistant.
+            </li>
+          </ol>
+
+          <div class="about__badges">
+            <span class="badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> AI fellow — top 4.7% of 31,700</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ISO 42001 &amp; 27001 LA</span>
+            <span class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ankara, Türkiye</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 03 · EXPERIENCE TIMELINE ============================ -->
+    <section id="experience" class="zone" aria-labelledby="exp-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">03</span>
+        <h2 id="exp-h" class="sec-head__title">Experience Timeline</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">PLOTTED 2022 → 2026</span>
+      </div>
+
+      <ol class="tl" aria-label="Experience timeline, most recent first">
+        <li class="tl__item">
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__date">12/2025 — Present</div>
+          <div class="tl__card">
+            <div class="tl__head">
+              <h3 class="tl__role">AI Fellow</h3>
+              <span class="tl__org">Yapay Zeka ve Teknoloji Akademisi · Remote</span>
+            </div>
+            <p class="tl__desc">
+              Selected in the <strong>top 4.7% of 31,700</strong> applicants. <strong>Lead developer</strong> of a
+              4-person team building a Slack microservice platform — Slack Bolt, async SQLAlchemy / PostgreSQL,
+              Groq Llama&nbsp;3.3 summarization, sentence-transformers with UMAP / HDBSCAN clustering.
+            </p>
+          </div>
+        </li>
+
+        <li class="tl__item">
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__date">09/2024 — Present</div>
+          <div class="tl__card">
+            <div class="tl__head">
+              <h3 class="tl__role">AI Engineer</h3>
+              <span class="tl__org">MCV Uluslararası Uygunluk Değerlendirme Danışmanlık · Ankara</span>
+            </div>
+            <ul class="tl__list">
+              <li>Agentic ISO/IEC 17020 conformity-audit assistant — Claude Agent SDK + 2 MCP servers + local hybrid RAG (FTS5 BM25 + sqlite-vec + RRF), on-device, KVKK / EU-AI-Act compliant.</li>
+              <li>Full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph).</li>
+              <li>Designed &amp; delivered an internal AI training curriculum (LLM, prompt eng., RAG, agents).</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl__item tl__item--datum">
+          <span class="tl__node tl__node--sq" aria-hidden="true"></span>
+          <div class="tl__date">2024 · DATUM</div>
+          <div class="tl__card tl__card--datum">
+            <div class="tl__head">
+              <h3 class="tl__role">BSc Mathematics <span class="tl__pill">FULL SCHOLARSHIP</span></h3>
+              <span class="tl__org">Bilkent University · English-medium</span>
+            </div>
+            <p class="tl__desc">Established reference datum — proof discipline applied to evaluation &amp; reliability.</p>
+          </div>
+        </li>
+
+        <li class="tl__item">
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__date">2024</div>
+          <div class="tl__card">
+            <div class="tl__head">
+              <h3 class="tl__role">AI Intern</h3>
+              <span class="tl__org">MCV · Ankara</span>
+            </div>
+            <p class="tl__desc">Early applied-AI work that grew into the AI Engineer role.</p>
+          </div>
+        </li>
+
+        <li class="tl__item">
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__date">2022 — 2024</div>
+          <div class="tl__card">
+            <div class="tl__head">
+              <h3 class="tl__role">Lab Assistant</h3>
+              <span class="tl__org">Bilkent University</span>
+            </div>
+            <p class="tl__desc">Instructed <strong>100+ students</strong> in Python — labs, grading and one-on-one support.</p>
+          </div>
+        </li>
+
+        <li class="tl__item">
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__date">2022</div>
+          <div class="tl__card">
+            <div class="tl__head">
+              <h3 class="tl__role">Innovation Intern</h3>
+              <span class="tl__org">SA</span>
+            </div>
+            <p class="tl__desc">First professional exposure to product and innovation work.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================ 04 · PARTS / PROJECTS ============================ -->
+    <section id="projects" class="zone" aria-labelledby="proj-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">04</span>
+        <h2 id="proj-h" class="sec-head__title">Schematic Parts</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">5 COMPONENTS</span>
+      </div>
+
+      <!-- FLAGSHIP -->
+      <article class="part part--flagship">
+        <header class="part__top">
+          <span class="part__no">P-01</span>
+          <span class="part__status part__status--flag">FLAGSHIP</span>
+          <span class="part__lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> PRIVATE REPOSITORY</span>
+        </header>
+        <h3 class="part__title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+        <p class="part__desc">
+          9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python orchestrator;
+          dense RAG (Qdrant + Voyage-3-Large + rerank-2); human-in-the-loop review producing per-claim citations.
+        </p>
+        <dl class="spec">
+          <div><dt>TOP-1</dt><dd class="spec--amber">43% → 86%</dd></div>
+          <div><dt>HALLUC.</dt><dd>0% / 5 scenarios</dd></div>
+          <div><dt>TESTS</dt><dd>700+</dd></div>
+          <div><dt>STACK</dt><dd>FastAPI · Arq/Redis · PostgreSQL</dd></div>
+        </dl>
+        <ul class="tags">
+          <li>Claude</li><li>Multi-Agent</li><li>Dense RAG</li><li>Qdrant</li><li>FastAPI</li><li>HITL</li>
+        </ul>
+      </article>
+
+      <div class="part-grid">
+        <!-- P-02 PUBLIC -->
+        <article class="part">
+          <header class="part__top">
+            <span class="part__no">P-02</span>
+            <span class="part__status part__status--public">PUBLIC</span>
+            <a class="part__link" href="https://github.com/FatihErenCetin/RAG-System" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> repository
+            </a>
+          </header>
+          <h3 class="part__title">RAG Systems — Chat With Your Documents</h3>
+          <p class="part__desc">
+            FastAPI + Streamlit + Google Gemini + ChromaDB. Hexagonal (Ports &amp; Adapters) architecture,
+            per-chunk source citations, TR / EN cross-lingual.
+          </p>
+          <dl class="spec">
+            <div><dt>ARCH</dt><dd>Hexagonal</dd></div>
+            <div><dt>TESTS</dt><dd>64</dd></div>
+          </dl>
+          <ul class="tags"><li>FastAPI</li><li>Gemini</li><li>ChromaDB</li><li>Streamlit</li></ul>
+        </article>
+
+        <!-- P-03 TEAM -->
+        <article class="part">
+          <header class="part__top">
+            <span class="part__no">P-03</span>
+            <span class="part__status part__status--team">TEAM · CORE/LEAD</span>
+            <span class="part__lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> NO PUBLIC LINK</span>
+          </header>
+          <h3 class="part__title">Multi-Agent SME Operations Assistant</h3>
+          <p class="part__desc">
+            Google Gemini function calling with per-agent permission scoping; Telegram + Web surfaces;
+            graceful degradation via API-key rotation and deterministic fallbacks.
+          </p>
+          <dl class="spec">
+            <div><dt>AGENTS</dt><dd>Scoped permissions</dd></div>
+            <div><dt>SURFACES</dt><dd>Telegram · Web</dd></div>
+          </dl>
+          <ul class="tags"><li>Gemini</li><li>Function Calling</li><li>Multi-Agent</li></ul>
+        </article>
+
+        <!-- P-04 -->
+        <article class="part">
+          <header class="part__top">
+            <span class="part__no">P-04</span>
+            <span class="part__status part__status--data">DATA / ML</span>
+            <span class="part__lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> NO PUBLIC LINK</span>
+          </header>
+          <h3 class="part__title">Investment-Incentive Analytics &amp; Forecasting</h3>
+          <p class="part__desc">
+            132 official sources (55 Excel + 77 Word) → a 77K-record dataset (Parquet + SQLite); 5-model
+            out-of-sample backtest. SARIMA <strong>24% MAPE</strong> vs 93% seasonal-naive.
+          </p>
+          <dl class="spec">
+            <div><dt>SOURCES</dt><dd>132 → 77K rows</dd></div>
+            <div><dt>BEST MAPE</dt><dd class="spec--amber">24%</dd></div>
+          </dl>
+          <ul class="tags"><li>SARIMA</li><li>Backtest</li><li>Polars</li><li>Streamlit</li><li>Plotly</li></ul>
+        </article>
+
+        <!-- P-05 -->
+        <article class="part">
+          <header class="part__top">
+            <span class="part__no">P-05</span>
+            <span class="part__status part__status--data">DATA / ML</span>
+            <span class="part__lock"><i class="fa-solid fa-lock" aria-hidden="true"></i> NO PUBLIC LINK</span>
+          </header>
+          <h3 class="part__title">Financial Time-Series Forecasting</h3>
+          <p class="part__desc">
+            30+ technical indicators (RSI, MACD, Bollinger…) feeding LightGBM + SARIMA / SARIMAX models
+            on Borsa İstanbul series.
+          </p>
+          <dl class="spec">
+            <div><dt>FEATURES</dt><dd>30+ indicators</dd></div>
+            <div><dt>MODELS</dt><dd>LightGBM · SARIMA(X)</dd></div>
+          </dl>
+          <ul class="tags"><li>LightGBM</li><li>SARIMAX</li><li>scikit-learn</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ 05 · LEGEND / SKILLS (BOM) ============================ -->
+    <section id="skills" class="zone" aria-labelledby="skills-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">05</span>
+        <h2 id="skills-h" class="sec-head__title">Legend — Bill of Materials</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">4 SUBSYSTEMS</span>
+      </div>
+
+      <div class="bom-wrap">
+        <table class="bom">
+          <caption class="visually-hidden">Skills, grouped into four subsystems with their components.</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="bom__ref">REF</th>
+              <th scope="col" class="bom__sys">SUBSYSTEM</th>
+              <th scope="col">COMPONENTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="bom__ref">LLM</th>
+              <td class="bom__sys">LLM &amp; Agentic</td>
+              <td>
+                <span class="comp">Anthropic Claude API</span><span class="comp">Google Gemini</span><span class="comp">OpenAI API</span><span class="comp">MCP</span><span class="comp">LangGraph</span><span class="comp">LangChain</span><span class="comp">Multi-agent systems</span><span class="comp">Function calling</span><span class="comp">Structured outputs</span><span class="comp">Prompt engineering</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="bom__ref">RAG</th>
+              <td class="bom__sys">RAG &amp; Retrieval</td>
+              <td>
+                <span class="comp">Qdrant</span><span class="comp">ChromaDB</span><span class="comp">pgvector</span><span class="comp">sqlite-vec</span><span class="comp">Voyage embeddings</span><span class="comp">Hybrid BM25 + dense</span><span class="comp">RRF</span><span class="comp">Reranking</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="bom__ref">BE</th>
+              <td class="bom__sys">Backend &amp; Data</td>
+              <td>
+                <span class="comp">Python</span><span class="comp">FastAPI</span><span class="comp">async Python</span><span class="comp">SQLAlchemy + Alembic</span><span class="comp">PostgreSQL</span><span class="comp">Redis</span><span class="comp">Pydantic</span><span class="comp">Polars</span><span class="comp">scikit-learn</span><span class="comp">LightGBM</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="bom__ref">OPS</th>
+              <td class="bom__sys">MLOps &amp; Governance</td>
+              <td>
+                <span class="comp">Docker / compose</span><span class="comp">CI/CD (GitHub Actions)</span><span class="comp">pytest (TDD)</span><span class="comp">Ruff / mypy</span><span class="comp">ISO/IEC 42001</span><span class="comp">ISO/IEC 27001</span><span class="comp">KVKK / GDPR / EU-AI-Act</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================ 06 · STAMPS / CERTIFICATIONS ============================ -->
+    <section id="certifications" class="zone" aria-labelledby="cert-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">06</span>
+        <h2 id="cert-h" class="sec-head__title">Approval Stamps</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">CERTIFICATIONS</span>
+      </div>
+
+      <div class="certs">
+        <div class="stamp stamp--primary">
+          <span class="stamp__top">APPROVED</span>
+          <span class="stamp__main">ISO/IEC 42001</span>
+          <span class="stamp__role">LEAD AUDITOR</span>
+          <span class="stamp__sub">AI Management System</span>
+          <i class="fa-solid fa-check stamp__check" aria-hidden="true"></i>
+        </div>
+
+        <div class="stamp stamp--primary">
+          <span class="stamp__top">APPROVED</span>
+          <span class="stamp__main">ISO/IEC 27001:2022</span>
+          <span class="stamp__role">LEAD AUDITOR</span>
+          <span class="stamp__sub">Information Security</span>
+          <i class="fa-solid fa-check stamp__check" aria-hidden="true"></i>
+        </div>
+
+        <div class="cert-log">
+          <h3 class="cert-log__h">Training Log</h3>
+          <ul class="cert-log__list">
+            <li>
+              <span class="cert-log__src">MIUUL</span>
+              Data Scientist Bootcamp · Generative AI &amp; Prompt Engineering · Deep Learning ·
+              Time Series · Recommendation Systems · ML Summer Camp
+            </li>
+            <li>
+              <span class="cert-log__src">AKADEMİ</span>
+              Yapay Zeka ve Teknoloji Akademisi — Deep Learning · Web App Development
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 07 · TITLE BLOCK / CONTACT ============================ -->
+    <section id="contact" class="zone zone--contact" aria-labelledby="contact-h">
+      <div class="sec-head">
+        <span class="sec-head__coord">07</span>
+        <h2 id="contact-h" class="sec-head__title">Title Block</h2>
+        <span class="sec-head__rule" aria-hidden="true"></span>
+        <span class="sec-head__meta">CONTACT</span>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb__cell tb__cell--wide tb__project">
+          <span class="tb__k">PROJECT</span>
+          <span class="tb__v">Personal Portfolio</span>
+        </div>
+        <div class="tb__cell tb__cell--wide tb__title">
+          <span class="tb__k">TITLE</span>
+          <span class="tb__v">AI Engineer — LLM &amp; Agentic AI</span>
+        </div>
+
+        <div class="tb__cell"><span class="tb__k">DRAWN BY</span><span class="tb__v">F. E. Çetin</span></div>
+        <div class="tb__cell"><span class="tb__k">CHK'D</span><span class="tb__v">Self</span></div>
+        <div class="tb__cell"><span class="tb__k">SHEET</span><span class="tb__v">07 / 07</span></div>
+        <div class="tb__cell"><span class="tb__k">DATE</span><span class="tb__v">2026-06</span></div>
+        <div class="tb__cell"><span class="tb__k">REV</span><span class="tb__v">A</span></div>
+        <div class="tb__cell"><span class="tb__k">SCALE</span><span class="tb__v">1 : 1</span></div>
+
+        <a class="tb__cell tb__contact" href="mailto:fatih.e.cetin@gmail.com">
+          <span class="tb__k"><i class="fa-solid fa-envelope" aria-hidden="true"></i> EMAIL</span>
+          <span class="tb__v">fatih.e.cetin@gmail.com</span>
+        </a>
+        <a class="tb__cell tb__contact" href="https://linkedin.com/in/fatih-eren-cetin" target="_blank"
+          rel="noopener noreferrer">
+          <span class="tb__k"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LINKEDIN</span>
+          <span class="tb__v">in/fatih-eren-cetin</span>
+        </a>
+        <a class="tb__cell tb__contact" href="https://github.com/FatihErenCetin" target="_blank"
+          rel="noopener noreferrer">
+          <span class="tb__k"><i class="fa-brands fa-github" aria-hidden="true"></i> GITHUB</span>
+          <span class="tb__v">FatihErenCetin</span>
+        </a>
+        <a class="tb__cell tb__contact" href="https://kaggle.com/fatiherencetin" target="_blank"
+          rel="noopener noreferrer">
+          <span class="tb__k"><i class="fa-brands fa-kaggle" aria-hidden="true"></i> KAGGLE</span>
+          <span class="tb__v">fatiherencetin</span>
+        </a>
+        <a class="tb__cell tb__contact" href="https://hackerrank.com/fecetinn" target="_blank"
+          rel="noopener noreferrer">
+          <span class="tb__k"><i class="fa-brands fa-hackerrank" aria-hidden="true"></i> HACKERRANK</span>
+          <span class="tb__v">fecetinn</span>
+        </a>
+        <div class="tb__cell tb__logo">
+          <span class="tb__seal" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="24" cy="24" r="20" />
+              <path d="M24 4v40 M4 24h40 M9.9 9.9l28.2 28.2 M38.1 9.9 9.9 38.1" stroke-width="0.6" />
+              <circle cx="24" cy="24" r="5" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>REV A — 2026-06 — INITIAL ISSUE</span>
+      <span class="footer__sep" aria-hidden="true"></span>
+      <span>DRAWN BY F. E. ÇETİN</span>
+      <span class="footer__sep" aria-hidden="true"></span>
+      <span>NOT FOR CONSTRUCTION · BUILT WITH HTML, CSS &amp; ONE SVG</span>
+    </footer>
+  </main>
+
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

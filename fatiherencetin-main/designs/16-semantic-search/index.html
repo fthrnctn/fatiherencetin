@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatih Eren Çetin — AI Engineer · Search my work</title>
+  <meta name="description" content="Fatih Eren Çetin — AI Engineer building production-grade LLM, RAG and multi-agent systems. Search my entire portfolio client-side; the same retrieval tech I ship in production." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0f14'/%3E%3Ccircle cx='14' cy='14' r='7' fill='none' stroke='%234fd1e0' stroke-width='2.5'/%3E%3Cline x1='19' y1='19' x2='26' y2='26' stroke='%234fd1e0' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ HERO ============================ -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-id">
+        <img class="avatar" src="assets/images/FATIH_EREN_CETIN_PHOTO.jpg"
+             alt="Portrait of Fatih Eren Çetin" width="76" height="76" />
+        <div class="hero-id-text">
+          <h1 class="name">Fatih Eren Çetin</h1>
+          <p class="role"><span class="mono">AI&nbsp;Engineer</span> · LLM &amp; Agentic AI</p>
+          <p class="loc">Ankara, Türkiye</p>
+        </div>
+      </div>
+
+      <p class="one-liner">
+        AI Engineer building production-grade LLM, RAG, and multi-agent systems —
+        most recently a <strong>9-agent Claude pipeline</strong> that lifted top-1 retrieval
+        from <strong>43% to 86%</strong> with <strong>0% citation hallucination</strong>.
+      </p>
+
+      <!-- The bold hook: a real search box. Sits BELOW the instant identity. -->
+      <div class="search-stage">
+        <div class="search-frame">
+          <label class="search-label" for="search-input">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Search Fatih's portfolio</span>
+          </label>
+          <input
+            id="search-input"
+            class="search-input"
+            type="search"
+            inputmode="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search my work — try “RAG”, “multi-agent”, “forecasting”…"
+            aria-describedby="search-frame-note"
+            aria-controls="results catalog"
+            disabled
+            data-enable-on-js />
+          <button id="clear-btn" class="clear-btn" type="button" aria-label="Clear search" hidden>✕</button>
+          <kbd class="slash-hint" aria-hidden="true">/</kbd>
+        </div>
+        <p id="search-frame-note" class="search-note">
+          Everything I've built, searchable — <strong>client-side</strong>, your query never leaves the browser.
+          The same retrieval tech I ship in production.
+          <span class="how">Ranking is real TF-IDF + cosine, computed live — not a hardcoded list.</span>
+        </p>
+        <noscript>
+          <p class="search-note nojs-note">
+            Live ranking needs JavaScript. The full portfolio is browsable below — every
+            project, role, skill and certification is listed in plain HTML.
+          </p>
+        </noscript>
+
+        <!-- suggested queries (JS fills these; static fallbacks below for no-JS) -->
+        <div class="chips-row">
+          <span class="chips-lead mono">try:</span>
+          <div id="chips" class="chips">
+            <!-- JS renders chips. No-JS static fallback: -->
+            <noscript>
+              <span class="chip-static">RAG</span>
+              <span class="chip-static">multi-agent</span>
+              <span class="chip-static">governance / ISO</span>
+              <span class="chip-static">forecasting</span>
+              <span class="chip-static">Python</span>
+            </noscript>
+          </div>
+        </div>
+
+        <!-- OPTIONAL semantic mode — additive, behind explicit action, never default -->
+        <div class="semantic-row js-only">
+          <button id="semantic-btn" class="semantic-btn" type="button"
+                  aria-pressed="false"
+                  title="Optional. Loads a ~30MB MiniLM embedder in your browser to re-rank by meaning. BM25 stays the default.">
+            ⚡ enable semantic mode <span class="sm-meta">— loads ~30MB once</span>
+          </button>
+          <p id="semantic-status" class="semantic-status" role="status" aria-live="polite">
+            Instant lexical search is on by default — no download.
+          </p>
+        </div>
+      </div>
+
+      <nav class="hero-links" aria-label="Contact and profiles">
+        <a href="mailto:fatih.e.cetin@gmail.com">Email</a>
+        <a href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer">Kaggle</a>
+        <a href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer">HackerRank</a>
+      </nav>
+
+      <ul class="stat-strip" aria-label="Signature results">
+        <li><b>43% → 86%</b><span>top-1 retrieval (7-query ground truth)</span></li>
+        <li><b>0%</b><span>citation hallucination (5 e2e scenarios)</span></li>
+        <li><b>9 agents</b><span>Claude pipeline · Sonnet 4.6 + Haiku 4.5</span></li>
+        <li><b>700+</b><span>automated tests · Python + Playwright</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- result meta + live ranked results (JS) -->
+    <p id="result-meta" class="result-meta" role="status" aria-live="polite" hidden></p>
+    <section id="results" class="results" aria-label="Search results" hidden></section>
+
+    <!-- =================== BROWSABLE CATALOG (empty state + no-JS) =================== -->
+    <!-- This is the full, scannable portfolio. JS re-renders it for richer cards; with
+         JS off, THIS static markup IS the page. Every project/experience/skill/cert is here. -->
+    <div id="catalog" class="catalog">
+      <p class="catalog-lead">
+        <span class="mono">browse&nbsp;·</span> the full portfolio, or type above to rank it.
+      </p>
+
+      <section class="cat-section" aria-label="Projects">
+        <h2 class="cat-title">Projects</h2>
+        <div class="cat-grid kind-project">
+          <article class="cat-card kind-project">
+            <div class="result-head"><span class="result-tag">flagship</span></div>
+            <h3 class="result-title">Multi-Agent LLM System — Citation-Backed Regulatory Documents</h3>
+            <p class="result-snippet">9 specialized Claude agents (Sonnet 4.6 + Haiku 4.5) over a deterministic Python orchestrator; dense RAG (article-aware chunking, Qdrant + Voyage-3-Large + rerank-2); lifted top-1 retrieval 43→86% on a 7-query legislation ground-truth set; 0% citation hallucination across 5 end-to-end scenarios via provenance enforcement; async FastAPI + Arq/Redis + PostgreSQL; per-step token/cost/latency auditing; human-in-the-loop review; 700+ tests.</p>
+            <div class="stack"><span class="stack-tag">Claude</span><span class="stack-tag">Multi-Agent</span><span class="stack-tag">Dense RAG</span><span class="stack-tag">Qdrant</span><span class="stack-tag">Voyage</span><span class="stack-tag">FastAPI</span><span class="stack-tag">Redis</span></div>
+            <div class="result-foot"><span class="result-state">Private repo — no public link</span></div>
+          </article>
+          <article class="cat-card kind-project">
+            <div class="result-head"><span class="result-tag">public</span></div>
+            <h3 class="result-title">RAG Systems — Chat With Your Documents</h3>
+            <p class="result-snippet">FastAPI + Streamlit + Google Gemini + ChromaDB; hexagonal (Ports &amp; Adapters) architecture; per-chunk source citations; cross-lingual TR/EN; 64-test suite.</p>
+            <div class="stack"><span class="stack-tag">FastAPI</span><span class="stack-tag">Streamlit</span><span class="stack-tag">Gemini</span><span class="stack-tag">ChromaDB</span><span class="stack-tag">Hexagonal</span></div>
+            <div class="result-foot"><a class="result-link" href="https://github.com/FatihErenCetin/RAG-System" target="_blank" rel="noopener noreferrer">↗ github.com/FatihErenCetin/RAG-System</a></div>
+          </article>
+          <article class="cat-card kind-project">
+            <div class="result-head"><span class="result-tag">team · lead</span></div>
+            <h3 class="result-title">Multi-Agent SME Operations Assistant</h3>
+            <p class="result-snippet">Google Gemini function calling; per-agent permission scoping; graceful degradation via API-key rotation + deterministic fallbacks; Telegram + Web front-ends. Core developer / lead.</p>
+            <div class="stack"><span class="stack-tag">Gemini</span><span class="stack-tag">Function Calling</span><span class="stack-tag">Multi-Agent</span><span class="stack-tag">Telegram</span></div>
+            <div class="result-foot"><span class="result-state">Team project — no public link</span></div>
+          </article>
+          <article class="cat-card kind-project">
+            <div class="result-head"><span class="result-tag">forecasting</span></div>
+            <h3 class="result-title">Investment-Incentive Analytics &amp; Forecasting Platform</h3>
+            <p class="result-snippet">132 official sources (55 Excel + 77 Word) → 77K-record dataset (Parquet + SQLite); 5-model out-of-sample backtest — SARIMA 24% MAPE vs 93% seasonal-naive; Streamlit/Plotly.</p>
+            <div class="stack"><span class="stack-tag">SARIMA</span><span class="stack-tag">Polars</span><span class="stack-tag">Streamlit</span><span class="stack-tag">Plotly</span><span class="stack-tag">Backtesting</span></div>
+            <div class="result-foot"><span class="result-state">No public link</span></div>
+          </article>
+          <article class="cat-card kind-project">
+            <div class="result-head"><span class="result-tag">forecasting</span></div>
+            <h3 class="result-title">Financial Time-Series Forecasting</h3>
+            <p class="result-snippet">30+ technical indicators (RSI, MACD, Bollinger…); LightGBM + SARIMA/SARIMAX; Borsa İstanbul.</p>
+            <div class="stack"><span class="stack-tag">LightGBM</span><span class="stack-tag">SARIMA</span><span class="stack-tag">SARIMAX</span><span class="stack-tag">Time-Series</span></div>
+            <div class="result-foot"><span class="result-state">No public link</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cat-section" aria-label="Experience">
+        <h2 class="cat-title">Experience</h2>
+        <div class="cat-grid kind-experience">
+          <article class="cat-card kind-experience">
+            <div class="result-head"><span class="result-tag">Ankara · 09/2024–Present</span></div>
+            <h3 class="result-title">AI Engineer — MCV Uluslararası Uygunluk Değerlendirme Danışmanlık</h3>
+            <p class="result-snippet">Agentic ISO/IEC 17020 conformity-audit assistant (Claude Agent SDK + 2 MCP servers + local hybrid RAG: FTS5 BM25 + sqlite-vec + RRF), on-device, KVKK/EU-AI-Act compliant. Full-stack multi-agent RAG import-compliance assistant (FastAPI + LangGraph). Internal AI training curriculum.</p>
+            <div class="stack"><span class="stack-tag">Claude Agent SDK</span><span class="stack-tag">MCP</span><span class="stack-tag">Hybrid RAG</span><span class="stack-tag">FastAPI</span><span class="stack-tag">LangGraph</span></div>
+          </article>
+          <article class="cat-card kind-experience">
+            <div class="result-head"><span class="result-tag">Remote · 12/2025–Present</span></div>
+            <h3 class="result-title">AI Fellow — Yapay Zeka ve Teknoloji Akademisi</h3>
+            <p class="result-snippet">Top 4.7% of 31,700 applicants; one of 5 fellows. Lead developer of a 4-person team building a Slack microservice platform: Slack Bolt, async SQLAlchemy/PostgreSQL, Groq Llama 3.3 summarization, sentence-transformers + UMAP/HDBSCAN clustering.</p>
+            <div class="stack"><span class="stack-tag">Slack Bolt</span><span class="stack-tag">async SQLAlchemy</span><span class="stack-tag">Groq Llama 3.3</span><span class="stack-tag">sentence-transformers</span><span class="stack-tag">HDBSCAN</span></div>
+          </article>
+          <article class="cat-card kind-experience">
+            <div class="result-head"><span class="result-tag">2022–2024</span></div>
+            <h3 class="result-title">Earlier — Internships &amp; Teaching</h3>
+            <p class="result-snippet">MCV Intern (2024). Lab Assistant, Bilkent University (2022–2024), instructing 100+ students in Python. SA Innovation Intern (2022).</p>
+            <div class="stack"><span class="stack-tag">Python teaching</span><span class="stack-tag">Bilkent</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cat-section" aria-label="Education">
+        <h2 class="cat-title">Education</h2>
+        <div class="cat-grid kind-education">
+          <article class="cat-card kind-education">
+            <div class="result-head"><span class="result-tag">2024 · English-medium</span></div>
+            <h3 class="result-title">BSc Mathematics (Full Scholarship) — Bilkent University</h3>
+            <p class="result-snippet">Bachelor of Science in Mathematics, full scholarship, English-medium. The mathematical foundation behind the ML and retrieval work.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cat-section" aria-label="Skills">
+        <h2 class="cat-title">Skills</h2>
+        <div class="cat-grid kind-skill">
+          <article class="cat-card kind-skill">
+            <div class="result-head"><span class="result-tag">skills</span></div>
+            <h3 class="result-title">LLM &amp; Agentic</h3>
+            <p class="result-snippet">Anthropic Claude API, Google Gemini, OpenAI API, MCP, LangGraph, LangChain, multi-agent systems, function calling, structured outputs, prompt engineering.</p>
+          </article>
+          <article class="cat-card kind-skill">
+            <div class="result-head"><span class="result-tag">skills</span></div>
+            <h3 class="result-title">RAG &amp; Retrieval</h3>
+            <p class="result-snippet">Qdrant, ChromaDB, pgvector, sqlite-vec, Voyage embeddings, hybrid BM25 + dense + RRF, reranking.</p>
+          </article>
+          <article class="cat-card kind-skill">
+            <div class="result-head"><span class="result-tag">skills</span></div>
+            <h3 class="result-title">Backend &amp; Data</h3>
+            <p class="result-snippet">Python, FastAPI, async Python, SQLAlchemy + Alembic, PostgreSQL, Redis, Pydantic, Polars, scikit-learn, LightGBM.</p>
+          </article>
+          <article class="cat-card kind-skill">
+            <div class="result-head"><span class="result-tag">skills</span></div>
+            <h3 class="result-title">MLOps &amp; Governance</h3>
+            <p class="result-snippet">Docker &amp; docker-compose, CI/CD (GitHub Actions), pytest (TDD), Ruff/mypy, ISO/IEC 42001, ISO/IEC 27001, KVKK/GDPR/EU-AI-Act-aware.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cat-section" aria-label="Certifications">
+        <h2 class="cat-title">Certifications</h2>
+        <div class="cat-grid kind-cert">
+          <article class="cat-card kind-cert">
+            <div class="result-head"><span class="result-tag">★ certification</span></div>
+            <h3 class="result-title">ISO/IEC 42001 Lead Auditor</h3>
+            <p class="result-snippet">AI Management System — governance and audit rigor applied to the LLM and agentic systems I build.</p>
+          </article>
+          <article class="cat-card kind-cert">
+            <div class="result-head"><span class="result-tag">★ certification</span></div>
+            <h3 class="result-title">ISO/IEC 27001:2022 Lead Auditor</h3>
+            <p class="result-snippet">Information Security Management System.</p>
+          </article>
+          <article class="cat-card kind-cert">
+            <div class="result-head"><span class="result-tag">certification</span></div>
+            <h3 class="result-title">Miuul programs</h3>
+            <p class="result-snippet">Data Scientist Bootcamp, Generative AI &amp; Prompt Engineering, Deep Learning, Time Series, Recommendation Systems, ML Summer Camp.</p>
+          </article>
+          <article class="cat-card kind-cert">
+            <div class="result-head"><span class="result-tag">certification</span></div>
+            <h3 class="result-title">Yapay Zeka ve Teknoloji Akademisi programs</h3>
+            <p class="result-snippet">Deep Learning, Web App Development.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <p class="foot-name mono">Fatih Eren Çetin · AI Engineer</p>
+      <nav class="foot-links" aria-label="Contact">
+        <a href="mailto:fatih.e.cetin@gmail.com">fatih.e.cetin@gmail.com</a>
+        <a href="https://github.com/FatihErenCetin" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/fatih-eren-cetin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://kaggle.com/fatiherencetin" target="_blank" rel="noopener noreferrer">Kaggle</a>
+        <a href="https://hackerrank.com/fecetinn" target="_blank" rel="noopener noreferrer">HackerRank</a>
+      </nav>
+      <p class="foot-note">
+        This page is its own proof: a client-side ranked search over my real portfolio.
+        BM25/TF-IDF runs in your browser; optional semantic re-rank uses an in-browser MiniLM embedder.
+        Nothing here is fabricated — projects without a public link are labeled.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

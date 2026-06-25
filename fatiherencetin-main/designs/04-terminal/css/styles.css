@@ -1,0 +1,524 @@
+/* =====================================================================
+   Fatih Eren Çetin — Terminal / IDE portfolio
+   Palette: refined GitHub-dark. Primary face: JetBrains Mono.
+   ===================================================================== */
+
+:root{
+  --bg:        #0D1117;   /* editor background          */
+  --panel:     #161B22;   /* sidebar / panels           */
+  --panel-2:   #1C2128;   /* tab bar / hover            */
+  --line:      #21262D;   /* hairline                   */
+  --text:      #C9D1D9;   /* body text                  */
+  --muted:     #7D8590;   /* line numbers / inactive — AA on bg + panel */
+  --comment:   #8B949E;   /* comment text (AA)          */
+
+  /* syntax accents — disciplined, 5 hues */
+  --kw:   #FF7B72;   /* keyword          (coral)  */
+  --str:  #A5D6FF;   /* string           (sky)    */
+  --fn:   #D2A8FF;   /* function / class (purple) */
+  --num:  #7EE787;   /* number / metric  (green)  */
+  --prop: #79C0FF;   /* property / key   (blue)   */
+  --link: #58A6FF;   /* interactive blue          */
+
+  /* type scale (rem) — disciplined steps, mono-first */
+  --fs-eyebrow: .68rem;  /* uppercase chrome labels      */
+  --fs-meta:    .72rem;  /* captions · status · hints    */
+  --fs-chrome:  .8rem;   /* window chrome · buttons      */
+  --fs-code:    .85rem;  /* editor + terminal body       */
+  --fs-tree:    .875rem; /* file-tree items              */
+  --fs-h2:      1.05rem;
+  --fs-h1:      1.5rem;
+
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --tb:  40px;   /* title bar height  */
+  --sb:  26px;   /* status bar height */
+  --side: 248px; /* sidebar width     */
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--mono);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+::selection{ background:rgba(88,166,255,.30); }
+
+a{ color:var(--link); }
+
+/* skip link */
+.skip-link{
+  position:absolute; left:8px; top:-44px; z-index:50;
+  background:var(--panel-2); color:var(--text);
+  border:1px solid var(--line); border-radius:6px;
+  padding:.5rem .8rem; font-family:var(--mono); font-size:var(--fs-chrome);
+  transition:top .15s ease;
+}
+.skip-link:focus{ top:8px; }
+
+/* =====================================================================
+   Window shell
+   ===================================================================== */
+.ide{
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  height:100dvh;
+  min-height:560px;
+  overflow:hidden;
+  background:var(--bg);
+}
+
+.titlebar{
+  flex:0 0 var(--tb);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 .9rem;
+  background:linear-gradient(180deg,#1B222B,#161B22);
+  border-bottom:1px solid var(--line);
+  font-family:var(--sans);
+  user-select:none;
+}
+.lights{ display:flex; gap:8px; flex:0 0 auto; }
+.lights i{ width:12px; height:12px; border-radius:50%; display:block; }
+.lights i:nth-child(1){ background:#FF5F56; }
+.lights i:nth-child(2){ background:#FFBD2E; }
+.lights i:nth-child(3){ background:#27C93F; }
+
+.menu{ display:flex; gap:1rem; color:var(--muted); font-size:var(--fs-meta); }
+.menu span{ cursor:default; }
+
+.wintitle{
+  margin:0 auto;
+  font-family:var(--mono);
+  font-size:var(--fs-chrome); font-weight:500; letter-spacing:.02em;
+  color:var(--comment);
+}
+.who{
+  flex:0 0 auto; color:var(--muted);
+  font-family:var(--mono); font-size:var(--fs-meta);
+}
+.who i{ color:var(--num); margin-right:.25rem; }
+
+/* =====================================================================
+   Workbench: sidebar + main
+   ===================================================================== */
+.workbench{
+  flex:1 1 auto;
+  display:flex;
+  min-height:0;            /* allow children to scroll */
+}
+
+.sidebar{
+  flex:0 0 var(--side);
+  background:var(--panel);
+  border-right:1px solid var(--line);
+  overflow-y:auto;
+  padding:.6rem 0 1rem;
+}
+.sidebar__head{
+  margin:.2rem 0 .4rem;
+  padding:0 1rem;
+  font-family:var(--sans); font-size:var(--fs-eyebrow); font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.tree-root{
+  margin:.2rem 0; padding:.15rem 1rem;
+  font-size:var(--fs-tree); color:var(--comment);
+  display:flex; align-items:center; gap:.45rem;
+}
+.tree-root i{ font-size:var(--fs-eyebrow); color:var(--muted); }
+
+.tree{ list-style:none; margin:0; padding:0; }
+.tree__item{
+  width:100%;
+  display:flex; align-items:center; gap:.55rem;
+  padding:.42rem 1rem .42rem 1.6rem;
+  background:transparent; border:0;
+  font-family:var(--mono); font-size:var(--fs-tree); color:var(--text);
+  text-align:left; cursor:pointer;
+  border-left:2px solid transparent;
+  transition:background .12s ease, color .12s ease;
+}
+.tree__item i{ width:1.1em; text-align:center; font-size:.85em; }
+.tree__item:hover{ background:var(--panel-2); }
+.tree__item[aria-selected="true"]{
+  background:#1F2630;
+  border-left-color:var(--link);
+  color:#fff;
+}
+/* per-filetype icon colors */
+.ft-md   i{ color:var(--prop); }
+.ft-git  i{ color:var(--kw);  }
+.ft-py   i{ color:var(--num); }
+.ft-json i{ color:#E3B341;    }
+.ft-sh   i{ color:var(--fn);  }
+
+.sidebar__foot{
+  margin:1rem 0 0; padding:0 1rem;
+  font-size:var(--fs-meta); color:var(--muted);
+}
+
+/* =====================================================================
+   Main editor column
+   ===================================================================== */
+.main{
+  flex:1 1 auto;
+  display:flex; flex-direction:column;
+  min-width:0; min-height:0;
+}
+
+.tabbar{
+  flex:0 0 auto;
+  display:flex; align-items:stretch;
+  height:38px;
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+}
+.open-tab{
+  display:flex; align-items:center; gap:.5rem;
+  padding:0 1rem;
+  background:var(--bg);
+  border-right:1px solid var(--line);
+  border-top:2px solid var(--link);
+  font-size:var(--fs-chrome); color:var(--text);
+}
+.open-tab__icon{ font-size:.85em; color:var(--prop); }
+.open-tab__dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--muted); margin-left:.3rem;
+}
+.tabbar__pad{ flex:1 1 auto; }
+.tabbar__hint{
+  display:flex; align-items:center; padding:0 1rem;
+  font-size:var(--fs-meta); color:var(--muted); font-family:var(--sans);
+}
+
+/* editor scroll region */
+.editor{
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:var(--bg);
+}
+
+/* file panes */
+.pane{
+  padding:1.1rem 1.4rem 2.4rem;
+  max-width:80ch;
+  outline:none;
+}
+.pane[hidden]{ display:none; }
+.pane-name{
+  margin:0 0 1rem;
+  padding-bottom:.55rem;
+  border-bottom:1px dashed var(--line);
+  font-size:var(--fs-meta); letter-spacing:.04em; color:var(--muted);
+}
+.pane-name i{ margin-right:.35rem; }
+
+/* === code lines with gutter line-numbers ============================ */
+.code{
+  counter-reset:ln;
+  font-size:var(--fs-code);
+  line-height:1.85;
+}
+.l{
+  counter-increment:ln;
+  display:block;
+  position:relative;
+  padding-left:3.2rem;
+  min-height:1.85em;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.l::before{
+  content:counter(ln);
+  position:absolute; left:0; top:0;
+  width:2.3rem; text-align:right;
+  color:var(--muted);
+  -webkit-user-select:none; user-select:none;
+  font-variant-numeric:tabular-nums;
+}
+
+/* syntax tokens */
+.c{ color:var(--comment); font-style:italic; }
+.k{ color:var(--kw); }
+.s{ color:var(--str); }
+.f{ color:var(--fn); }
+.n{ color:var(--num); font-variant-numeric:tabular-nums; }
+.p{ color:var(--prop); }
+.v{ color:var(--text); }            /* variable assignment lhs */
+.dim{ color:var(--comment); }
+.strong{ color:var(--text); font-weight:700; }
+.star{ color:var(--num); }
+.quote{ color:var(--str); }
+.graph{ color:var(--muted); }
+.hash{ color:var(--muted); }
+.ref{ color:var(--kw); }
+.comma{ color:var(--text); }
+
+/* markdown-ish headers */
+.h1{
+  font-size:var(--fs-h1); font-weight:700; color:#fff; letter-spacing:-.01em;
+}
+.h2{ font-size:var(--fs-h2); font-weight:700; color:var(--text); }
+
+/* inline code link inside editor */
+a.lnk{
+  color:var(--link);
+  text-decoration:none;
+  border-radius:3px;
+}
+a.lnk .s{ color:var(--link); }
+a.lnk:hover{ text-decoration:underline; }
+
+/* about-pane image preview */
+.img-preview{
+  float:right;
+  margin:.2rem 0 .8rem 1.2rem;
+  width:124px; text-align:center;
+}
+.img-preview img{
+  width:124px; height:124px; object-fit:cover;
+  border-radius:12px;
+  border:1px solid var(--line);
+  box-shadow:0 8px 26px rgba(0,0,0,.45);
+  filter:grayscale(.18) contrast(1.02);
+}
+.img-preview figcaption{
+  margin-top:.4rem; font-size:var(--fs-eyebrow); color:var(--muted);
+  word-break:break-all;
+}
+
+/* contact buttons */
+.contact-actions{
+  display:flex; flex-wrap:wrap; gap:.55rem;
+  margin-top:1.6rem; padding-left:3.2rem;
+}
+.cbtn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.5rem .85rem;
+  border:1px solid var(--line); border-radius:8px;
+  background:var(--panel-2);
+  color:var(--text); text-decoration:none;
+  font-size:var(--fs-chrome);
+  transition:border-color .14s ease, background .14s ease, transform .14s ease;
+}
+.cbtn i{ color:var(--link); }
+.cbtn:hover{ border-color:var(--link); background:#1F2630; transform:translateY(-1px); }
+
+/* =====================================================================
+   Terminal panel
+   ===================================================================== */
+.terminal{
+  flex:0 0 auto;
+  height:clamp(216px, 34vh, 332px);
+  display:flex; flex-direction:column;
+  background:#0B0F14;
+  border-top:1px solid var(--line);
+  min-height:0;
+}
+.term__bar{
+  flex:0 0 auto;
+  display:flex; align-items:center; gap:.2rem;
+  height:32px; padding:0 .9rem;
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+  font-family:var(--sans);
+}
+.term__tab{
+  font-size:var(--fs-eyebrow); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); padding:0 .7rem; height:100%;
+  display:flex; align-items:center; border-bottom:2px solid transparent;
+}
+.term__tab.is-on{ color:var(--text); border-bottom-color:var(--num); }
+.term__bar-pad{ flex:1 1 auto; }
+.term__shell{ font-size:var(--fs-meta); color:var(--muted); }
+
+.term__body{
+  flex:1 1 auto;
+  overflow-y:auto;
+  padding:.7rem 1.1rem 1rem;
+  font-size:var(--fs-code);
+  line-height:1.7;
+}
+.term__promptline,.term__cmdline,.term__live,.out-line{ margin:0; }
+.usr{ color:var(--num); }
+.pth{ color:var(--prop); }
+.git{ color:var(--kw); }
+.term__cmdline{ color:var(--text); }
+.term__cmdline #termCmd{ color:#fff; }
+
+.summary{ color:var(--text); }
+.spacer{ height:.5em; }
+.metric{ display:flex; gap:1rem; }
+.m-k{ flex:0 0 13rem; color:var(--prop); }
+.m-v{ color:var(--text); }
+.exit .ok{ color:var(--num); opacity:.85; }
+
+.term__live{ color:var(--text); margin-top:.2rem; }
+.term__live #liveVerb{ color:var(--str); }
+.term__live #termFile{ color:var(--prop); }
+
+/* blinking caret */
+.caret{ color:var(--num); font-weight:700; }
+.cmd-caret{ display:none; }      /* shown by JS while typing */
+
+/* =====================================================================
+   Status bar
+   ===================================================================== */
+.statusbar{
+  flex:0 0 var(--sb);
+  display:flex; align-items:center; gap:.1rem;
+  padding:0 .6rem;
+  background:var(--panel);
+  border-top:1px solid var(--line);
+  font-family:var(--mono); font-size:var(--fs-meta); color:var(--muted);
+  overflow:hidden;
+}
+.sb{ display:inline-flex; align-items:center; gap:.35rem; padding:0 .7rem; white-space:nowrap; }
+.sb i{ font-size:.85em; }
+.sb--accent{ color:var(--num); }
+.sb--spacer{ flex:1 1 auto; padding:0; }
+
+/* =====================================================================
+   Focus states (keyboard)
+   ===================================================================== */
+:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:2px;
+  border-radius:4px;
+}
+.tree__item:focus-visible{ outline-offset:-2px; }
+.pane:focus-visible{ outline-offset:-3px; }
+
+/* =====================================================================
+   Reveal mechanics (JS on/off + reduced motion safe)
+   With JS: only the active pane shows; terminal output animates in.
+   Without JS or reduced-motion: everything is visible.
+   ===================================================================== */
+.js .pane:not(.is-active){ display:none; }
+.js .pane.is-active{ display:block; }
+
+/* terminal output: hidden->revealed only when motion is allowed + JS */
+@media (prefers-reduced-motion:no-preference){
+  .js .term__out .out-line{
+    opacity:0;
+    transform:translateY(3px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .js .term__out .out-line.revealed{
+    opacity:1;
+    transform:none;
+  }
+  .caret{ animation:blink 1.05s steps(1,end) infinite; }
+}
+
+@keyframes blink{ 0%,50%{ opacity:1; } 50.01%,100%{ opacity:0; } }
+
+/* No-JS: the explorer is informational; show every pane stacked
+   with a clear separator so nothing is hidden. */
+.no-js .pane{
+  border-top:1px solid var(--line);
+  margin-top:1rem;
+}
+.no-js .pane:first-of-type{ border-top:0; margin-top:0; }
+.no-js .tabbar__hint::after{ content:" (enable JS for live file switching)"; }
+/* with JS off the explorer can't switch — say so, and reassure that
+   every file is rendered in full further down the page. */
+.no-js .sidebar::after{
+  content:"JS off — every file is shown in full below \2193";
+  display:block; margin-top:.6rem; padding:.5rem 1rem;
+  border-top:1px dashed var(--line);
+  color:var(--comment); font-size:var(--fs-meta);
+}
+
+/* =====================================================================
+   Responsive — mobile / tablet
+   ===================================================================== */
+@media (max-width:860px){
+  body{ font-size:14px; }
+  .ide{ height:auto; min-height:100dvh; overflow:visible; }
+  .menu, .who{ display:none; }
+  .wintitle{ margin:0 auto 0 .4rem; }
+
+  .workbench{ flex-direction:column; }
+
+  /* explorer becomes a horizontal, scrollable file strip on top */
+  .sidebar{
+    flex:0 0 auto; width:100%;
+    border-right:0; border-bottom:1px solid var(--line);
+    padding:.5rem 0;
+    overflow-x:auto; overflow-y:hidden;
+  }
+  .sidebar__head, .tree-root, .sidebar__foot{ display:none; }
+  .tree{ display:flex; gap:.2rem; padding:0 .5rem; }
+  .tree li{ flex:0 0 auto; }
+  .tree__item{
+    padding:.5rem .8rem;
+    border-left:0; border-bottom:2px solid transparent;
+    border-radius:8px 8px 0 0;
+    white-space:nowrap;
+  }
+  .tree__item[aria-selected="true"]{
+    border-left:0; border-bottom-color:var(--link);
+  }
+
+  .tabbar{ display:none; }
+
+  /* let the page scroll naturally instead of nested scroll */
+  .main{ min-height:0; }
+  .editor{ overflow:visible; min-height:0; }
+  .pane{ max-width:none; padding:1rem 1rem 2rem; }
+
+  .terminal{ height:auto; }
+  .term__body{ overflow:visible; }
+
+  .img-preview{ width:96px; margin:.1rem 0 .6rem .9rem; }
+  .img-preview img{ width:96px; height:96px; }
+
+  .metric{ gap:.6rem; }
+  .m-k{ flex:0 0 9.5rem; }
+
+  .contact-actions{ padding-left:0; }
+  .statusbar{ font-size:var(--fs-eyebrow); }
+  .sb--accent + .sb{ display:none; }   /* trim noise on small screens */
+}
+
+@media (max-width:480px){
+  :root{ --fs-code:.8rem; }            /* nudge editor + terminal down a step */
+  .l{ padding-left:2.6rem; }
+  .l::before{ width:1.9rem; }
+  /* metric key/value stack: indent the value so the pair stays grouped */
+  .metric{ flex-direction:column; gap:.05rem; }
+  .m-k{ flex:none; }
+  .m-v{ padding-left:1rem; }
+  .statusbar .sb:nth-child(n+6){ display:none; }
+}
+
+/* =====================================================================
+   Reduced-motion safety net — neutralise all animation/transition and
+   hover lift, regardless of JS state. (Reveal + caret are already gated
+   behind prefers-reduced-motion:no-preference above; this also covers
+   the contact-button lift and any incidental transitions.)
+   ===================================================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .cbtn:hover{ transform:none; }
+}

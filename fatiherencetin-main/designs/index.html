@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fatiherencetin.com — design options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --surface: #141a25;
+            --line: #243044;
+            --text: #e8edf5;
+            --muted: #93a0b4;
+            --accent: #5ee6c5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: clamp(1.5rem, 5vw, 5rem);
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .8rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -.02em;
+            margin-bottom: .6rem;
+        }
+
+        .lede {
+            color: var(--muted);
+            max-width: 56ch;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform .2s ease, border-color .2s ease;
+        }
+
+        .card:hover,
+        .card:focus-visible {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .card:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .num {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin: .5rem 0;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: .92rem;
+            flex: 1;
+        }
+
+        .swatch {
+            display: flex;
+            gap: .4rem;
+            margin: 1.1rem 0 .25rem;
+        }
+
+        .swatch span {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .open {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: .9rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: var(--muted);
+            font-size: .85rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1.5rem;
+        }
+
+        footer code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <p class="eyebrow">fatiherencetin.com</p>
+        <h1>Eighteen directions for the personal site</h1>
+        <p class="lede">All eighteen carry the same verified content from the CV (AI Engineer · LLM &amp; Agentic AI).
+            01–07 first set · 08–14 research-grounded styles · 15–18 hiring-optimized <em>interactive</em> directions
+            (a working artifact that doubles as proof-of-skill). Pick one to ship — each folder is self-contained, so
+            the chosen one can be promoted to the site root.</p>
+
+        <div class="grid">
+            <a class="card" href="01-bento/index.html">
+                <span class="num">01 — same design, updated</span>
+                <h2>Bento grid</h2>
+                <p>Your current design preserved: 3D background, expandable cards, modal detail — now with accurate
+                    CV content and the correct GitHub handle.</p>
+                <div class="swatch"><span style="background:#0a0a0f"></span><span
+                        style="background:#6c5ce7"></span><span style="background:#00d2d3"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="02-agentic-graph/index.html">
+                <span class="num">02 — new</span>
+                <h2>Agentic pipeline</h2>
+                <p>Subject-literal: the hero renders the multi-agent / RAG system as a live node-graph. Dark
+                    ops-console panels, monospace telemetry, animated retrieval pulses.</p>
+                <div class="swatch"><span style="background:#0a0e16"></span><span
+                        style="background:#5ee6c5"></span><span style="background:#6e8bff"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="03-editorial/index.html">
+                <span class="num">03 — new</span>
+                <h2>Editorial</h2>
+                <p>A mathematician's technical journal: oversized serif thesis, the metrics typeset as a figures
+                    column, hairline rules, lots of air, one navy accent.</p>
+                <div class="swatch"><span style="background:#f6f7f9"></span><span
+                        style="background:#10141c"></span><span style="background:#2b4c7e"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="04-terminal/index.html">
+                <span class="num">04 — new</span>
+                <h2>Terminal / IDE</h2>
+                <p>The page is a code editor: a file tree, tabs, a syntax-highlighted pane, and a terminal that
+                    "runs" a command to print the metrics. The subject's daily habitat.</p>
+                <div class="swatch"><span style="background:#0d1117"></span><span
+                        style="background:#bb9af7"></span><span style="background:#9ece6a"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="05-notebook/index.html">
+                <span class="num">05 — new</span>
+                <h2>Notebook</h2>
+                <p>A Jupyter computational notebook: markdown + code cells with In[ ]/Out[ ] prompts; the metrics
+                    render as a DataFrame. Unmistakably an ML engineer's tool.</p>
+                <div class="swatch"><span style="background:#ffffff"></span><span
+                        style="background:#303f9f"></span><span style="background:#2ea043"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="06-swiss/index.html">
+                <span class="num">06 — new</span>
+                <h2>Swiss / typographic</h2>
+                <p>International Style: a strict modular grid, neo-grotesque type, oversized numerals locked to grid
+                    lines, one navy accent. Rigor as the aesthetic.</p>
+                <div class="swatch"><span style="background:#ffffff"></span><span
+                        style="background:#0a0a0a"></span><span style="background:#2b4c7e"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="07-spatial/index.html">
+                <span class="num">07 — new</span>
+                <h2>Spatial / 3D</h2>
+                <p>An immersive Three.js hero: a drifting 3D knowledge-graph / embedding space with the thesis
+                    floating over it. Content in calm panels above the field.</p>
+                <div class="swatch"><span style="background:#05060a"></span><span
+                        style="background:#5ee6c5"></span><span style="background:#b69cff"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="08-neobrutalism/index.html">
+                <span class="num">08 — researched</span>
+                <h2>Neobrutalism</h2>
+                <p>Thick black borders, hard offset shadows, saturated primaries, oversized type + monospace
+                    metadata. Confident maker-brand energy (NN/g-defined).</p>
+                <div class="swatch"><span style="background:#faf7f0"></span><span
+                        style="background:#2d5bff"></span><span style="background:#ffe600"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="09-kinetic-type/index.html">
+                <span class="num">09 — researched</span>
+                <h2>Kinetic type</h2>
+                <p>Type as the medium: a variable-font headline that "generates" token-by-token and re-samples on
+                    hover; a live axis slider. Minimal chrome, maximal type.</p>
+                <div class="swatch"><span style="background:#f7f7f4"></span><span
+                        style="background:#14151a"></span><span style="background:#2b4c7e"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="10-blueprint/index.html">
+                <span class="num">10 — researched</span>
+                <h2>Blueprint</h2>
+                <p>The portfolio drawn as an engineering schematic: an exploded view of the RAG/agent pipeline with
+                    annotated dimension-metrics and a real drawing title block.</p>
+                <div class="swatch"><span style="background:#0b2a4a"></span><span
+                        style="background:#9fd8ff"></span><span style="background:#f2c14e"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="11-cyberpunk-hud/index.html">
+                <span class="num">11 — researched</span>
+                <h2>Cyberpunk / HUD</h2>
+                <p>A live operator HUD: telemetry gauges of the real metrics, soot-dulled neon, corner brackets and
+                    restrained glitch. Atmosphere, not a literal shell.</p>
+                <div class="swatch"><span style="background:#07090e"></span><span
+                        style="background:#38e1c9"></span><span style="background:#c86bff"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="12-maximalism/index.html">
+                <span class="num">12 — researched · loud</span>
+                <h2>Maximalism</h2>
+                <p>Curated chaos: layered oversized type, overlapping panels, explosive color — the breadth of an AI
+                    toolchain as the subject. (Bold; may read loud for hiring.)</p>
+                <div class="swatch"><span style="background:#ff2e88"></span><span
+                        style="background:#14e0e0"></span><span style="background:#c6ff00"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="13-vaporwave/index.html">
+                <span class="num">13 — researched · loud</span>
+                <h2>Vaporwave</h2>
+                <p>Neon-pastel outrun: a glowing gridded-sun horizon as "latent space", chrome neon name, scanlines.
+                    Most mood-driven. (Playful; may read un-serious for hiring.)</p>
+                <div class="swatch"><span style="background:#1a0b2e"></span><span
+                        style="background:#ff6ad5"></span><span style="background:#05ffa1"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="14-ascii-dither/index.html">
+                <span class="num">14 — researched</span>
+                <h2>ASCII / dither</h2>
+                <p>The portrait rendered as live ASCII / dithered on canvas (tokenization &amp; quantization made
+                    literal), with a character-ramp control. Lo-fi monospace texture.</p>
+                <div class="swatch"><span style="background:#050805"></span><span
+                        style="background:#00ff9c"></span><span style="background:#c7d0cc"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="15-playground/index.html">
+                <span class="num">15 — interactive</span>
+                <h2>ML Playground</h2>
+                <p>Hero is a tiny neural net you actually train in-browser — adjust learning rate / activation /
+                    neurons and watch the decision boundary form. Proof-of-skill, not decoration.</p>
+                <div class="swatch"><span style="background:#0e1117"></span><span
+                        style="background:#2b4c7e"></span><span style="background:#39d3bb"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="16-semantic-search/index.html">
+                <span class="num">16 — interactive</span>
+                <h2>Search my work</h2>
+                <p>A real client-side search engine over everything he's built — type a query, get ranked results.
+                    The retrieval tech he ships, running in your browser.</p>
+                <div class="swatch"><span style="background:#0f1115"></span><span
+                        style="background:#e8edf5"></span><span style="background:#7aa2f7"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="17-chat-cv/index.html">
+                <span class="num">17 — interactive</span>
+                <h2>Chat with my CV</h2>
+                <p>Ask the résumé questions instead of skimming — a tiny grounded RAG over his real experience,
+                    answering client-side. The memorable "not another PDF" move.</p>
+                <div class="swatch"><span style="background:#101418"></span><span
+                        style="background:#2b4c7e"></span><span style="background:#39d3bb"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+
+            <a class="card" href="18-scrollytelling/index.html">
+                <span class="num">18 — interactive</span>
+                <h2>Scrollytelling case study</h2>
+                <p>The flagship as a scroll-driven engineering story: a sticky pipeline diagram advancing stage by
+                    stage with the decisions and the 43→86% before/after. Shows the rationale recruiters miss.</p>
+                <div class="swatch"><span style="background:#0a0e16"></span><span
+                        style="background:#f5f7fa"></span><span style="background:#f4b860"></span></div>
+                <span class="open">Open preview →</span>
+            </a>
+        </div>
+
+        <footer>
+            To go live: copy the chosen folder's contents into the site root (next to <code>CNAME</code>), or point
+            your host at it. Content reference: <code>designs/CONTENT.md</code>.
+        </footer>
+    </div>
+</body>
+
+</html>
