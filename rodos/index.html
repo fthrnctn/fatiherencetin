@@ -59,6 +59,17 @@
   .footer{margin-top:50px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.85rem}
   .kbd{background:#eef3f8;border:1px solid #d4dee8;border-radius:6px;padding:1px 7px;font-size:.85rem}
   hr{border:none;border-top:1px dashed var(--line);margin:28px 0}
+  figure{margin:0}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
+  .ph{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(7,59,110,.06)}
+  .ph img{display:block;width:100%;height:185px;object-fit:cover;background:#e8eef4}
+  .ph figcaption{padding:8px 11px;font-size:.86rem;color:var(--ink);line-height:1.35}
+  .ph .src{display:block;font-size:.71rem;color:var(--muted);margin-top:3px}
+  .ph .src a{color:var(--muted)}
+  .banner{width:100%;height:300px;object-fit:cover;border-radius:14px;margin:18px 0 2px;display:block;border:1px solid var(--line)}
+  .banner-cap{font-size:.73rem;color:var(--muted);margin:0 0 6px}
+  td a{font-weight:600;white-space:nowrap}
+  @media(max-width:680px){.ph img{height:150px}.banner{height:190px}}
 </style>
 </head>
 <body>
@@ -79,7 +90,12 @@
 
 <div class="wrap">
 
-<div class="card" style="margin-top:24px">
+<figure>
+  <img class="banner" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Medieval_City_of_Rhodes_03.jpg/1280px-Medieval_City_of_Rhodes_03.jpg" alt="Rodos Ortaçağ Şehri (UNESCO)" loading="lazy">
+  <figcaption class="banner-cap">📷 Rodos Eski Şehri (UNESCO Dünya Mirası) · Kaynak: <a href="https://commons.wikimedia.org/wiki/File:Medieval_City_of_Rhodes_03.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+</figure>
+
+<div class="card" style="margin-top:8px">
   <p class="small" style="margin:0 0 6px"><strong>Kur referansı:</strong> 1 € ≈ <strong>52,9 TL</strong> (24 Haziran 2026). Aşağıdaki belgede fiyatlar ağırlıklı <strong>€</strong> verilmiş, büyük kalemler için yaklaşık TL eklenmiştir. Kur ve fiyatlar Ağustos'a kadar değişebilir; tüm rakamlar <strong>tahminî ve yön göstericidir</strong>.</p>
 </div>
 
@@ -213,33 +229,49 @@
   <br>② <strong>Bölünmüş = 4 gece Rodos Şehri + 2 gece Lindos</strong> — "şehir + ikonik köy/plaj" deneyimini en iyi verir (Lindos şehre 1 saat olduğu için orada konaklamak günübirlikten çok daha keyifli). Gece hayatı önceliğiniz çoksa ikinci üs <strong>Faliraki</strong> olabilir.
 </div>
 
-<h3>İsimli otel önerileri (Ağustos, oda/gece, yaklaşık €)</h3>
-<p class="small">İki çift = 2 oda. Ağustos zirve sezon; küçük butikler aylar önce dolar, mümkünse Ocak–Mart'ta kesinleştirin.</p>
+<h3>Konaklama bölgeleri (görsel)</h3>
+<div class="gallery">
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Medieval_City_of_Rhodes_03.jpg/1280px-Medieval_City_of_Rhodes_03.jpg" alt="Rodos Şehri" loading="lazy"><figcaption>Rodos Şehri / Eski Şehir — en dengeli tek üs<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Medieval_City_of_Rhodes_03.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Faliraki_2.jpg/1280px-Faliraki_2.jpg" alt="Faliraki" loading="lazy"><figcaption>Faliraki — gece hayatı + uzun plaj<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Faliraki_2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/20210826-Lindos-DJI_0205.jpg/1280px-20210826-Lindos-DJI_0205.jpg" alt="Lindos" loading="lazy"><figcaption>Lindos — ikonik köy + akropol<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:20210826-Lindos-DJI_0205.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Kallithea_rhodes_greece-1518041236.jpeg/1280px-Kallithea_rhodes_greece-1518041236.jpeg" alt="Kallithea" loading="lazy"><figcaption>Kallithea — sakin-lüks, şehre ~15 dk<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Kallithea_rhodes_greece-1518041236.jpeg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Ixia%2C_Rhodes%2C_Greece.jpg/1280px-Ixia%2C_Rhodes%2C_Greece.jpg" alt="Ixia / Ialysos" loading="lazy"><figcaption>Ixia / Ialysos — resort & spa şeridi<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Ixia,_Rhodes,_Greece.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<h3>İsimli otel önerileri — fiyat & rezervasyon linki</h3>
+<p class="small">İki çift = 2 oda. Ağustos (oda/gece, yaklaşık €) zirve sezon; küçük butikler aylar önce dolar, mümkünse Ocak–Mart'ta kesinleştirin. <strong>Linkler:</strong> "Booking" = Booking.com sayfası/araması, "Site" = otelin resmî sitesi. Her otelin kendi fotoğraf galerisi linkte açılır.</p>
 
 <h4>Ekonomi <span class="pill p-best">~50–90 €</span></h4>
-<ul>
-  <li><strong>Elite Hotel</strong> (Yeni Şehir, Elli'ye 350 m) — mükemmel konum/değer.</li>
-  <li><strong>Esperia City Hotel</strong> (Yeni Şehir, plaja ~100 m).</li>
-  <li><strong>Lindos Comfy Suites</strong> (Lindos) — çatı bar, ekonomik çift seçeneği.</li>
-  <li><strong>Matina Pefkos Aparthotel</strong> (Pefkos, plaja 50 m) — daireler iki çifte uygun.</li>
-</ul>
+<table>
+  <tr><th>Otel</th><th>Bölge</th><th>~€ (Ağu)</th><th>Özellik</th><th>Link</th></tr>
+  <tr><td><strong>Elite Hotel</strong></td><td>Yeni Şehir (Elli'ye 350 m)</td><td class="num">55–90</td><td>Merkezî, fiyat/performans</td><td><a href="https://www.booking.com/searchresults.html?ss=Elite%20Hotel%20Rhodes%20Town" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Esperia City Hotel</strong></td><td>Yeni Şehir (plaja ~100 m)</td><td class="num">80–140</td><td>Havuz, merkezî</td><td><a href="https://www.booking.com/searchresults.html?ss=Esperia%20City%20Hotel%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Matina Pefkos Aparthotel</strong></td><td>Pefkos (plaja 50 m)</td><td class="num">70–110</td><td>2 havuz, daireler (2 çifte)</td><td><a href="https://www.booking.com/hotel/gr/matina-pefkos-apart.html" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Lindos Comfy Suites</strong></td><td>Lindos</td><td class="num">75–95</td><td>Çatı bar, iyi değer</td><td><a href="https://www.booking.com/searchresults.html?ss=Lindos%20Comfy%20Suites" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Relax Hotel</strong></td><td>Kolymbia (plaja 250 m)</td><td class="num">60–100</td><td>Sakin, aile işletmesi</td><td><a href="https://www.booking.com/searchresults.html?ss=Relax%20Hotel%20Kolymbia%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+</table>
 
 <h4>Orta segment <span class="pill p-mid">~100–180 €</span></h4>
-<ul>
-  <li><strong>Parthenon Hotel</strong> (Yeni Şehir, Elli'ye ~100 m, havuzlu) — Bar Street & Eski Şehir yürüme.</li>
-  <li><strong>Pegasos Deluxe Beach Hotel</strong> 4★ (Faliraki, sahilde) — özel plaj + havuz.</li>
-  <li><strong>Mitsis Faliraki Beach Hotel &amp; Spa</strong> (her şey dahil) — resort + gece hayatı dengesi.</li>
-  <li><strong>Lindos Aqua Terra</strong> (Lindos/Vlicha, sahilde) — çiftlere uygun.</li>
-</ul>
+<table>
+  <tr><th>Otel</th><th>Bölge</th><th>~€ (Ağu)</th><th>Özellik</th><th>Link</th></tr>
+  <tr><td><strong>Parthenon Hotel</strong></td><td>Yeni Şehir (Elli'ye ~100 m)</td><td class="num">100–160</td><td>Havuz; Bar St &amp; Eski Şehir yürüme</td><td><a href="https://www.booking.com/searchresults.html?ss=Parthenon%20Hotel%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Pegasos Deluxe Beach</strong> 4★</td><td>Faliraki (sahilde)</td><td class="num">130–180</td><td>Özel plaj, havuz</td><td><a href="https://www.booking.com/hotel/gr/pegasos-beach.html" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Mitsis Faliraki Beach &amp; Spa</strong></td><td>Faliraki</td><td class="num">150–230</td><td>Her şey dahil, spa</td><td><a href="https://www.booking.com/hotel/gr/mitsis-faliraki-beach.html" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Leonardo Kolymbia Resort</strong> 4★</td><td>Kolymbia</td><td class="num">140–200</td><td>Swim-up süit, AI, çocuk kulübü</td><td><a href="https://www.booking.com/searchresults.html?ss=Leonardo%20Kolymbia%20Resort%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Lindos Aqua Terra</strong></td><td>Lindos (Vlicha, sahilde)</td><td class="num">140–180</td><td>Havuz, çiftlere uygun</td><td><a href="https://www.booking.com/hotel/gr/lindos-aqua-terra.html" target="_blank" rel="noopener">Booking</a></td></tr>
+</table>
 
 <h4>Lüks <span class="pill p-lux">200 €+</span></h4>
-<ul>
-  <li><strong>Mediterranean Hotel</strong> 5★ (Yeni Şehir, Elli sahilinde) — 2 deniz manzaralı oda ideal.</li>
-  <li><strong>Allegory Boutique Hotel</strong> / <strong>Spirit of the Knights</strong> (Eski Şehir, minik butikler) — 2 süit için çok erken rezerve edin.</li>
-  <li><strong>Rodos Palace</strong> veya <strong>The Ixian Grand (sadece yetişkin)</strong> (Ixia) — 2 yatak odalı süitler iki çiftin paylaşımına mükemmel.</li>
-  <li><strong>Amada Colossos Resort</strong> 5★ (Kallithea) — su parkı, aile & yetişkin bölgeleri ayrı.</li>
-  <li><strong>Melenos Lindos</strong> / <strong>Lindos Blu (sadece yetişkin)</strong> (Lindos) — ikonik, romantik.</li>
-</ul>
+<table>
+  <tr><th>Otel</th><th>Bölge</th><th>~€ (Ağu)</th><th>Özellik</th><th>Link</th></tr>
+  <tr><td><strong>Mediterranean Hotel</strong> 5★</td><td>Yeni Şehir (Elli sahili)</td><td class="num">160–250</td><td>Deniz manzara, aile odası</td><td><a href="https://www.mediterranean.gr/" target="_blank" rel="noopener">Site</a></td></tr>
+  <tr><td><strong>Allegory Boutique Hotel</strong></td><td>Eski Şehir</td><td class="num">200–270</td><td>Tüm süit, ikonik (erken!)</td><td><a href="https://www.allegoryhotel.com/" target="_blank" rel="noopener">Site</a></td></tr>
+  <tr><td><strong>Rodos Palace</strong> 5★</td><td>Ixia</td><td class="num">160–280</td><td>2 yatak odalı süit (2 çifte)</td><td><a href="https://www.booking.com/hotel/gr/rodos-palace.html" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>The Ixian Grand</strong> (Adults Only)</td><td>Ixia</td><td class="num">250–400</td><td>Tüm süit, çoğu özel havuzlu</td><td><a href="https://www.booking.com/searchresults.html?ss=The%20Ixian%20Grand%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Amada Colossos Resort</strong> 5★</td><td>Kallithea</td><td class="num">200–470</td><td>Su parkı; aile &amp; yetişkin bölge</td><td><a href="https://www.booking.com/searchresults.html?ss=Amada%20Colossos%20Resort" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Melenos Lindos</strong></td><td>Lindos</td><td class="num">400–700</td><td>12 süit, ünlü çatı restoran</td><td><a href="https://www.booking.com/searchresults.html?ss=Melenos%20Lindos" target="_blank" rel="noopener">Booking</a></td></tr>
+  <tr><td><strong>Lindos Blu</strong> (Adults Only)</td><td>Lindos (Vlicha)</td><td class="num">280–600</td><td>Sonsuzluk havuzu, deniz manzara</td><td><a href="https://www.booking.com/searchresults.html?ss=Lindos%20Blu%20Luxury%20Hotel%20Rhodes" target="_blank" rel="noopener">Booking</a></td></tr>
+</table>
 <p class="small"><strong>İki çift için villa ipucu:</strong> Lindos/Pefkos'ta 2 yatak odalı özel havuzlu villalar (Villa Seashell, Villa Driftwood vb.) çoğu zaman iki lüks otel odasından daha iyi değer sunar. Pefkos villaları Lindos'tan genelde daha hesaplı.</p>
 
 <!-- 4 GEZİ -->
@@ -257,6 +289,14 @@
   <tr><td>Kallithea / Agathi / Ladiko / Elli</td><td>Karışık</td><td>Kallithea & Agathi şnorkel; Elli şehir plajı (Eski Şehir'e yürüme)</td></tr>
 </table>
 
+<div class="gallery">
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tsiniki_Bay_Tsampika_Beach_and_Tsampika_Mountain_Rhodes_12_September_2019.jpg/1280px-Tsiniki_Bay_Tsampika_Beach_and_Tsampika_Mountain_Rhodes_12_September_2019.jpg" alt="Tsambika Plajı" loading="lazy"><figcaption>Tsambika Plajı — ince altın kum, sığ ve sakin<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Tsiniki_Bay_Tsampika_Beach_and_Tsampika_Mountain_Rhodes_12_September_2019.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Anthony_Quinn_Beach_Anthony_Quinn_Bay_Rhodes_31_August_2024.jpg/1280px-Anthony_Quinn_Beach_Anthony_Quinn_Bay_Rhodes_31_August_2024.jpg" alt="Anthony Quinn Koyu" loading="lazy"><figcaption>Anthony Quinn Koyu — şnorkel için en iyilerden<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Anthony_Quinn_Beach_Anthony_Quinn_Bay_Rhodes_31_August_2024.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Faro_di_Prassonissi.JPG" alt="Prasonisi" loading="lazy"><figcaption>Prasonisi — windsurf/kitesurf cenneti (çift deniz)<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Faro_di_Prassonissi.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Kallithea_rhodes_greece-1518041236.jpeg/1280px-Kallithea_rhodes_greece-1518041236.jpeg" alt="Kallithea" loading="lazy"><figcaption>Kallithea — berrak koy + art-deco kaplıcalar<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Kallithea_rhodes_greece-1518041236.jpeg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Faliraki_2.jpg/1280px-Faliraki_2.jpg" alt="Faliraki" loading="lazy"><figcaption>Faliraki — uzun kumsal + plaj barları<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Faliraki_2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
 <h3>🏛️ Tarih & kültür (yaklaşık giriş ücretleri)</h3>
 <table>
   <tr><th>Yer</th><th>Ücret (€)</th><th>Not</th></tr>
@@ -270,12 +310,24 @@
   <tr><td>Filerimos / Mandraki Limanı</td><td>~6 € / ücretsiz</td><td>Panoramik manzara / geyik heykelleri + yel değirmenleri</td></tr>
 </table>
 
+<div class="gallery">
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Street_of_the_Knights%2C_Medieval_City_of_Rhodes%2C_Greece.jpg/1280px-Street_of_the_Knights%2C_Medieval_City_of_Rhodes%2C_Greece.jpg" alt="Şövalyeler Sokağı" loading="lazy"><figcaption>Şövalyeler Sokağı — Eski Şehir<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Street_of_the_Knights,_Medieval_City_of_Rhodes,_Greece.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Courtyard_of_the_Palace_of_the_Grand_Master_of_the_Knights_of_Rhodes%2C_Greece.jpg/1280px-Courtyard_of_the_Palace_of_the_Grand_Master_of_the_Knights_of_Rhodes%2C_Greece.jpg" alt="Büyük Üstatlar Sarayı" loading="lazy"><figcaption>Büyük Üstatlar Sarayı (iç avlu)<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Courtyard_of_the_Palace_of_the_Grand_Master_of_the_Knights_of_Rhodes,_Greece.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/20210826-Lindos-DJI_0205.jpg/1280px-20210826-Lindos-DJI_0205.jpg" alt="Lindos" loading="lazy"><figcaption>Lindos köyü & Akropolü (havadan)<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:20210826-Lindos-DJI_0205.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Ruins_Kameiros_Rhodes_1.jpg/1280px-Ruins_Kameiros_Rhodes_1.jpg" alt="Antik Kamiros" loading="lazy"><figcaption>Antik Kamiros — "Rodos'un Pompeii'si"<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Ruins_Kameiros_Rhodes_1.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Petaloudes_-_butterflies_-_panoramio.jpg/1280px-Petaloudes_-_butterflies_-_panoramio.jpg" alt="Kelebekler Vadisi" loading="lazy"><figcaption>Kelebekler Vadisi (Petaloudes)<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Petaloudes_-_butterflies_-_panoramio.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
 <h3>⛴️ Günübirlik turlar</h3>
 <ul>
   <li><strong>Symi Adası</strong> (tekneyle, Mandraki/Kolona limanından): ~<strong>45–50 €/yetişkin</strong>, ~8,5 saat. Renkli neoklasik liman + yüzme molası (+ bazı turlarda Panormitis Manastırı). Klasik ve çok beğenilen rota.</li>
   <li><strong>Rodos → Marmaris</strong> (Türkiye): katamaran ~45 dk–1 sa, ~45 €. Pasaport şart. <span class="small">(Sizin senaryonuzda zaten Marmaris'ten geleceğiniz için ayrı tura gerek olmayabilir.)</span></li>
   <li>Alternatif: Chalki (Halki) swim-cruise, Lindos koyları tekne turu.</li>
 </ul>
+
+<div class="gallery">
+  <figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Colorful_houses_symi.jpg/1280px-Colorful_houses_symi.jpg" alt="Symi adası" loading="lazy"><figcaption>Symi adası — renkli neoklasik liman (günübirlik tur)<span class="src">📷 <a href="https://commons.wikimedia.org/wiki/File:Colorful_houses_symi.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
 
 <h3>🌙 Gece hayatı</h3>
 <ul>
@@ -384,7 +436,8 @@
 </div>
 
 <div class="footer">
-  Hazırlanma tarihi: 24 Haziran 2026 · Bu rehber genel bilgilendirme amaçlıdır; vize, fiyat ve sefer bilgileri için resmî kaynaklardan güncel teyit alın.
+  Hazırlanma tarihi: 24 Haziran 2026 · Bu rehber genel bilgilendirme amaçlıdır; vize, fiyat ve sefer bilgileri için resmî kaynaklardan güncel teyit alın.<br>
+  Görseller: Wikimedia Commons — her fotoğrafın altında kaynak bağlantısı verilmiştir.
 </div>
 
 </div>
